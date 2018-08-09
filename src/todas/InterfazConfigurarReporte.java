@@ -44,30 +44,28 @@ public class InterfazConfigurarReporte extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblConfigurarReporte = new JLabel("Configurar reporte");
-		lblConfigurarReporte.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblConfigurarReporte.setBounds(482, 10, 385, 60);
-		contentPane.add(lblConfigurarReporte);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(275, 90, 800, 2);
 		contentPane.add(separator);
+		
+		
+		JLabel lblConfigurarReporte = new JLabel("Configurar reporte");
+		lblConfigurarReporte.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblConfigurarReporte.setBounds(482, 10, 385, 60);
+		contentPane.add(lblConfigurarReporte);
 		
 		JLabel lblCriterioAgrupar = new JLabel("Criterio para agrupar los datos:  ");
 		lblCriterioAgrupar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
 		lblCriterioAgrupar.setBounds(360, 200, 223, 27);
 		contentPane.add(lblCriterioAgrupar);
 		
-		JButton button = new JButton("Cancelar");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
 		
-		button.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		button.setBounds(1207, 655, 133, 37);
-		contentPane.add(button);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 655, 133, 37);
+		contentPane.add(btnCancelar);
 		
 		JButton btnVerDescendente = new JButton("Ver en forma descendente");
 		btnVerDescendente.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -78,6 +76,8 @@ public class InterfazConfigurarReporte extends JFrame {
 		btnVerAscendente.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnVerAscendente.setBounds(726, 655, 200, 37);
 		contentPane.add(btnVerAscendente);
+		
+		
 		
 		JRadioButton radioButtonNumeroTicket = new JRadioButton("Numero de ticket");
 		radioButtonNumeroTicket.setBackground(new Color(230, 230, 250));
@@ -108,5 +108,12 @@ public class InterfazConfigurarReporte extends JFrame {
 		radioButtonClasificacinActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		radioButtonClasificacinActual.setBounds(700, 536, 256, 20);
 		contentPane.add(radioButtonClasificacinActual);
+		
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 	}
 }

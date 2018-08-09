@@ -52,17 +52,29 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblModificarClasificacion = new JLabel("Modificar clasificaci\u00F3n de ticket");
-		lblModificarClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblModificarClasificacion.setBounds(361, 20, 625, 42);
-		contentPane.add(lblModificarClasificacion);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(274, 90, 800, 2);
 		contentPane.add(separator);
 		
-		JLabel lblCodigo = new JLabel("C\u00F3digo:");
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(615, 307, 292, 86);
+		contentPane.add(scrollPane);
+		
+		JTextArea textAreaDescripcion = new JTextArea();
+		textAreaDescripcion.setBackground(new Color(220, 220, 220));
+		textAreaDescripcion.setEditable(true);
+		scrollPane.setViewportView(textAreaDescripcion);
+		
+		
+		
+		JLabel lblModificarClasificacion = new JLabel("Modificar clasificacion de ticket");
+		lblModificarClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblModificarClasificacion.setBounds(361, 20, 625, 42);
+		contentPane.add(lblModificarClasificacion);
+		
+		JLabel lblCodigo = new JLabel("Codigo:");
 		lblCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblCodigo.setBounds(430, 173, 173, 25);
 		contentPane.add(lblCodigo);
@@ -72,7 +84,7 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		lblNombre.setBounds(430, 240, 173, 25);
 		contentPane.add(lblNombre);
 		
-		JLabel lblDescripcion = new JLabel("Descripci\u00F3n:");
+		JLabel lblDescripcion = new JLabel("Descripcion:");
 		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblDescripcion.setBounds(430, 307, 173, 25);
 		contentPane.add(lblDescripcion);
@@ -82,56 +94,10 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		lblEstado.setBounds(430, 436, 173, 25);
 		contentPane.add(lblEstado);
 		
-		JLabel lblGruposResolucion = new JLabel("Grupos de resoluci\u00F3n:");
+		JLabel lblGruposResolucion = new JLabel("Grupos de resolucion:");
 		lblGruposResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblGruposResolucion.setBounds(430, 499, 173, 25);
 		contentPane.add(lblGruposResolucion);
-		
-		JButton btnGuardar = new JButton("Guardar");
-		btnGuardar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Desea guardar los cambios realizados?");
-			}
-		});
-		btnGuardar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnGuardar.setBounds(1020, 655, 133, 37);
-		contentPane.add(btnGuardar);
-		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
-		
-		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCancelar.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnCancelar);
-		
-		txtCodigo = new JTextField();
-		txtCodigo.setBackground(new Color(220, 220, 220));
-		txtCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		txtCodigo.setBounds(615, 174, 292, 24);
-		contentPane.add(txtCodigo);
-		txtCodigo.setColumns(10);
-		
-		txtNombre = new JTextField();
-		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		txtNombre.setBounds(615, 241, 292, 24);
-		contentPane.add(txtNombre);
-		txtNombre.setColumns(10);
-		
-		txtEstado = new JTextField();
-		txtEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		txtEstado.setBounds(615, 437, 292, 24);
-		contentPane.add(txtEstado);
-		txtEstado.setColumns(10);
-		
-		txtGrupoResolucion = new JTextField();
-		txtGrupoResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		txtGrupoResolucion.setBounds(615, 500, 292, 24);
-		contentPane.add(txtGrupoResolucion);
-		txtGrupoResolucion.setColumns(10);
 		
 		JLabel errorNombre = new JLabel("* Este campo no puede estar vacio.");
 		errorNombre.setBackground(new Color(240, 240, 240));
@@ -176,13 +142,56 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		errorClasificacion.setVisible(false);
 		contentPane.add(errorClasificacion);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(615, 307, 292, 86);
-		contentPane.add(scrollPane);
 		
-		JTextArea textAreaDescripcion = new JTextArea();
-		textAreaDescripcion.setBackground(new Color(220, 220, 220));
-		textAreaDescripcion.setEditable(true);
-		scrollPane.setViewportView(textAreaDescripcion);
+
+		txtCodigo = new JTextField();
+		txtCodigo.setBackground(new Color(220, 220, 220));
+		txtCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtCodigo.setBounds(615, 174, 292, 24);
+		contentPane.add(txtCodigo);
+		txtCodigo.setColumns(10);
+		
+		txtNombre = new JTextField();
+		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtNombre.setBounds(615, 241, 292, 24);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
+		
+		txtEstado = new JTextField();
+		txtEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtEstado.setBounds(615, 437, 292, 24);
+		contentPane.add(txtEstado);
+		txtEstado.setColumns(10);
+		
+		txtGrupoResolucion = new JTextField();
+		txtGrupoResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtGrupoResolucion.setBounds(615, 500, 292, 24);
+		contentPane.add(txtGrupoResolucion);
+		txtGrupoResolucion.setColumns(10);
+		
+		
+		
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnGuardar.setBounds(1020, 655, 133, 37);
+		contentPane.add(btnGuardar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 655, 133, 37);
+		contentPane.add(btnCancelar);
+		
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Desea guardar los cambios realizados?");
+			}
+		});
+
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 	}
 }

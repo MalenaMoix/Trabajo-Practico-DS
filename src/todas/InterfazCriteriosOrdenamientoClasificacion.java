@@ -45,12 +45,19 @@ public class InterfazCriteriosOrdenamientoClasificacion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(275, 90, 800, 2);
+		contentPane.add(separator);
+		
+		
+		
 		JLabel lblCriteriosOrdenamiento = new JLabel("Criterios de ordenamiento");
 		lblCriteriosOrdenamiento.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblCriteriosOrdenamiento.setBounds(417, 20, 515, 61);
 		contentPane.add(lblCriteriosOrdenamiento);
 		
-		JLabel lblSeleccionarCriterios = new JLabel("Seleccionar los criterios por los que desea ordenar la visualizaci\u00F3n por clasificaci\u00F3n actual del ticket: ");
+		JLabel lblSeleccionarCriterios = new JLabel("Seleccionar los criterios por los que desea ordenar la visualizacion por clasificacion actual del ticket: ");
 		lblSeleccionarCriterios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		lblSeleccionarCriterios.setBounds(187, 200, 974, 32);
 		contentPane.add(lblSeleccionarCriterios);
@@ -80,52 +87,52 @@ public class InterfazCriteriosOrdenamientoClasificacion extends JFrame {
 		lblCriterio5.setBounds(437, 557, 103, 22);
 		contentPane.add(lblCriterio5);
 		
+		
+		
 		JComboBox comboBoxCriterio1 = new JComboBox();
 		comboBoxCriterio1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio1.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resoluci\u00F3n", "Legajo", "N\u00FAmero de ticket"}));
+		comboBoxCriterio1.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resolucion", "Legajo", "Numero de ticket"}));
 		comboBoxCriterio1.setBounds(637, 294, 275, 24);
 		contentPane.add(comboBoxCriterio1);
 		
 		JComboBox comboBoxCriterio2 = new JComboBox();
 		comboBoxCriterio2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio2.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resoluci\u00F3n", "Legajo", "N\u00FAmero de ticket"}));
+		comboBoxCriterio2.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resolucion", "Legajo", "Numero de ticket"}));
 		comboBoxCriterio2.setBounds(637, 358, 275, 24);
 		contentPane.add(comboBoxCriterio2);
 		
 		JComboBox comboBoxCriterio3 = new JComboBox();
 		comboBoxCriterio3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio3.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resoluci\u00F3n", "Legajo", "N\u00FAmero de ticket"}));
+		comboBoxCriterio3.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resolucion", "Legajo", "Numero de ticket"}));
 		comboBoxCriterio3.setBounds(637, 425, 275, 24);
 		contentPane.add(comboBoxCriterio3);
 		
 		JComboBox comboBoxCriterio4 = new JComboBox();
 		comboBoxCriterio4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio4.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resoluci\u00F3n", "Legajo", "N\u00FAmero de ticket"}));
+		comboBoxCriterio4.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resolucion", "Legajo", "Numero de ticket"}));
 		comboBoxCriterio4.setBounds(637, 490, 275, 24);
 		contentPane.add(comboBoxCriterio4);
 		
 		JComboBox comboBoxCriterio5 = new JComboBox();
 		comboBoxCriterio5.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio5.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resoluci\u00F3n", "Legajo", "N\u00FAmero de ticket"}));
+		comboBoxCriterio5.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Estado actual del ticket", "Fecha apertura", "Grupo actual de resolucion", "Legajo", "NuAmero de ticket"}));
 		comboBoxCriterio5.setBounds(637, 557, 275, 24);
 		contentPane.add(comboBoxCriterio5);
 		
-		JSeparator separator = new JSeparator();
-		separator.setBounds(275, 90, 800, 2);
-		contentPane.add(separator);
+		
 		
 		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnConfirmar.setBounds(1207, 655, 133, 37);
+		contentPane.add(btnConfirmar);
+		
+		
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				InterfazVisualizandoInfoPorClasificacion vergrupo = new InterfazVisualizandoInfoPorClasificacion();
 				vergrupo.setVisible(true);
 				InterfazCriteriosOrdenamientoClasificacion.this.dispose();
 			}
-		});
-		
-		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnConfirmar.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnConfirmar);
-		
+		});		
 	}
 }

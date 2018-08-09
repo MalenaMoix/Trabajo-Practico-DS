@@ -59,14 +59,32 @@ public class InterfazVisualizacionTicket extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblVisualizacionTicket = new JLabel("Visualizaci\u00F3n ticket");
-		lblVisualizacionTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblVisualizacionTicket.setBounds(481, 20, 385, 48);
-		contentPane.add(lblVisualizacionTicket);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(275, 90, 800, 2);
 		contentPane.add(separator);
+		
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(701, 182, 578, 223);
+		contentPane.add(scrollPane_1);
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(820, 438, 458, 170);
+		contentPane.add(scrollPane);
+		
+		JTextArea textAreaObservaciones = new JTextArea();
+		textAreaObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		scrollPane.setViewportView(textAreaObservaciones);
+		textAreaObservaciones.setBackground(new Color(220, 220, 220));
+		
+		
+		
+		JLabel lblVisualizacionTicket = new JLabel("Visualizacion ticket");
+		lblVisualizacionTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblVisualizacionTicket.setBounds(481, 20, 385, 48);
+		contentPane.add(lblVisualizacionTicket);
 		
 		JLabel lblDatosUsuario = new JLabel("Datos usuario: ");
 		lblDatosUsuario.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
@@ -88,22 +106,22 @@ public class InterfazVisualizacionTicket extends JFrame {
 		lblNombreYApellido.setBounds(220, 221, 156, 24);
 		contentPane.add(lblNombreYApellido);
 		
-		JLabel lblTelefonoInterno = new JLabel("Tel\u00E9fono interno: ");
+		JLabel lblTelefonoInterno = new JLabel("Telefono interno: ");
 		lblTelefonoInterno.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblTelefonoInterno.setBounds(220, 258, 156, 24);
 		contentPane.add(lblTelefonoInterno);
 		
-		JLabel lblTelefonoDirecto = new JLabel("Tel\u00E9fono directo: ");
+		JLabel lblTelefonoDirecto = new JLabel("Telefono directo: ");
 		lblTelefonoDirecto.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblTelefonoDirecto.setBounds(220, 295, 156, 24);
 		contentPane.add(lblTelefonoDirecto);
 		
-		JLabel lblDescripcionCargo = new JLabel("Descripci\u00F3n de cargo: ");
+		JLabel lblDescripcionCargo = new JLabel("Descripcion de cargo: ");
 		lblDescripcionCargo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblDescripcionCargo.setBounds(220, 332, 148, 24);
 		contentPane.add(lblDescripcionCargo);
 		
-		JLabel lblDireccion = new JLabel("Direcci\u00F3n: ");
+		JLabel lblDireccion = new JLabel("Direccion: ");
 		lblDireccion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 15));
 		lblDireccion.setBounds(220, 434, 156, 24);
 		contentPane.add(lblDireccion);
@@ -113,7 +131,7 @@ public class InterfazVisualizacionTicket extends JFrame {
 		lblCalle.setBounds(220, 471, 72, 24);
 		contentPane.add(lblCalle);
 		
-		JLabel lblNumero = new JLabel("N\u00FAmero: ");
+		JLabel lblNumero = new JLabel("Numero: ");
 		lblNumero.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblNumero.setBounds(220, 510, 72, 24);
 		contentPane.add(lblNumero);
@@ -127,6 +145,18 @@ public class InterfazVisualizacionTicket extends JFrame {
 		lblOficina.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblOficina.setBounds(220, 584, 72, 24);
 		contentPane.add(lblOficina);
+		
+		JLabel label_6 = new JLabel((String) null);
+		label_6.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		label_6.setBounds(780, 550, 123, 24);
+		contentPane.add(label_6);
+		
+		JLabel lblObservaciones = new JLabel("Observaciones: ");
+		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblObservaciones.setBounds(701, 434, 115, 24);
+		contentPane.add(lblObservaciones);
+		
+		
 		
 		txtDescripcionCargo = new JTextField();
 		txtDescripcionCargo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
@@ -191,24 +221,7 @@ public class InterfazVisualizacionTicket extends JFrame {
 		txtOficina.setBounds(327, 584, 180, 24);
 		contentPane.add(txtOficina);
 		
-		JLabel label_6 = new JLabel((String) null);
-		label_6.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		label_6.setBounds(780, 550, 123, 24);
-		contentPane.add(label_6);
 		
-		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		
-		btnAceptar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnAceptar.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnAceptar);
-		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(701, 182, 578, 223);
-		contentPane.add(scrollPane_1);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
@@ -228,27 +241,21 @@ public class InterfazVisualizacionTicket extends JFrame {
 				{null, null, null, null, null, null},
 				{null, null, null, null, null, null},
 			},
-			new String[] {
-				"Fecha", "Hora", "Operador", "Estado", "Grupo de resol.", "Clasif. ticket"
-			}
+			new String[] {"Fecha", "Hora", "Operador", "Estado", "Grupo de resol.", "Clasif. ticket"}
 		));
-		
 		table.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 11));
 		scrollPane_1.setViewportView(table);
 		
-		JLabel lblObservaciones = new JLabel("Observaciones: ");
-		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblObservaciones.setBounds(701, 434, 115, 24);
-		contentPane.add(lblObservaciones);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(820, 438, 458, 170);
-		contentPane.add(scrollPane);
+
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnAceptar.setBounds(1207, 655, 133, 37);
+		contentPane.add(btnAceptar);
 		
-		JTextArea textAreaObservaciones = new JTextArea();
-		textAreaObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		scrollPane.setViewportView(textAreaObservaciones);
-		textAreaObservaciones.setBackground(new Color(220, 220, 220));
-		
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 	}
 }

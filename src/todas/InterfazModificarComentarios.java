@@ -45,31 +45,6 @@ public class InterfazModificarComentarios extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblModificarComentarios = new JLabel("Modificar comentarios");
-		lblModificarComentarios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblModificarComentarios.setBounds(455, 20, 438, 45);
-		contentPane.add(lblModificarComentarios);
-		
-		JLabel lblObservaciones = new JLabel("Observaciones:");
-		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
-		lblObservaciones.setBounds(286, 202, 143, 25);
-		contentPane.add(lblObservaciones);
-		
-		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnAceptar.setBounds(1020, 655, 133, 37);
-		contentPane.add(btnAceptar);
-		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
-		
-		btnCancelar.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnCancelar);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
@@ -84,5 +59,36 @@ public class InterfazModificarComentarios extends JFrame {
 		textAreaObservaciones.setBackground(new Color(220, 220, 220));
 		textAreaObservaciones.setEditable(true);
 		scrollPane.setViewportView(textAreaObservaciones);
+		
+		
+		
+		JLabel lblModificarComentarios = new JLabel("Modificar comentarios");
+		lblModificarComentarios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblModificarComentarios.setBounds(455, 20, 438, 45);
+		contentPane.add(lblModificarComentarios);
+		
+		JLabel lblObservaciones = new JLabel("Observaciones:");
+		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		lblObservaciones.setBounds(286, 202, 143, 25);
+		contentPane.add(lblObservaciones);
+		
+		
+		
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnAceptar.setBounds(1020, 655, 133, 37);
+		contentPane.add(btnAceptar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 655, 133, 37);
+		contentPane.add(btnCancelar);
+		
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 	}
 }

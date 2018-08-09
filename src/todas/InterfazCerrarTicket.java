@@ -52,6 +52,16 @@ public class InterfazCerrarTicket extends JFrame {
 		contentPane.setLayout(null);
 		
 		
+		JSeparator separator = new JSeparator();
+		separator.setForeground(Color.GRAY);
+		separator.setBounds(275, 90, 800, 2);
+		contentPane.add(separator);
+		
+		TextArea textAreaObservaciones = new TextArea();
+		textAreaObservaciones.setBounds(701, 420, 345, 160);
+		contentPane.add(textAreaObservaciones);
+		
+		
 		JLabel lblCerrarTicket = new JLabel("Cerrar ticket\r\n");
 		lblCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblCerrarTicket.setToolTipText("");
@@ -78,6 +88,14 @@ public class InterfazCerrarTicket extends JFrame {
 		lblObservaciones.setBounds(498, 420, 148, 26);
 		contentPane.add(lblObservaciones);
 		
+		JLabel errorObsVacio = new JLabel("* Este campo no puede ser estar vacio.");
+		errorObsVacio.setBounds(1083, 423, 241, 26);
+		errorObsVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		errorObsVacio.setForeground(Color.RED);
+		contentPane.add(errorObsVacio);
+		errorObsVacio.setVisible(false);
+		
+		
 		textFieldTicket = new JTextField();
 		textFieldTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		textFieldTicket.setBounds(701, 184, 200, 24);
@@ -96,44 +114,39 @@ public class InterfazCerrarTicket extends JFrame {
 		contentPane.add(textFieldNuevoEstado);
 		textFieldNuevoEstado.setColumns(10);
 		
-		JLabel errorObsVacio = new JLabel("* Este campo no puede ser estar vacio.");
-		errorObsVacio.setBounds(1083, 423, 241, 26);
-		errorObsVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		errorObsVacio.setForeground(Color.RED);
-		contentPane.add(errorObsVacio);
-		errorObsVacio.setVisible(false);
 		
-		TextArea textAreaObservaciones = new TextArea();
-		textAreaObservaciones.setBounds(701, 420, 345, 160);
-		contentPane.add(textAreaObservaciones);
 		
-		JSeparator separator = new JSeparator();
-		separator.setForeground(Color.GRAY);
-		separator.setBounds(275, 90, 800, 2);
-		contentPane.add(separator);
+		JButton btnCerrarTicket = new JButton("Cerrar ticket");
+		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCerrarTicket.setBounds(1020, 650, 133, 37);
+		contentPane.add(btnCerrarTicket);
+		
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 650, 133, 37);
+		contentPane.add(btnCancelar);
+		
+		
+		btnCerrarTicket.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(textAreaObservaciones.getText().isEmpty()) {
+					errorObsVacio.setVisible(true);
+				}
+				
+				int dialogButton = JOptionPane.YES_NO_OPTION;
+			    JOptionPane.showConfirmDialog (null, "Desea cerrar el ticket?","Warning",dialogButton);
+			    if (dialogButton == JOptionPane.YES_OPTION) {
+			    	//Pasa algo
+			    }
+			}
+		});
+		
+		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		
-		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCancelar.setBounds(1207, 650, 133, 37);
-		contentPane.add(btnCancelar);
-		
-		JButton btnCerrarTicket = new JButton("Cerrar ticket");
-		btnCerrarTicket.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if(textAreaObservaciones.getText().isEmpty()) errorObsVacio.setVisible(true);
-				JOptionPane.showOptionDialog(null, "¿Desea cerrar el ticket?", "Cerrar ticket", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, (Icon) Toolkit.getDefaultToolkit().getImage("C:\\Users\\Usuario\\Desktop\\Diseño de Sistemas\\cool-flame-icon.png"), new Object[] {"Sí","No"}, "Sí");
-			}
-		});
-		
-		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCerrarTicket.setBounds(1020, 650, 133, 37);
-		contentPane.add(btnCerrarTicket);
-		
 	}
 }

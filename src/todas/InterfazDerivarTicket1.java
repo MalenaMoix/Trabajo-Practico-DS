@@ -44,38 +44,26 @@ public class InterfazDerivarTicket1 extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.setBackground(new Color(230, 230, 250));
 		
+		
+		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(301, 90, 760, 2);
 		contentPane.add(separator);
+		
+		
 		
 		JLabel lblDerivarTicket = new JLabel("Derivar ticket");
 		lblDerivarTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblDerivarTicket.setBounds(550, 20, 262, 54);
 		contentPane.add(lblDerivarTicket);
 		
-		JButton btnDerivar = new JButton("Derivar");
-		btnDerivar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnDerivar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		JLabel lblSeleccione = new JLabel("Seleccione grupo de resolucion:");
+		lblSeleccione.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblSeleccione.setBounds(364, 130, 262, 31);
+		contentPane.add(lblSeleccione);
 		
-		btnDerivar.setBounds(1020, 655, 133, 37);
-		contentPane.add(btnDerivar);
 		
-		JButton btnAtras = new JButton("Atras");
-		btnAtras.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfazRegistrarTicket2 volver = new InterfazRegistrarTicket2();
-				volver.setVisible(true);
-				InterfazDerivarTicket1.this.dispose();
-			}
-		});
-		
-		btnAtras.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnAtras.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnAtras);
 		
 		JRadioButton radioButtonMesaAyuda = new JRadioButton("Mesa de ayuda");
 		radioButtonMesaAyuda.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
@@ -107,7 +95,7 @@ public class InterfazDerivarTicket1 extends JFrame {
 		radioButtonAdministradorSuseLinux.setBounds(658, 333, 222, 23);
 		contentPane.add(radioButtonAdministradorSuseLinux);
 		
-		JRadioButton radioButtonAdministradorProxy = new JRadioButton("Administrador Proxy y correo electr\u00F3nico");
+		JRadioButton radioButtonAdministradorProxy = new JRadioButton("Administrador Proxy y correo electronico");
 		radioButtonAdministradorProxy.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		radioButtonAdministradorProxy.setBackground(new Color(230, 230, 250));
 		radioButtonAdministradorProxy.setBounds(658, 374, 317, 23);
@@ -149,10 +137,31 @@ public class InterfazDerivarTicket1 extends JFrame {
 		radioButtonDesarrolloSistemaReclamos.setBounds(658, 626, 242, 23);
 		contentPane.add(radioButtonDesarrolloSistemaReclamos);
 		
-		JLabel lblSeleccione = new JLabel("Seleccione grupo de resoluci\u00F3n:");
-		lblSeleccione.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblSeleccione.setBounds(364, 130, 262, 31);
-		contentPane.add(lblSeleccione);
 		
+		
+		JButton btnDerivar = new JButton("Derivar");
+		btnDerivar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnDerivar.setBounds(1020, 655, 133, 37);
+		contentPane.add(btnDerivar);
+		
+		JButton btnAtras = new JButton("Atras");
+		btnAtras.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnAtras.setBounds(1207, 655, 133, 37);
+		contentPane.add(btnAtras);
+		
+		
+		btnDerivar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
+
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfazRegistrarTicket2 volver = new InterfazRegistrarTicket2();
+				volver.setVisible(true);
+				InterfazDerivarTicket1.this.dispose();
+			}
+		});
 	}
 }

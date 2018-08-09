@@ -59,6 +59,8 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setPreferredSize(new Dimension(1366, 768));
@@ -67,125 +69,96 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 		contentPane.add(panel);
 		
 		
-		JLabel lblVisualizando = new JLabel("Visualizando informaci\u00F3n por ticket");
-		lblVisualizando.setBounds(330, 20, 706, 54);
-		lblVisualizando.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		panel.add(lblVisualizando);
-		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(295, 80, 760, 2);
 		separator.setForeground(Color.GRAY);
 		panel.add(separator);
+		
+		
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(86, 415, 1139, 115);
+		panel.add(scrollPane_2);
+		
+		JScrollPane scrollPane_3 = new JScrollPane();
+		scrollPane_3.setBounds(86, 567, 1139, 115);
+		panel.add(scrollPane_3);
+		
+		
+		JTextArea textAreaDescripcionCargo = new JTextArea();
+		textAreaDescripcionCargo.setBounds(1141, 336, 183, 74);
+		panel.add(textAreaDescripcionCargo);
+		textAreaDescripcionCargo.setBackground(new Color(220, 220, 220));
+		textAreaDescripcionCargo.setEditable(false);
+		
+		
+		
+		
+		JLabel lblVisualizando = new JLabel("Visualizando informacion por ticket");
+		lblVisualizando.setBounds(330, 20, 706, 54);
+		lblVisualizando.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		panel.add(lblVisualizando);
 		
 		JLabel lblCriterios = new JLabel("Criterios:");
 		lblCriterios.setBounds(64, 80, 222, 26);
 		lblCriterios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		panel.add(lblCriterios);
 		
-	
-		JLabel label = new JLabel("-");
-		label.setBounds(74, 117, 8, 8);
-		label.setFont(new Font("Tahoma", Font.BOLD, 18));
-		panel.add(label);
-		
-		JLabel lblNumeroTicket = new JLabel("N\u00FAmero de ticket: 205");
+		JLabel lblNumeroTicket = new JLabel("-Numero de ticket: ");
 		lblNumeroTicket.setBounds(86, 111, 183, 21);
 		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblNumeroTicket);
 		
-		JLabel label_2 = new JLabel("-");
-		label_2.setBounds(74, 142, 8, 8);
-		label_2.setFont(new Font("Tahoma", Font.BOLD, 18));
-		panel.add(label_2);
-		
-		JLabel label_3 = new JLabel("-");
-		label_3.setBounds(74, 167, 8, 8);
-		label_3.setFont(new Font("Tahoma", Font.BOLD, 18));
-		panel.add(label_3);
-		
-		JLabel label_4 = new JLabel("-");
-		label_4.setBounds(409, 117, 8, 8);
-		label_4.setFont(new Font("Tahoma", Font.BOLD, 18));
-		panel.add(label_4);
-		
-		JLabel label_5 = new JLabel("-");
-		label_5.setBounds(409, 142, 8, 8);
-		label_5.setFont(new Font("Tahoma", Font.BOLD, 18));
-		panel.add(label_5);
-		
-		JLabel label_6 = new JLabel("-");
-		label_6.setBounds(409, 167, 8, 8);
-		label_6.setFont(new Font("Tahoma", Font.BOLD, 18));
-		panel.add(label_6);
-		
-		JLabel label_7 = new JLabel("-");
-		label_7.setBounds(803, 117, 8, 8);
-		label_7.setFont(new Font("Tahoma", Font.BOLD, 18));
-		panel.add(label_7);
-		
-		JLabel lblNumeroLegajo = new JLabel("N\u00FAmero de legajo: 15");
+		JLabel lblNumeroLegajo = new JLabel("-Numero de legajo: ");
 		lblNumeroLegajo.setBounds(86, 136, 183, 21);
 		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblNumeroLegajo);
 		
-		JLabel lblClasificacionActual = new JLabel("Clasificaci\u00F3n actual del ticket: Otros ");
+		JLabel lblClasificacionActual = new JLabel("-Clasificaci0n actual del ticket: ");
 		lblClasificacionActual.setBounds(86, 161, 270, 21);
 		lblClasificacionActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblClasificacionActual);
 		
-		JLabel lblEstadoActual = new JLabel("Estado actual del ticket: Abierto derivado");
+		JLabel lblEstadoActual = new JLabel("-Estado actual del ticket: ");
 		lblEstadoActual.setBounds(419, 111, 282, 21);
 		lblEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblEstadoActual);
 		
-		JLabel lblFechaApertura = new JLabel("Fecha Apertura: 04/09/2000");
+		JLabel lblFechaApertura = new JLabel("-Fecha Apertura: ");
 		lblFechaApertura.setBounds(419, 136, 282, 21);
 		lblFechaApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblFechaApertura);
 		
-		JLabel lblFechaUltimoCambio = new JLabel("Fecha del \u00FAltimo cambio de estado: 11/01/2005");
+		JLabel lblFechaUltimoCambio = new JLabel("-Fecha del ultimo cambio de estado: ");
 		lblFechaUltimoCambio.setBounds(419, 161, 324, 21);
 		lblFechaUltimoCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblFechaUltimoCambio);
 		
-		JLabel lblUltimoGrupo = new JLabel("\u00DAltimo grupo de resoluci\u00F3n asignado: Mesa de ayuda");
+		JLabel lblUltimoGrupo = new JLabel("-Ultimo grupo de resolucion asignado: ");
 		lblUltimoGrupo.setBounds(815, 111, 509, 21);
 		lblUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblUltimoGrupo);
 		
-		JLabel label_1 = new JLabel("-");
-		label_1.setBounds(803, 142, 8, 8);
-		label_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		panel.add(label_1);
-		
-		JLabel lblNumeroTicketForma = new JLabel("N\u00FAmero de ticket en forma ascendente");
+		JLabel lblNumeroTicketForma = new JLabel("-Numero de ticket en forma ascendente");
 		lblNumeroTicketForma.setBounds(815, 136, 261, 21);
 		lblNumeroTicketForma.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblNumeroTicketForma);
-		
 		
 		JLabel lblTicket = new JLabel("Ticket         de 23");
 		lblTicket.setBounds(462, 211, 167, 29);
 		lblTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
 		panel.add(lblTicket);
 		
-		textField = new JTextField();
-		textField.setBounds(530, 215, 33, 22);
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField.setColumns(10);
-		panel.add(textField);
-		
 		JLabel lblDatosTicket = new JLabel("Datos del ticket:");
 		lblDatosTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		lblDatosTicket.setBounds(12, 231, 167, 37);
 		panel.add(lblDatosTicket);
 		
-		JLabel lblNumeroTicketDatos = new JLabel("N\u00FAmero de ticket:");
+		JLabel lblNumeroTicketDatos = new JLabel("Numero de ticket:");
 		lblNumeroTicketDatos.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblNumeroTicketDatos.setBounds(22, 271, 222, 21);
 		panel.add(lblNumeroTicketDatos);
 		
-		JLabel lblClasificacionActualDatos = new JLabel("Clasificaci\u00F3n actual ticket:");
+		JLabel lblClasificacionActualDatos = new JLabel("Clasificacion actual ticket:");
 		lblClasificacionActualDatos.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblClasificacionActualDatos.setBounds(345, 271, 177, 21);
 		panel.add(lblClasificacionActualDatos);
@@ -195,10 +168,63 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 		lblEstadoActualDatos.setBounds(345, 303, 177, 21);
 		panel.add(lblEstadoActualDatos);
 		
-		JLabel lblTiempoAcumuladoAtencion = new JLabel("Tiempo acumulado de atenci\u00F3n:");
+		JLabel lblTiempoAcumuladoAtencion = new JLabel("Tiempo acumulado de atencion:");
 		lblTiempoAcumuladoAtencion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblTiempoAcumuladoAtencion.setBounds(22, 303, 222, 21);
 		panel.add(lblTiempoAcumuladoAtencion);
+		
+		JLabel lblDatosUsuario = new JLabel("Datos del usuario:");
+		lblDatosUsuario.setBounds(719, 237, 261, 25);
+		lblDatosUsuario.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		panel.add(lblDatosUsuario);
+		
+		JLabel lblNumeroLegajoUsuario = new JLabel("Numero de legajo:");
+		lblNumeroLegajoUsuario.setBounds(729, 271, 132, 21);
+		lblNumeroLegajoUsuario.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblNumeroLegajoUsuario);
+		
+		JLabel lblApellidoYNombre = new JLabel("Apellido y Nombre:");
+		lblApellidoYNombre.setBounds(984, 271, 150, 21);
+		lblApellidoYNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblApellidoYNombre);
+		
+		JLabel lblTelefonoInterno = new JLabel("Telefono interno:");
+		lblTelefonoInterno.setBounds(727, 303, 132, 21);
+		lblTelefonoInterno.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblTelefonoInterno);
+		
+		JLabel lblTelefonoDirecto = new JLabel("Telefono directo:");
+		lblTelefonoDirecto.setBounds(984, 303, 150, 21);
+		lblTelefonoDirecto.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblTelefonoDirecto);
+		
+		JLabel lblUbicacion = new JLabel("Ubicacion:");
+		lblUbicacion.setBounds(729, 335, 132, 21);
+		lblUbicacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblUbicacion);
+		
+		JLabel lblDescripcinCargo = new JLabel("Descripcion de cargo:");
+		lblDescripcinCargo.setBounds(984, 335, 150, 21);
+		lblDescripcinCargo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblDescripcinCargo);
+		
+		JLabel lblGruposResolucionIntervinieron = new JLabel("Grupos de resolucion que intervinieron:");
+		lblGruposResolucionIntervinieron.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		lblGruposResolucionIntervinieron.setBounds(64, 377, 391, 37);
+		panel.add(lblGruposResolucionIntervinieron);
+		
+		JLabel lblReclasificaciones = new JLabel("Reclasificaciones del ticket:");
+		lblReclasificaciones.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		lblReclasificaciones.setBounds(64, 528, 391, 37);
+		panel.add(lblReclasificaciones);
+		
+		
+		
+		textField = new JTextField();
+		textField.setBounds(530, 215, 33, 22);
+		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		textField.setColumns(10);
+		panel.add(textField);
 		
 		txtNumeroTicketDatos = new JTextField();
 		txtNumeroTicketDatos.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -231,41 +257,6 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 		txtEstadoActual.setBackground(new Color(220, 220, 220));
 		txtEstadoActual.setBounds(521, 304, 194, 20);
 		panel.add(txtEstadoActual);
-		
-		JLabel lblDatosUsuario = new JLabel("Datos del usuario:");
-		lblDatosUsuario.setBounds(719, 237, 261, 25);
-		lblDatosUsuario.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		panel.add(lblDatosUsuario);
-		
-		JLabel lblNumeroLegajoUsuario = new JLabel("N\u00FAmero de legajo:");
-		lblNumeroLegajoUsuario.setBounds(729, 271, 132, 21);
-		lblNumeroLegajoUsuario.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		panel.add(lblNumeroLegajoUsuario);
-		
-		JLabel lblApellidoYNombre = new JLabel("Apellido y Nombre:");
-		lblApellidoYNombre.setBounds(984, 271, 150, 21);
-		lblApellidoYNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		panel.add(lblApellidoYNombre);
-		
-		JLabel lblTelefonoInterno = new JLabel("Tel\u00E9fono interno:");
-		lblTelefonoInterno.setBounds(727, 303, 132, 21);
-		lblTelefonoInterno.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		panel.add(lblTelefonoInterno);
-		
-		JLabel lblTelefonoDirecto = new JLabel("Tel\u00E9fono directo:");
-		lblTelefonoDirecto.setBounds(984, 303, 150, 21);
-		lblTelefonoDirecto.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		panel.add(lblTelefonoDirecto);
-		
-		JLabel lblUbicacion = new JLabel("Ubicaci\u00F3n:");
-		lblUbicacion.setBounds(729, 335, 132, 21);
-		lblUbicacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		panel.add(lblUbicacion);
-		
-		JLabel lblDescripcinCargo = new JLabel("Descripci\u00F3n de cargo:");
-		lblDescripcinCargo.setBounds(984, 335, 150, 21);
-		lblDescripcinCargo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		panel.add(lblDescripcinCargo);
 		
 		txtNumeroLegajo = new JTextField();
 		txtNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -307,14 +298,7 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 		txtUbicacion.setBounds(864, 336, 108, 20);
 		panel.add(txtUbicacion);
 		
-		JLabel lblGruposResolucionIntervinieron = new JLabel("Grupos de resoluci\u00F3n que intervinieron:");
-		lblGruposResolucionIntervinieron.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblGruposResolucionIntervinieron.setBounds(64, 377, 391, 37);
-		panel.add(lblGruposResolucionIntervinieron);
 		
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(86, 415, 1139, 115);
-		panel.add(scrollPane_2);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
@@ -330,21 +314,10 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 				{null, null, null, null},
 				{null, null, null, null},
 			},
-			new String[] {
-				"Grupo de resolucion", "Fecha de asignacion", "Tiempo real de atencion", "Tiempo total asignado"
-			}
+			new String[] {"Grupo de resolucion", "Fecha de asignacion", "Tiempo real de atencion", "Tiempo total asignado"}
 		));
-		
 		scrollPane_2.setViewportView(table);
 		
-		JLabel lblReclasificaciones = new JLabel("Reclasificaciones del ticket:");
-		lblReclasificaciones.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblReclasificaciones.setBounds(64, 528, 391, 37);
-		panel.add(lblReclasificaciones);
-		
-		JScrollPane scrollPane_3 = new JScrollPane();
-		scrollPane_3.setBounds(86, 567, 1139, 115);
-		panel.add(scrollPane_3);
 		
 		table_1 = new JTable();
 		table_1.setModel(new DefaultTableModel(
@@ -358,12 +331,11 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 				{null, null, null},
 				{null, null, null},
 			},
-			new String[] {
-				"Clasificacion anterior", "Clasificacion nueva", "Fecha"
-			}
+			new String[] {"Clasificacion anterior", "Clasificacion nueva", "Fecha"}
 		));
-		
 		scrollPane_3.setViewportView(table_1);
+		
+		
 		
 		JButton btnCerrar = new JButton("Cerrar");
 		btnCerrar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -373,13 +345,7 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 		JButton btnImprimir = new JButton("Imprimir");
 		btnImprimir.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnImprimir.setBounds(1187, 690, 133, 28);
-		panel.add(btnImprimir);
-		
-		JTextArea textAreaDescripcionCargo = new JTextArea();
-		textAreaDescripcionCargo.setBounds(1141, 336, 183, 74);
-		panel.add(textAreaDescripcionCargo);
-		textAreaDescripcionCargo.setBackground(new Color(220, 220, 220));
-		textAreaDescripcionCargo.setEditable(false);	
+		panel.add(btnImprimir);	
 		
 		JButton btnIzquierda = new JButton("<");
 		btnIzquierda.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));

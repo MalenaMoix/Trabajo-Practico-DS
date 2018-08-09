@@ -51,15 +51,27 @@ public class InterfazBuscarClasificacionTicket extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblBuscarClasificacion = new JLabel("Buscar clasificaci\u00F3n de tickets");
-		lblBuscarClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblBuscarClasificacion.setBounds(385, 27, 579, 38);
-		contentPane.add(lblBuscarClasificacion);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(295, 80, 760, 2);
 		contentPane.add(separator);
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(696, 321, 296, 114);
+		contentPane.add(scrollPane);
+		
+		
+		JTextArea textAreaDescripcion = new JTextArea();
+		scrollPane.setViewportView(textAreaDescripcion);
+		
+		
+		JLabel lblBuscarClasificacion = new JLabel("Buscar clasificacion de tickets");
+		lblBuscarClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblBuscarClasificacion.setBounds(385, 27, 579, 38);
+		contentPane.add(lblBuscarClasificacion);
+		
 		
 		JLabel lblParteNombre = new JLabel("Parte nombre:");
 		lblParteNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
@@ -67,17 +79,17 @@ public class InterfazBuscarClasificacionTicket extends JFrame {
 		contentPane.add(lblParteNombre);
 		
 		
-		JLabel lblCodigoNumerico = new JLabel("C\u00F3digo num\u00E9rico:");
+		JLabel lblCodigoNumerico = new JLabel("Codigo numerico:");
 		lblCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblCodigoNumerico.setBounds(392, 235, 142, 31);
 		contentPane.add(lblCodigoNumerico);
 		
-		JLabel lblDescripcion = new JLabel("Parte de la descripci\u00F3n:");
+		JLabel lblDescripcion = new JLabel("Parte de la descripcion:");
 		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblDescripcion.setBounds(392, 321, 242, 31);
 		contentPane.add(lblDescripcion);
 		
-		JLabel lblGruposDeResolucion = new JLabel("Grupos de resoluci\u00F3n relacionados:");
+		JLabel lblGruposDeResolucion = new JLabel("Grupos de resolucion relacionados:");
 		lblGruposDeResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblGruposDeResolucion.setBounds(392, 476, 284, 31);
 		contentPane.add(lblGruposDeResolucion);
@@ -99,24 +111,16 @@ public class InterfazBuscarClasificacionTicket extends JFrame {
 		contentPane.add(textFieldCodigo);
 		textFieldCodigo.setColumns(10);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(696, 321, 296, 114);
-		contentPane.add(scrollPane);
-		
-		
-		JTextArea textAreaDescripcion = new JTextArea();
-		scrollPane.setViewportView(textAreaDescripcion);
-		
 		
 		JComboBox comboBoxGrupo = new JComboBox();
-		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electr\u00F3nico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio t\u00E9cnico", "Unidades de soporte"}));
+		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"}));
 		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxGrupo.setBounds(696, 481, 296, 24);
 		contentPane.add(comboBoxGrupo);
 		
 		JComboBox comboBoxEstado = new JComboBox();
 		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK"}));
+		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK"}));
 		comboBoxEstado.setBounds(696, 550, 296, 24);
 		contentPane.add(comboBoxEstado);
 		
@@ -127,15 +131,10 @@ public class InterfazBuscarClasificacionTicket extends JFrame {
 		contentPane.add(btnBuscar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
-			}
-		});
-		
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCancelar.setBounds(1207, 650, 133, 37);
 		contentPane.add(btnCancelar);
+		
 		
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -143,6 +142,12 @@ public class InterfazBuscarClasificacionTicket extends JFrame {
 				InterfazBuscarClasificacionTicketPaginacion comentario = new InterfazBuscarClasificacionTicketPaginacion();
 				comentario.setVisible(true);
 				InterfazBuscarClasificacionTicket.this.dispose();
+			}
+		});
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
 			}
 		});
 	}

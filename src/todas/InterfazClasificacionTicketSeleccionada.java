@@ -53,7 +53,22 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblCodigoNumerico = new JLabel("C\u00F3digo num\u00E9rico:");
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(797, 85, 296, 114);
+		contentPane.add(scrollPane);
+		
+		JScrollPane scrollPane1 = new JScrollPane();
+		scrollPane1.setBounds(113, 352, 1092, 280);
+		contentPane.add(scrollPane1);
+		
+		JTextArea textAreaDescripcion = new JTextArea();
+		scrollPane.setViewportView(textAreaDescripcion);
+		textAreaDescripcion.setBackground(new Color(220, 220, 220));
+		textAreaDescripcion.setEditable(false);
+		
+		
+		JLabel lblCodigoNumerico = new JLabel("Codigo numerico:");
 		lblCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblCodigoNumerico.setBounds(103, 79, 183, 25);
 		contentPane.add(lblCodigoNumerico);
@@ -68,45 +83,12 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 		lblEstado.setBounds(103, 165, 153, 31);
 		contentPane.add(lblEstado);
 		
-		JLabel lblDescripcionCompleta = new JLabel("Descripci\u00F3n completa:");
+		JLabel lblDescripcionCompleta = new JLabel("Descripcion completa:");
 		lblDescripcionCompleta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblDescripcionCompleta.setBounds(591, 79, 203, 25);
 		contentPane.add(lblDescripcionCompleta);
 		
-		textFieldCodigo = new JTextField();
-		textFieldCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textFieldCodigo.setBackground(new Color(220, 220, 220));
-		textFieldCodigo.setEditable(false);
-		textFieldCodigo.setBounds(315, 82, 183, 22);
-		contentPane.add(textFieldCodigo);
-		textFieldCodigo.setColumns(10);
-		
-		textFieldNombre = new JTextField();
-		textFieldNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textFieldNombre.setBackground(new Color(220, 220, 220));
-		textFieldNombre.setEditable(false);
-		textFieldNombre.setColumns(10);
-		textFieldNombre.setBounds(315, 126, 183, 22);
-		contentPane.add(textFieldNombre);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(797, 85, 296, 114);
-		contentPane.add(scrollPane);
-		
-		JTextArea textAreaDescripcion = new JTextArea();
-		scrollPane.setViewportView(textAreaDescripcion);
-		textAreaDescripcion.setBackground(new Color(220, 220, 220));
-		textAreaDescripcion.setEditable(false);
-		
-		textFieldEstado = new JTextField();
-		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textFieldEstado.setEditable(false);
-		textFieldEstado.setColumns(10);
-		textFieldEstado.setBackground(new Color(220, 220, 220));
-		textFieldEstado.setBounds(315, 171, 183, 22);
-		contentPane.add(textFieldEstado);
-		
-		JLabel lblClasificacionDeTicket = new JLabel("Clasificaci\u00F3n de ticket seleccionada:");
+		JLabel lblClasificacionDeTicket = new JLabel("Clasificacion de ticket seleccionada:");
 		lblClasificacionDeTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		lblClasificacionDeTicket.setBounds(80, 35, 553, 25);
 		contentPane.add(lblClasificacionDeTicket);
@@ -131,9 +113,36 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 		lblCantidadTotal2.setBounds(305, 277, 230, 25);
 		contentPane.add(lblCantidadTotal2);
 		
-		JScrollPane scrollPane1 = new JScrollPane();
-		scrollPane1.setBounds(113, 352, 1092, 280);
-		contentPane.add(scrollPane1);
+		JLabel lblListaTickets = new JLabel("Lista de tickets actualmente derivados al Actor:");
+		lblListaTickets.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblListaTickets.setBounds(103, 316, 482, 25);
+		contentPane.add(lblListaTickets);
+		
+		
+		textFieldCodigo = new JTextField();
+		textFieldCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldCodigo.setBackground(new Color(220, 220, 220));
+		textFieldCodigo.setEditable(false);
+		textFieldCodigo.setBounds(315, 82, 183, 22);
+		contentPane.add(textFieldCodigo);
+		textFieldCodigo.setColumns(10);
+		
+		textFieldNombre = new JTextField();
+		textFieldNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldNombre.setBackground(new Color(220, 220, 220));
+		textFieldNombre.setEditable(false);
+		textFieldNombre.setColumns(10);
+		textFieldNombre.setBounds(315, 126, 183, 22);
+		contentPane.add(textFieldNombre);
+		
+		textFieldEstado = new JTextField();
+		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldEstado.setEditable(false);
+		textFieldEstado.setColumns(10);
+		textFieldEstado.setBackground(new Color(220, 220, 220));
+		textFieldEstado.setBounds(315, 171, 183, 22);
+		contentPane.add(textFieldEstado);
+		
 		
 		table_1 = new JTable();
 		scrollPane1.setViewportView(table_1);
@@ -169,12 +178,13 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 			}
 		));
 		
-		JLabel lblListaTickets = new JLabel("Lista de tickets actualmente derivados al Actor:");
-		lblListaTickets.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblListaTickets.setBounds(103, 316, 482, 25);
-		contentPane.add(lblListaTickets);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 650, 133, 37);
+		contentPane.add(btnCancelar);
+		
+		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				InterfazBuscarClasificacionTicketPaginacion comentario = new InterfazBuscarClasificacionTicketPaginacion();
@@ -182,9 +192,5 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 				InterfazClasificacionTicketSeleccionada.this.dispose();
 			}
 		});
-		
-		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCancelar.setBounds(1207, 650, 133, 37);
-		contentPane.add(btnCancelar);
 	}
 }

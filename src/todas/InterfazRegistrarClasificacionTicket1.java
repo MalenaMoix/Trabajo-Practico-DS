@@ -52,58 +52,11 @@ public class InterfazRegistrarClasificacionTicket1 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblRegistrarClasificacion = new JLabel("Registar clasificaci\u00F3n de ticket");
-		lblRegistrarClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblRegistrarClasificacion.setBounds(373, 20, 602, 54);
-		contentPane.add(lblRegistrarClasificacion);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(295, 80, 760, 2);
 		contentPane.add(separator);
-		
-		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblNombre.setBounds(407, 157, 193, 31);
-		contentPane.add(lblNombre);
-		
-		lblDescripcion = new JLabel("Descripci\u00F3n:");
-		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblDescripcion.setBounds(407, 247, 193, 31);
-		contentPane.add(lblDescripcion);
-		
-		lblGruposResolucion = new JLabel("Grupos de Resoluci\u00F3n:");
-		lblGruposResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblGruposResolucion.setBounds(407, 457, 193, 37);
-		contentPane.add(lblGruposResolucion);
-		
-		txtNombre = new JTextField();
-		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		txtNombre.setBounds(612, 163, 327, 24);
-		contentPane.add(txtNombre);
-		txtNombre.setColumns(10);
-		
-		JComboBox comboBoxGrupo = new JComboBox();
-		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electr\u00F3nico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio t\u00E9cnico", "Unidades de soporte"}));
-		comboBoxGrupo.setBounds(612, 465, 327, 24);
-		contentPane.add(comboBoxGrupo);
-		
-		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnRegistrar.setBounds(1020, 650, 133, 37);
-		contentPane.add(btnRegistrar);
-		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
-			}
-		});
-		
-		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCancelar.setBounds(1207, 650, 133, 37);
-		contentPane.add(btnCancelar);
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -113,8 +66,19 @@ public class InterfazRegistrarClasificacionTicket1 extends JFrame {
 		JTextArea textAreaDescripcion = new JTextArea();
 		textAreaDescripcion.setBounds(612, 253, 327, 139);
 		scrollPane.setViewportView(textAreaDescripcion);
-		//contentPane.add(textArea);
+		contentPane.add(textAreaDescripcion);
 		
+		
+		
+		JLabel lblRegistrarClasificacion = new JLabel("Registar clasificacion de ticket");
+		lblRegistrarClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblRegistrarClasificacion.setBounds(373, 20, 602, 54);
+		contentPane.add(lblRegistrarClasificacion);
+		
+		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblNombre.setBounds(407, 157, 193, 31);
+		contentPane.add(lblNombre);
 		
 		JLabel errorGrupo = new JLabel("* Debe seleccionar una opcion.");
 		errorGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -142,10 +106,55 @@ public class InterfazRegistrarClasificacionTicket1 extends JFrame {
 		lblNewLabel_2.setBounds(990, 157, 254, 28);
 		contentPane.add(lblNewLabel_2);
 		
+		
+		
+		lblDescripcion = new JLabel("Descripcion:");
+		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblDescripcion.setBounds(407, 247, 193, 31);
+		contentPane.add(lblDescripcion);
+		
+		lblGruposResolucion = new JLabel("Grupos de Resolucion:");
+		lblGruposResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblGruposResolucion.setBounds(407, 457, 193, 37);
+		contentPane.add(lblGruposResolucion);
+		
+		txtNombre = new JTextField();
+		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtNombre.setBounds(612, 163, 327, 24);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
+		
+		
+		JComboBox comboBoxGrupo = new JComboBox();
+		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"}));
+		comboBoxGrupo.setBounds(612, 465, 327, 24);
+		contentPane.add(comboBoxGrupo);
+		
+		
+		
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnRegistrar.setBounds(1020, 650, 133, 37);
+		contentPane.add(btnRegistrar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 650, 133, 37);
+		contentPane.add(btnCancelar);
+		
+		
+
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (textAreaDescripcion.getText().isEmpty()) errorDescripcionVacio.setVisible(true);;
 				if(comboBoxGrupo.getSelectedIndex() == 0) errorGrupo.setVisible(true);;
+			}
+		});
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
 			}
 		});
 	}

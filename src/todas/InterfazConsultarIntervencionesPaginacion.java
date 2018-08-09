@@ -57,17 +57,28 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNumeroTicket = new JLabel("N\u00FAmero ticket:");
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(976, 407, 202, 113);
+		contentPane.add(scrollPane);
+		
+		JTextArea textAreaObservaciones = new JTextArea();
+		textAreaObservaciones.setBackground(new Color(220, 220, 220));
+		textAreaObservaciones.setEditable(true);
+		scrollPane.setViewportView(textAreaObservaciones);
+		
+		
+		JLabel lblNumeroTicket = new JLabel("Numero ticket:");
 		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblNumeroTicket.setBounds(189, 260, 235, 25);
 		contentPane.add(lblNumeroTicket);
 		
-		JLabel lblNumeroLegajo = new JLabel("N\u00FAmero legajo:");
+		JLabel lblNumeroLegajo = new JLabel("Numero legajo:");
 		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblNumeroLegajo.setBounds(189, 309, 235, 25);
 		contentPane.add(lblNumeroLegajo);
 		
-		JLabel lblClasificacionActual = new JLabel("Clasificaci\u00F3n actual del ticket:");
+		JLabel lblClasificacionActual = new JLabel("Clasificacion actual del ticket:");
 		lblClasificacionActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblClasificacionActual.setBounds(189, 358, 235, 22);
 		contentPane.add(lblClasificacionActual);
@@ -82,62 +93,63 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 		lblFechaApertura.setBounds(189, 456, 235, 22);
 		contentPane.add(lblFechaApertura);
 		
-		JLabel lblFechaAsignacion = new JLabel("Fecha asignaci\u00F3n de intervenci\u00F3n:");
+		JLabel lblFechaAsignacion = new JLabel("Fecha asignacion de intervencion:");
 		lblFechaAsignacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblFechaAsignacion.setBounds(694, 260, 271, 25);
 		contentPane.add(lblFechaAsignacion);
 		
-		JLabel lblEstadoIntervencion = new JLabel("Estado intervenci\u00F3n:");
+		JLabel lblEstadoIntervencion = new JLabel("Estado intervencion:");
 		lblEstadoIntervencion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblEstadoIntervencion.setBounds(694, 310, 270, 22);
 		contentPane.add(lblEstadoIntervencion);
 		
-		JLabel lblGrupoResolucion = new JLabel("Grupo de resoluci\u00F3n:");
+		JLabel lblGrupoResolucion = new JLabel("Grupo de resolucion:");
 		lblGrupoResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblGrupoResolucion.setBounds(694, 357, 270, 25);
 		contentPane.add(lblGrupoResolucion);
 		
-		JLabel lblObservaciones = new JLabel("Observaciones de la intervenci\u00F3n:");
+		JLabel lblObservaciones = new JLabel("Observaciones de la intervencion:");
 		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblObservaciones.setBounds(694, 406, 270, 25);
 		contentPane.add(lblObservaciones);
 		
-		JButton btnModificarEstado = new JButton("Modificar estado");
-		btnModificarEstado.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfazActualizarEstadoIntervencion comentario = new InterfazActualizarEstadoIntervencion();
-				comentario.setVisible(true);
-				InterfazConsultarIntervencionesPaginacion.this.dispose();
-			}
-		});
 		
-		btnModificarEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnModificarEstado.setBounds(854, 650, 157, 37);
-		contentPane.add(btnModificarEstado);
+		JLabel lblCriteriosDeBusqueda = new JLabel("Criterios de busqueda de intervenciones asignadas:");
+		lblCriteriosDeBusqueda.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		lblCriteriosDeBusqueda.setBounds(80, 35, 516, 31);
+		contentPane.add(lblCriteriosDeBusqueda);
 		
-		JButton btnIngresarComentario = new JButton("Ingresar comentario");
-		btnIngresarComentario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfazModificarComentarios comentario = new InterfazModificarComentarios();
-				comentario.setVisible(true);
-				InterfazConsultarIntervencionesPaginacion.this.dispose();
-			}
-		});
+		JLabel lblClasificacionDeTicket = new JLabel("Clasificacion de ticket        de ");
+		lblClasificacionDeTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
+		lblClasificacionDeTicket.setBounds(532, 200, 285, 22);
+		contentPane.add(lblClasificacionDeTicket);
 		
-		btnIngresarComentario.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnIngresarComentario.setBounds(1020, 650, 157, 37);
-		contentPane.add(btnIngresarComentario);
+		JLabel lblNumeroTicketDeArriba = new JLabel("-Numero ticket:");
+		lblNumeroTicketDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblNumeroTicketDeArriba.setBounds(169, 92, 183, 21);
+		contentPane.add(lblNumeroTicketDeArriba);
 		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+		JLabel lblNumeroLegajoDeArriba = new JLabel("-Numero legajo:");
+		lblNumeroLegajoDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblNumeroLegajoDeArriba.setBounds(169, 160, 241, 21);
+		contentPane.add(lblNumeroLegajoDeArriba);
 		
-		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCancelar.setBounds(1207, 650, 133, 37);
-		contentPane.add(btnCancelar);
+		JLabel lblEstadoDearriba = new JLabel("-Estado:");
+		lblEstadoDearriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblEstadoDearriba.setBounds(169, 126, 241, 21);
+		contentPane.add(lblEstadoDearriba);
+		
+		JLabel lblfechaDesdeDeArriba = new JLabel("-Fecha desde:");
+		lblfechaDesdeDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblfechaDesdeDeArriba.setBounds(502, 94, 102, 16);
+		contentPane.add(lblfechaDesdeDeArriba);
+		
+		JLabel lblfechaHastaDeArriba = new JLabel("-Fecha hasta:");
+		lblfechaHastaDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblfechaHastaDeArriba.setBounds(502, 128, 86, 16);
+		contentPane.add(lblfechaHastaDeArriba);
+		
+		
 		
 		txtNumeroTicket = new JTextField();
 		txtNumeroTicket.setBackground(new Color(220, 220, 220));
@@ -187,60 +199,33 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 		contentPane.add(txtGrupoResolucion);
 		txtGrupoResolucion.setColumns(10);
 		
-		JLabel lblCriteriosDeBusqueda = new JLabel("Criterios de b\u00FAsqueda de intervenciones asignadas:");
-		lblCriteriosDeBusqueda.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblCriteriosDeBusqueda.setBounds(80, 35, 516, 31);
-		contentPane.add(lblCriteriosDeBusqueda);
-		
-		JLabel lblClasificacionDeTicket = new JLabel("Clasificaci\u00F3n de ticket        de ");
-		lblClasificacionDeTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
-		lblClasificacionDeTicket.setBounds(532, 200, 285, 22);
-		contentPane.add(lblClasificacionDeTicket);
-		
-		JLabel lblNumeroTicketDeArriba = new JLabel("-N\u00FAmero ticket:");
-		lblNumeroTicketDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNumeroTicketDeArriba.setBounds(169, 92, 183, 21);
-		contentPane.add(lblNumeroTicketDeArriba);
-		
-		JLabel lblNumeroLegajoDeArriba = new JLabel("-N\u00FAmero legajo:");
-		lblNumeroLegajoDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNumeroLegajoDeArriba.setBounds(169, 160, 241, 21);
-		contentPane.add(lblNumeroLegajoDeArriba);
-		
-		JLabel lblEstadoDearriba = new JLabel("-Estado:");
-		lblEstadoDearriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblEstadoDearriba.setBounds(169, 126, 241, 21);
-		contentPane.add(lblEstadoDearriba);
-		
-		JLabel lblfechaDesdeDeArriba = new JLabel("-Fecha desde:");
-		lblfechaDesdeDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblfechaDesdeDeArriba.setBounds(502, 94, 102, 16);
-		contentPane.add(lblfechaDesdeDeArriba);
-		
-		JLabel lblfechaHastaDeArriba = new JLabel("-Fecha hasta:");
-		lblfechaHastaDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblfechaHastaDeArriba.setBounds(502, 128, 86, 16);
-		contentPane.add(lblfechaHastaDeArriba);
-		
 		txtNumeroPagina = new JTextField();
 		txtNumeroPagina.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		txtNumeroPagina.setBounds(731, 203, 34, 22);
 		contentPane.add(txtNumeroPagina);
 		txtNumeroPagina.setColumns(10);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(976, 407, 202, 113);
-		contentPane.add(scrollPane);
-		
-		JTextArea textAreaObservaciones = new JTextArea();
-		textAreaObservaciones.setBackground(new Color(220, 220, 220));
-		textAreaObservaciones.setEditable(true);
-		scrollPane.setViewportView(textAreaObservaciones);
-		
 		textFieldCantidad = new JTextField();
 		textFieldCantidad.setBounds(803, 203, 57, 22);
 		contentPane.add(textFieldCantidad);
 		textFieldCantidad.setColumns(10);
+		
+		
+		
+		JButton btnModificarEstado = new JButton("Modificar estado");
+		btnModificarEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnModificarEstado.setBounds(854, 650, 157, 37);
+		contentPane.add(btnModificarEstado);
+		
+		JButton btnIngresarComentario = new JButton("Ingresar comentario");
+		btnIngresarComentario.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnIngresarComentario.setBounds(1020, 650, 157, 37);
+		contentPane.add(btnIngresarComentario);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 650, 133, 37);
+		contentPane.add(btnCancelar);
 		
 		JButton btnIzquierda = new JButton("<");
 		btnIzquierda.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
@@ -251,5 +236,30 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 		btnDerecha.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
 		btnDerecha.setBounds(926, 202, 42, 25);
 		contentPane.add(btnDerecha);
+		
+		
+		btnModificarEstado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfazActualizarEstadoIntervencion comentario = new InterfazActualizarEstadoIntervencion();
+				comentario.setVisible(true);
+				InterfazConsultarIntervencionesPaginacion.this.dispose();
+			}
+		});
+		
+		
+		btnIngresarComentario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfazModificarComentarios comentario = new InterfazModificarComentarios();
+				comentario.setVisible(true);
+				InterfazConsultarIntervencionesPaginacion.this.dispose();
+			}
+		});
+		
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 	}
 }

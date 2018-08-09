@@ -50,22 +50,36 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblBorrarClasificacionTicket = new JLabel("Borrar clasificaci\u00F3n de ticket");
-		lblBorrarClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblBorrarClasificacionTicket.setBounds(396, 20, 558, 54);
-		contentPane.add(lblBorrarClasificacionTicket);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(295, 80, 760, 2);
 		contentPane.add(separator);
 		
-		JLabel lblClasificacionABorrar = new JLabel("Clasificaci\u00F3n a borrar:");
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(665, 450, 369, 114);
+		contentPane.add(scrollPane);
+		
+		
+		JTextArea textAreaDescripcion = new JTextArea();
+		scrollPane.setViewportView(textAreaDescripcion);
+		textAreaDescripcion.setBackground(new Color(220, 220, 220));
+		textAreaDescripcion.setEditable(false);
+		
+		
+		
+		JLabel lblBorrarClasificacionTicket = new JLabel("Borrar clasificacion de ticket");
+		lblBorrarClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblBorrarClasificacionTicket.setBounds(396, 20, 558, 54);
+		contentPane.add(lblBorrarClasificacionTicket);
+		
+		JLabel lblClasificacionABorrar = new JLabel("Clasificacion a borrar:");
 		lblClasificacionABorrar.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		lblClasificacionABorrar.setBounds(295, 163, 233, 25);
 		contentPane.add(lblClasificacionABorrar);
 		
-		JLabel lblCodigoNumerico = new JLabel("C\u00F3digo num\u00E9rico:");
+		JLabel lblCodigoNumerico = new JLabel("Codigo numerico:");
 		lblCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblCodigoNumerico.setBounds(450, 254, 203, 25);
 		contentPane.add(lblCodigoNumerico);
@@ -79,6 +93,24 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		lblEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblEstado.setBounds(450, 375, 203, 31);
 		contentPane.add(lblEstado);
+		
+		
+		JLabel lblDescripcionCompleta = new JLabel("Descripcion completa:");
+		lblDescripcionCompleta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblDescripcionCompleta.setBounds(450, 446, 203, 25);
+		contentPane.add(lblDescripcionCompleta);
+		
+		
+		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnConfirmar.setBounds(1020, 650, 133, 37);
+		contentPane.add(btnConfirmar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 650, 133, 37);
+		contentPane.add(btnCancelar);
+		
 		
 		textFieldEstado = new JTextField();
 		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -96,14 +128,6 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		textFieldNombre.setBounds(665, 321, 369, 24);
 		contentPane.add(textFieldNombre);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(665, 450, 369, 114);
-		contentPane.add(scrollPane);
-		
-		JTextArea textAreaDescripcion = new JTextArea();
-		scrollPane.setViewportView(textAreaDescripcion);
-		textAreaDescripcion.setBackground(new Color(220, 220, 220));
-		textAreaDescripcion.setEditable(false);
 		
 		textFieldCodigoNumerico = new JTextField();
 		textFieldCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -113,32 +137,26 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		textFieldCodigoNumerico.setBounds(665, 256, 369, 24);
 		contentPane.add(textFieldCodigoNumerico);
 		
-		JLabel lblDescripcionCompleta = new JLabel("Descripci\u00F3n completa:");
-		lblDescripcionCompleta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblDescripcionCompleta.setBounds(450, 446, 203, 25);
-		contentPane.add(lblDescripcionCompleta);
 		
-		JButton btnConfirmar = new JButton("Confirmar");
+		
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "No es posible eliminar esta clasificaci�n de ticket ya que fue utilizada anteriormente.");
-				JOptionPane.showMessageDialog(null, "Desea borrar esta clasificaci�n de ticket?");
+				JOptionPane.showMessageDialog(null, "No es posible eliminar esta clasificacion de ticket ya que fue utilizada anteriormente.");
+				
+				int dialogButton = JOptionPane.YES_NO_OPTION;
+			    JOptionPane.showConfirmDialog (null, "Desea borrar esta clasificacion de ticket?","Warning",dialogButton);
+			    if (dialogButton == JOptionPane.YES_OPTION) {
+			    	//Pasa algo
+			    }
 			}
 		});
 		
-		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnConfirmar.setBounds(1020, 650, 133, 37);
-		contentPane.add(btnConfirmar);
 		
-		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
 		});
 		
-		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCancelar.setBounds(1207, 650, 133, 37);
-		contentPane.add(btnCancelar);
 	}
 }

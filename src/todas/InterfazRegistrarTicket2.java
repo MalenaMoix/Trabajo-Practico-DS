@@ -48,37 +48,6 @@ public class InterfazRegistrarTicket2 extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.setBackground(new Color(230, 230, 250));
 		
-		JButton btnDerivarTicket = new JButton("Derivar ticket");
-		btnDerivarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnDerivarTicket.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfazDerivarTicket1 derivoticket = new InterfazDerivarTicket1();
-				derivoticket.setVisible(true);
-				InterfazRegistrarTicket2.this.dispose();
-				
-			}
-		});
-		
-		btnDerivarTicket.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnDerivarTicket);
-		
-		JButton btnCerrarTicket = new JButton("Cerrar ticket");
-		btnCerrarTicket.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				InterfazCerrarTicket cierroticket = new InterfazCerrarTicket();
-				cierroticket.setVisible(true);
-				InterfazRegistrarTicket2.this.dispose();
-			}
-		});
-		
-		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnCerrarTicket.setBounds(1020, 655, 133, 37);
-		contentPane.add(btnCerrarTicket);
-		
-		JLabel lblRegistrarTicket = new JLabel("Registrar ticket");
-		lblRegistrarTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblRegistrarTicket.setBounds(532, 20, 298, 54);
-		contentPane.add(lblRegistrarTicket);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
@@ -93,6 +62,12 @@ public class InterfazRegistrarTicket2 extends JFrame {
 		textAreaObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
 		scrollPane.setViewportView(textAreaObservaciones);
 		textAreaObservaciones.setLineWrap(true);
+		
+		
+		JLabel lblRegistrarTicket = new JLabel("Registrar ticket");
+		lblRegistrarTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblRegistrarTicket.setBounds(532, 20, 298, 54);
+		contentPane.add(lblRegistrarTicket);
 		
 		JLabel lblObservaciones = new JLabel("Observaciones:");
 		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
@@ -109,6 +84,7 @@ public class InterfazRegistrarTicket2 extends JFrame {
 		lblNumeroLegajo.setBounds(319, 192, 176, 27);
 		contentPane.add(lblNumeroLegajo);
 		
+		
 		txtNumeroTicket = new JTextField();
 		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
 		txtNumeroTicket.setBackground(new Color(220, 220, 220));
@@ -124,5 +100,35 @@ public class InterfazRegistrarTicket2 extends JFrame {
 		txtNumeroLegajo.setBounds(503, 198, 520, 22);
 		contentPane.add(txtNumeroLegajo);
 		txtNumeroLegajo.setEditable(false);
+		
+		
+		
+		JButton btnDerivarTicket = new JButton("Derivar ticket");
+		btnDerivarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnDerivarTicket.setBounds(1207, 655, 133, 37);
+		contentPane.add(btnDerivarTicket);
+		
+		JButton btnCerrarTicket = new JButton("Cerrar ticket");
+		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnCerrarTicket.setBounds(1020, 655, 133, 37);
+		contentPane.add(btnCerrarTicket);
+		
+		
+		btnDerivarTicket.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfazDerivarTicket1 derivoticket = new InterfazDerivarTicket1();
+				derivoticket.setVisible(true);
+				InterfazRegistrarTicket2.this.dispose();
+			}
+		});
+		
+
+		btnCerrarTicket.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				InterfazCerrarTicket cierroticket = new InterfazCerrarTicket();
+				cierroticket.setVisible(true);
+				InterfazRegistrarTicket2.this.dispose();
+			}
+		});
 	}
 }

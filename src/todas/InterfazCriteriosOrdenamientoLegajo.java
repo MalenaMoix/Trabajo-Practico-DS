@@ -45,6 +45,13 @@ public class InterfazCriteriosOrdenamientoLegajo extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(275, 90, 800, 2);
+		contentPane.add(separator);
+		
+		
 		JLabel lblCriteriosOrdenamiento = new JLabel("Criterios de ordenamiento");
 		lblCriteriosOrdenamiento.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblCriteriosOrdenamiento.setBounds(417, 20, 515, 61);
@@ -85,6 +92,7 @@ public class InterfazCriteriosOrdenamientoLegajo extends JFrame {
 		lblCriterio6.setBounds(437, 541, 103, 22);
 		contentPane.add(lblCriterio6);
 		
+		
 		JComboBox comboBoxCriterio1 = new JComboBox();
 		comboBoxCriterio1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		comboBoxCriterio1.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificacion actual del ticket", "Estado actual del ticket", "Fecha apertura", "Fecha ultimo cambio de estado", "Numero de ticket", "Ultimo grupo de resolucion"}));
@@ -121,11 +129,14 @@ public class InterfazCriteriosOrdenamientoLegajo extends JFrame {
 		comboBoxCriterio6.setBounds(637, 541, 275, 22);
 		contentPane.add(comboBoxCriterio6);
 		
-		JSeparator separator = new JSeparator();
-		separator.setBounds(275, 90, 800, 2);
-		contentPane.add(separator);
+		
 		
 		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnConfirmar.setBounds(1207, 655, 133, 37);
+		contentPane.add(btnConfirmar);
+		
+		
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				InterfazVisualizandoInfoPorLegajo verlegajo = new InterfazVisualizandoInfoPorLegajo();
@@ -133,10 +144,5 @@ public class InterfazCriteriosOrdenamientoLegajo extends JFrame {
 				InterfazCriteriosOrdenamientoLegajo.this.dispose();
 			}
 		});
-		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnConfirmar.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnConfirmar);
-		
 	}
-
 }

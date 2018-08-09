@@ -49,6 +49,8 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setPreferredSize(new Dimension(1300, 980));
@@ -56,15 +58,24 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		panel.setBounds(0, 0, 1327, 980);
 		contentPane.add(panel);
 		
-		JLabel lblVisualizando = new JLabel("Visualizando informacion por grupo de resolucion");
-		lblVisualizando.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblVisualizando.setBounds(170, 20, 986, 54);
-		panel.add(lblVisualizando);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(265, 90, 800, 2);
 		panel.add(separator);
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(25, 481, 1260, 171);
+		panel.add(scrollPane);
+		
+		
+		
+		
+		JLabel lblVisualizando = new JLabel("Visualizando informacion por grupo de resolucion");
+		lblVisualizando.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblVisualizando.setBounds(170, 20, 986, 54);
+		panel.add(lblVisualizando);
 		
 		JLabel lblCriterios = new JLabel("Criterios:");
 		lblCriterios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
@@ -76,47 +87,42 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		lblCriteriosOrdenamiento.setBounds(64, 188, 261, 37);
 		panel.add(lblCriteriosOrdenamiento);
 		
-		JLabel label_3 = new JLabel("-");
-		label_3.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_3.setBounds(74, 120, 8, 8);
-		panel.add(label_3);
-		
-		JLabel lblNumeroTicket = new JLabel("Numero de ticket: 205");
+		JLabel lblNumeroTicket = new JLabel("-Numero de ticket: ");
 		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblNumeroTicket.setBounds(86, 114, 183, 21);
 		panel.add(lblNumeroTicket);
 		
-		JLabel lblNumeroLegajo = new JLabel("Numero de legajo: 15");
+		JLabel lblNumeroLegajo = new JLabel("-Numero de legajo: ");
 		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblNumeroLegajo.setBounds(86, 139, 183, 21);
 		panel.add(lblNumeroLegajo);
 		
-		JLabel lblClasificacionActual = new JLabel("Clasificacion actual del ticket: Otros ");
+		JLabel lblClasificacionActual = new JLabel("-Clasificacion actual del ticket: ");
 		lblClasificacionActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblClasificacionActual.setBounds(86, 164, 270, 21);
 		panel.add(lblClasificacionActual);
 		
-		JLabel lblEstadoActual = new JLabel("Estado actual del ticket: Abierto derivado");
+		JLabel lblEstadoActual = new JLabel("-Estado actual del ticket: ");
 		lblEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblEstadoActual.setBounds(419, 114, 282, 21);
 		panel.add(lblEstadoActual);
 		
-		JLabel lblFechaApertura = new JLabel("Fecha Apertura: 04/09/2000");
+		JLabel lblFechaApertura = new JLabel("-Fecha Apertura: ");
 		lblFechaApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblFechaApertura.setBounds(419, 139, 282, 21);
 		panel.add(lblFechaApertura);
 		
-		JLabel lblFechaUltimoCambio = new JLabel("Fecha del ultimo cambio de estado: 11/01/2005");
+		JLabel lblFechaUltimoCambio = new JLabel("-Fecha del ultimo cambio de estado: ");
 		lblFechaUltimoCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblFechaUltimoCambio.setBounds(419, 164, 324, 21);
 		panel.add(lblFechaUltimoCambio);
 		
-		JLabel lblUltimoGrupo = new JLabel("Ultimo grupo de resolucion asignado: Mesa de ayuda");
+		JLabel lblUltimoGrupo = new JLabel("-Ultimo grupo de resolucion asignado: ");
 		lblUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblUltimoGrupo.setBounds(815, 114, 509, 21);
 		panel.add(lblUltimoGrupo);
 		
-		JLabel lblUltimoGrupoForma = new JLabel("Ultimo grupo de resolucion en forma ascendente");
+		JLabel lblUltimoGrupoForma = new JLabel("-Ultimo grupo de resolucion en forma ascendente");
 		lblUltimoGrupoForma.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblUltimoGrupoForma.setBounds(815, 139, 331, 21);
 		panel.add(lblUltimoGrupoForma);
@@ -146,12 +152,6 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		lblGrupoResolucion.setBounds(522, 270, 282, 37);
 		panel.add(lblGrupoResolucion);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField.setColumns(10);
-		textField.setBounds(710, 278, 33, 22);
-		panel.add(textField);
-		
 		JLabel lblDatosGrupo = new JLabel("Datos del grupo de resolucion:");
 		lblDatosGrupo.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		lblDatosGrupo.setBounds(64, 310, 329, 37);
@@ -167,6 +167,19 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		lblGraficoTorta.setBounds(74, 386, 541, 21);
 		panel.add(lblGraficoTorta);
 		
+		JLabel lblTicketsAsociados = new JLabel("Tickets asociados:");
+		lblTicketsAsociados.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		lblTicketsAsociados.setBounds(64, 447, 261, 37);
+		panel.add(lblTicketsAsociados);
+		
+		
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		textField.setColumns(10);
+		textField.setBounds(710, 278, 33, 22);
+		panel.add(textField);
+		
 		txtNombreGrupo = new JTextField();
 		txtNombreGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtNombreGrupo.setEditable(false);
@@ -175,14 +188,7 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		txtNombreGrupo.setBounds(318, 353, 362, 20);
 		panel.add(txtNombreGrupo);
 		
-		JLabel lblTicketsAsociados = new JLabel("Tickets asociados:");
-		lblTicketsAsociados.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblTicketsAsociados.setBounds(64, 447, 261, 37);
-		panel.add(lblTicketsAsociados);
-				
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(25, 481, 1260, 171);
-		panel.add(scrollPane);
+		
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
@@ -198,12 +204,10 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 				{null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null},
 			},
-			new String[] {
-				"Ticket", "Fecha de apertura", "Clasificacion actual","Estado actual","Estado de la intervencion","Observaciones registradas","Tiempo real de atencion","Tiempo total asignado"
-			}
+			new String[] {"Ticket", "Fecha de apertura", "Clasificacion actual","Estado actual","Estado de la intervencion","Observaciones registradas","Tiempo real de atencion","Tiempo total asignado"}
 		));
-		
 		scrollPane.setViewportView(table);
+		
 		
 		
 		JButton btnCerrar = new JButton("Cerrar");
@@ -215,41 +219,6 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		btnImprimir.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnImprimir.setBounds(1187, 670, 133, 28);
 		panel.add(btnImprimir);
-		
-		JLabel label_21 = new JLabel("-");
-		label_21.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_21.setBounds(74, 144, 8, 8);
-		panel.add(label_21);
-		
-		JLabel label_22 = new JLabel("-");
-		label_22.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_22.setBounds(74, 169, 8, 8);
-		panel.add(label_22);
-		
-		JLabel label_23 = new JLabel("-");
-		label_23.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_23.setBounds(409, 119, 8, 8);
-		panel.add(label_23);
-		
-		JLabel label_24 = new JLabel("-");
-		label_24.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_24.setBounds(409, 144, 8, 8);
-		panel.add(label_24);
-		
-		JLabel label_25 = new JLabel("-");
-		label_25.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_25.setBounds(409, 169, 8, 8);
-		panel.add(label_25);
-		
-		JLabel label_26 = new JLabel("-");
-		label_26.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_26.setBounds(803, 119, 8, 8);
-		panel.add(label_26);
-		
-		JLabel label_27 = new JLabel("-");
-		label_27.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_27.setBounds(803, 144, 8, 8);
-		panel.add(label_27);
 		
 		JButton btnIzquierda = new JButton("<");
 		btnIzquierda.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));

@@ -51,17 +51,23 @@ public class InterfazConsultarIntervenciones extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JSeparator separator = new JSeparator();
+		separator.setForeground(Color.GRAY);
+		separator.setBounds(274, 90, 800, 2);
+		contentPane.add(separator);
+		
+		
 		JLabel lblConsultasRealizadas = new JLabel("Consultar intervenciones asignadas");
 		lblConsultasRealizadas.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblConsultasRealizadas.setBounds(328, 20, 692, 51);
 		contentPane.add(lblConsultasRealizadas);
 		
-		JLabel lblNumeroTicket = new JLabel("N\u00FAmero ticket:");
+		JLabel lblNumeroTicket = new JLabel("Numero ticket:");
 		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblNumeroTicket.setBounds(426, 184, 195, 16);
 		contentPane.add(lblNumeroTicket);
 		
-		JLabel lblNumeroLegajo = new JLabel("N\u00FAmero legajo:");
+		JLabel lblNumeroLegajo = new JLabel("Numero legajo:");
 		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblNumeroLegajo.setBounds(426, 273, 195, 25);
 		contentPane.add(lblNumeroLegajo);
@@ -80,6 +86,22 @@ public class InterfazConsultarIntervenciones extends JFrame {
 		lblFechaHasta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblFechaHasta.setBounds(426, 535, 195, 16);
 		contentPane.add(lblFechaHasta);
+		
+		JLabel errorFechaDesde = new JLabel("* Fecha desde debe ser mayor a fecha hasta.");
+		errorFechaDesde.setBackground(new Color(240, 240, 240));
+		errorFechaDesde.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		errorFechaDesde.setForeground(Color.RED);
+		errorFechaDesde.setBounds(950, 454, 400, 20);
+		errorFechaDesde.setVisible(false);
+		contentPane.add(errorFechaDesde);
+		
+		JLabel errorFechaHasta = new JLabel("* Fecha hasta debe ser mayor a la fecha actual.");
+		errorFechaHasta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		errorFechaHasta.setForeground(Color.RED);
+		errorFechaHasta.setBounds(950, 535, 400, 20);
+		errorFechaHasta.setVisible(false);
+		contentPane.add(errorFechaHasta);
+		
 		
 		JComboBox comboBoxEstado = new JComboBox();
 		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
@@ -108,32 +130,19 @@ public class InterfazConsultarIntervenciones extends JFrame {
 		contentPane.add(txtFechaHasta);
 		txtFechaHasta.setColumns(10);
 		
-		JLabel errorFechaDesde = new JLabel("* Fecha desde debe ser mayor a fecha hasta.");
-		errorFechaDesde.setBackground(new Color(240, 240, 240));
-		errorFechaDesde.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		errorFechaDesde.setForeground(Color.RED);
-		errorFechaDesde.setBounds(950, 454, 400, 20);
-		errorFechaDesde.setVisible(false);
-		contentPane.add(errorFechaDesde);
 		
-		JLabel errorFechaHasta = new JLabel("* Fecha hasta debe ser mayor a la fecha actual.");
-		errorFechaHasta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		errorFechaHasta.setForeground(Color.RED);
-		errorFechaHasta.setBounds(950, 535, 400, 20);
-		errorFechaHasta.setVisible(false);
-		contentPane.add(errorFechaHasta);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCancelar.setBounds(1207, 650, 133, 37);
 		contentPane.add(btnCancelar);
 		
-		JSeparator separator = new JSeparator();
-		separator.setForeground(Color.GRAY);
-		separator.setBounds(274, 90, 800, 2);
-		contentPane.add(separator);
-		
 		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnBuscar.setBounds(1020, 650, 133, 37);
+		contentPane.add(btnBuscar);
+		
+		
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null, "No existen tickets que cumplan con los criterios ingresados.");
@@ -142,9 +151,5 @@ public class InterfazConsultarIntervenciones extends JFrame {
 				InterfazConsultarIntervenciones.this.dispose();
 			}
 		});
-		
-		btnBuscar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnBuscar.setBounds(1020, 650, 133, 37);
-		contentPane.add(btnBuscar);
 	}
 }

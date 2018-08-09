@@ -50,12 +50,23 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblCriteriosDeBusqueda = new JLabel("Criterios de b\u00FAsqueda de clasificaci\u00F3n de tickets:");
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(529, 392, 537, 114);
+		contentPane.add(scrollPane);
+		
+		JTextArea textAreaDescripcion = new JTextArea();
+		textAreaDescripcion.setBackground(new Color(220, 220, 220));
+		textAreaDescripcion.setEditable(false);
+		scrollPane.setViewportView(textAreaDescripcion);
+		
+		
+		JLabel lblCriteriosDeBusqueda = new JLabel("Criterios de busqueda de clasificacion de tickets:");
 		lblCriteriosDeBusqueda.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		lblCriteriosDeBusqueda.setBounds(80, 40, 516, 31);
 		contentPane.add(lblCriteriosDeBusqueda);
 		
-		JLabel lblCodigoNumerico = new JLabel("C\u00F3digo num\u00E9rico:");
+		JLabel lblCodigoNumerico = new JLabel("Codigo numerico:");
 		lblCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblCodigoNumerico.setBounds(334, 289, 183, 25);
 		contentPane.add(lblCodigoNumerico);
@@ -70,22 +81,17 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		lblEstado.setBounds(334, 529, 183, 31);
 		contentPane.add(lblEstado);
 		
-		JLabel lblCodigoDeArriba = new JLabel("C\u00F3digo num\u00E9rico: ");
+		JLabel lblCodigoDeArriba = new JLabel("Codigo numerico: ");
 		lblCodigoDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblCodigoDeArriba.setBounds(169, 84, 183, 21);
 		contentPane.add(lblCodigoDeArriba);
 		
-		txtNumeroPagina = new JTextField();
-		txtNumeroPagina.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		txtNumeroPagina.setText("1");
-		txtNumeroPagina.setBounds(690, 229, 33, 22);
-		contentPane.add(txtNumeroPagina);
-		txtNumeroPagina.setColumns(10);
 		
 		JLabel label = new JLabel("-");
 		label.setFont(new Font("Tahoma", Font.BOLD, 18));
 		label.setBounds(153, 90, 8, 8);
 		contentPane.add(label);
+		
 		
 		JLabel lblClasificacionDeTicket = new JLabel("Clasificaci\u00F3n de ticket        de ");
 		lblClasificacionDeTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
@@ -127,6 +133,14 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		lblDescripcionCompleta.setBounds(334, 390, 203, 25);
 		contentPane.add(lblDescripcionCompleta);
 		
+		
+		txtNumeroPagina = new JTextField();
+		txtNumeroPagina.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtNumeroPagina.setText("1");
+		txtNumeroPagina.setBounds(690, 229, 33, 22);
+		contentPane.add(txtNumeroPagina);
+		txtNumeroPagina.setColumns(10);
+		
 		textFieldCodigo = new JTextField();
 		textFieldCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		textFieldCodigo.setBackground(new Color(220, 220, 220));
@@ -143,14 +157,6 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		textFieldNombre.setBounds(529, 342, 537, 24);
 		contentPane.add(textFieldNombre);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(529, 392, 537, 114);
-		contentPane.add(scrollPane);
-		
-		JTextArea textAreaDescripcion = new JTextArea();
-		textAreaDescripcion.setBackground(new Color(220, 220, 220));
-		textAreaDescripcion.setEditable(false);
-		scrollPane.setViewportView(textAreaDescripcion);
 		
 		textFieldEstado = new JTextField();
 		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -160,15 +166,16 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		textFieldEstado.setBounds(529, 534, 537, 24);
 		contentPane.add(textFieldEstado);
 		
-		JButton btnSeleccionar = new JButton("Seleccionar");
-		btnSeleccionar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfazClasificacionTicketSeleccionada comentario = new InterfazClasificacionTicketSeleccionada();
-				comentario.setVisible(true);
-				InterfazBuscarClasificacionTicketPaginacion.this.dispose();
-			}
-		});
 		
+		textFieldCantidad = new JTextField();
+		textFieldCantidad.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		textFieldCantidad.setColumns(10);
+		textFieldCantidad.setBounds(761, 229, 61, 22);
+		contentPane.add(textFieldCantidad);
+		
+		
+		
+		JButton btnSeleccionar = new JButton("Seleccionar");
 		btnSeleccionar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnSeleccionar.setBounds(833, 650, 133, 37);
 		contentPane.add(btnSeleccionar);
@@ -179,25 +186,11 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		contentPane.add(btnModificar);
 		
 		JButton btnBorrar = new JButton("Borrar");
-		btnBorrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfazBorrarClasificacionTicket vergrupo = new InterfazBorrarClasificacionTicket();
-				vergrupo.setVisible(true);
-				InterfazBuscarClasificacionTicketPaginacion.this.dispose();
-			}
-		});
-		
 		btnBorrar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnBorrar.setBounds(1020, 650, 133, 37);
 		contentPane.add(btnBorrar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
-			}
-		});
-		
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCancelar.setBounds(1207, 650, 133, 37);
 		contentPane.add(btnCancelar);
@@ -212,10 +205,29 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		buttonDerecha.setBounds(906, 226, 42, 25);
 		contentPane.add(buttonDerecha);
 		
-		textFieldCantidad = new JTextField();
-		textFieldCantidad.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textFieldCantidad.setColumns(10);
-		textFieldCantidad.setBounds(761, 229, 61, 22);
-		contentPane.add(textFieldCantidad);
+		
+		btnSeleccionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfazClasificacionTicketSeleccionada comentario = new InterfazClasificacionTicketSeleccionada();
+				comentario.setVisible(true);
+				InterfazBuscarClasificacionTicketPaginacion.this.dispose();
+			}
+		});
+		
+		
+		btnBorrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfazBorrarClasificacionTicket vergrupo = new InterfazBorrarClasificacionTicket();
+				vergrupo.setVisible(true);
+				InterfazBuscarClasificacionTicketPaginacion.this.dispose();
+			}
+		});
+		
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
 	}
 }
