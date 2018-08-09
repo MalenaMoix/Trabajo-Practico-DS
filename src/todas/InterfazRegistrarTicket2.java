@@ -1,13 +1,11 @@
 package todas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,12 +19,9 @@ import javax.swing.JTextField;
 public class InterfazRegistrarTicket2 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtNumeroTicket;
+	private JTextField txtNumeroLegajo;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -40,9 +35,7 @@ public class InterfazRegistrarTicket2 extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public InterfazRegistrarTicket2() {
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
@@ -65,6 +58,7 @@ public class InterfazRegistrarTicket2 extends JFrame {
 				
 			}
 		});
+		
 		btnDerivarTicket.setBounds(1207, 655, 133, 37);
 		contentPane.add(btnDerivarTicket);
 		
@@ -76,6 +70,7 @@ public class InterfazRegistrarTicket2 extends JFrame {
 				InterfazRegistrarTicket2.this.dispose();
 			}
 		});
+		
 		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
 		btnCerrarTicket.setBounds(1020, 655, 133, 37);
 		contentPane.add(btnCerrarTicket);
@@ -94,40 +89,40 @@ public class InterfazRegistrarTicket2 extends JFrame {
 		scrollPane.setBounds(503, 253, 520, 320);
 		contentPane.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
-		scrollPane.setViewportView(textArea);
-		textArea.setLineWrap(true);
+		JTextArea textAreaObservaciones = new JTextArea();
+		textAreaObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		scrollPane.setViewportView(textAreaObservaciones);
+		textAreaObservaciones.setLineWrap(true);
 		
 		JLabel lblObservaciones = new JLabel("Observaciones:");
 		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
 		lblObservaciones.setBounds(319, 251, 133, 27);
 		contentPane.add(lblObservaciones);
 		
-		JLabel lblNumeroDeTicket = new JLabel("Numero de ticket:");
-		lblNumeroDeTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
-		lblNumeroDeTicket.setBounds(319, 152, 175, 27);
-		contentPane.add(lblNumeroDeTicket);
+		JLabel lblNumeroTicket = new JLabel("Numero de ticket:");
+		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		lblNumeroTicket.setBounds(319, 152, 175, 27);
+		contentPane.add(lblNumeroTicket);
 		
-		JLabel lblNumeroDeLegajo = new JLabel("Numero de Legajo:");
-		lblNumeroDeLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
-		lblNumeroDeLegajo.setBounds(319, 192, 176, 27);
-		contentPane.add(lblNumeroDeLegajo);
+		JLabel lblNumeroLegajo = new JLabel("Numero de Legajo:");
+		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		lblNumeroLegajo.setBounds(319, 192, 176, 27);
+		contentPane.add(lblNumeroLegajo);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
-		textField.setBackground(new Color(220, 220, 220));
-		textField.setBounds(503, 158, 520, 22);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		textField.setEditable(false);
+		txtNumeroTicket = new JTextField();
+		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		txtNumeroTicket.setBackground(new Color(220, 220, 220));
+		txtNumeroTicket.setBounds(503, 158, 520, 22);
+		contentPane.add(txtNumeroTicket);
+		txtNumeroTicket.setColumns(10);
+		txtNumeroTicket.setEditable(false);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
-		textField_1.setColumns(10);
-		textField_1.setBackground(new Color(220, 220, 220));
-		textField_1.setBounds(503, 198, 520, 22);
-		contentPane.add(textField_1);
-		textField_1.setEditable(false);
+		txtNumeroLegajo = new JTextField();
+		txtNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		txtNumeroLegajo.setColumns(10);
+		txtNumeroLegajo.setBackground(new Color(220, 220, 220));
+		txtNumeroLegajo.setBounds(503, 198, 520, 22);
+		contentPane.add(txtNumeroLegajo);
+		txtNumeroLegajo.setEditable(false);
 	}
 }

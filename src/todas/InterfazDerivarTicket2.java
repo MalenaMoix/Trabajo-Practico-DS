@@ -1,52 +1,34 @@
 package todas;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JTextField;
-import javax.swing.RootPaneContainer;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import java.awt.TextArea;
 import java.awt.Toolkit;
-
-import java.awt.EventQueue;
-import java.awt.Toolkit;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JTable;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
-import javax.swing.DropMode;
 
 public class InterfazDerivarTicket2 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField txtestadoX;
-	private JTextField txtdescripcinX;
-	private JTextField txtAbiertoDerivado;
+	private JTextField txtNumeroTicket;
+	private JTextField txtLegajo;
+	private JTextField txtEstadoActual;
+	private JTextField txtDescripcion;
+	private JTextField txtNuevoEstado;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -60,9 +42,7 @@ public class InterfazDerivarTicket2 extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public InterfazDerivarTicket2() {
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
@@ -75,10 +55,10 @@ public class InterfazDerivarTicket2 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Derivar ticket");
-		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblNewLabel.setBounds(535, 20, 280, 43);
-		contentPane.add(lblNewLabel);
+		JLabel lblDerivarTicket = new JLabel("Derivar ticket");
+		lblDerivarTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblDerivarTicket.setBounds(535, 20, 280, 43);
+		contentPane.add(lblDerivarTicket);
 		
 		JLabel lblNroTicket = new JLabel("N\u00FAmero Ticket: ");
 		lblNroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
@@ -95,40 +75,41 @@ public class InterfazDerivarTicket2 extends JFrame {
 		lblEstadoActual.setBounds(465, 239, 149, 37);
 		contentPane.add(lblEstadoActual);
 		
-		JLabel lblDescripcionDelProblema = new JLabel("Descripci\u00F3n del problema: ");
-		lblDescripcionDelProblema.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblDescripcionDelProblema.setBounds(465, 287, 187, 37);
-		contentPane.add(lblDescripcionDelProblema);
+		JLabel lblDescripcion = new JLabel("Descripci\u00F3n del problema: ");
+		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblDescripcion.setBounds(465, 287, 187, 37);
+		contentPane.add(lblDescripcion);
 		
 		JLabel lblNuevoEstado = new JLabel("Nuevo estado: ");
 		lblNuevoEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
 		lblNuevoEstado.setBounds(465, 337, 149, 37);
 		contentPane.add(lblNuevoEstado);
 		
-		JLabel lblClasificacinDelTicket = new JLabel("Clasificaci\u00F3n del ticket: ");
-		lblClasificacinDelTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblClasificacinDelTicket.setBounds(465, 385, 170, 37);
-		contentPane.add(lblClasificacinDelTicket);
+		JLabel lblClasificacinTicket = new JLabel("Clasificaci\u00F3n del ticket: ");
+		lblClasificacinTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblClasificacinTicket.setBounds(465, 385, 170, 37);
+		contentPane.add(lblClasificacinTicket);
 		
-		JLabel lblGrupoDeResolucin = new JLabel("Grupo de resoluci\u00F3n: ");
-		lblGrupoDeResolucin.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblGrupoDeResolucin.setBounds(465, 437, 149, 37);
-		contentPane.add(lblGrupoDeResolucin);
+		JLabel lblGrupoResolucion = new JLabel("Grupo de resoluci\u00F3n: ");
+		lblGrupoResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblGrupoResolucion.setBounds(465, 437, 149, 37);
+		contentPane.add(lblGrupoResolucion);
 		
 		JLabel lblObservaciones = new JLabel("Observaciones: ");
 		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
 		lblObservaciones.setBounds(465, 498, 149, 37);
 		contentPane.add(lblObservaciones);
 		
-		JButton btnNewButton = new JButton("Cancelar");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnNewButton.setBounds(1207, 650, 133, 37);
-		contentPane.add(btnNewButton);
+		
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 650, 133, 37);
+		contentPane.add(btnCancelar);
 		
 		JLabel errorGrupo = new JLabel("* Debes seleccionar una opci\u00F3n.");
 		errorGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 13));
@@ -137,56 +118,56 @@ public class InterfazDerivarTicket2 extends JFrame {
 		errorGrupo.setVisible(false);
 		contentPane.add(errorGrupo);
 		
-		JLabel errorObs = new JLabel("* Este campo no puede estar vac\u00EDo.");
-		errorObs.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 13));
-		errorObs.setForeground(Color.RED);
-		errorObs.setBounds(970, 507, 400, 20);
-		errorObs.setVisible(false);
-		contentPane.add(errorObs);
+		JLabel errorObsVacio = new JLabel("* Este campo no puede estar vac\u00EDo.");
+		errorObsVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 13));
+		errorObsVacio.setForeground(Color.RED);
+		errorObsVacio.setBounds(970, 507, 400, 20);
+		errorObsVacio.setVisible(false);
+		contentPane.add(errorObsVacio);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField.setBounds(692, 148, 252, 22);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtNumeroTicket = new JTextField();
+		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtNumeroTicket.setBounds(692, 148, 252, 22);
+		contentPane.add(txtNumeroTicket);
+		txtNumeroTicket.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField_1.setColumns(10);
-		textField_1.setBounds(692, 197, 252, 22);
-		contentPane.add(textField_1);
+		txtLegajo = new JTextField();
+		txtLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtLegajo.setColumns(10);
+		txtLegajo.setBounds(692, 197, 252, 22);
+		contentPane.add(txtLegajo);
 		
-		txtestadoX = new JTextField();
-		txtestadoX.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		txtestadoX.setEditable(false);
-		txtestadoX.setBorder(new LineBorder(Color.gray));
-		txtestadoX.setText(" (Estado X)");
-		txtestadoX.setBackground(new Color(220, 220, 220));
-		txtestadoX.setColumns(10);
-		txtestadoX.setBounds(692, 247, 252, 22);
-		contentPane.add(txtestadoX);
+		txtEstadoActual = new JTextField();
+		txtEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtEstadoActual.setEditable(false);
+		txtEstadoActual.setBorder(new LineBorder(Color.gray));
+		txtEstadoActual.setText(" (Estado X)");
+		txtEstadoActual.setBackground(new Color(220, 220, 220));
+		txtEstadoActual.setColumns(10);
+		txtEstadoActual.setBounds(692, 247, 252, 22);
+		contentPane.add(txtEstadoActual);
 		
-		txtdescripcinX = new JTextField();
-		txtdescripcinX.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		txtdescripcinX.setEditable(false);
-		txtdescripcinX.setBorder(new LineBorder(Color.gray));
-		txtdescripcinX.setText(" (Descripci\u00F3n X)");
-		txtdescripcinX.setBackground(new Color(220, 220, 220));
-		txtdescripcinX.setColumns(10);
-		txtdescripcinX.setBounds(692, 295, 252, 22);
-		contentPane.add(txtdescripcinX);
+		txtDescripcion = new JTextField();
+		txtDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtDescripcion.setEditable(false);
+		txtDescripcion.setBorder(new LineBorder(Color.gray));
+		txtDescripcion.setText(" (Descripci\u00F3n X)");
+		txtDescripcion.setBackground(new Color(220, 220, 220));
+		txtDescripcion.setColumns(10);
+		txtDescripcion.setBounds(692, 295, 252, 22);
+		contentPane.add(txtDescripcion);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electr\u00F3nico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio t\u00E9cnico", "Unidades de soporte"}));
-		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox.setBounds(692, 445, 252, 22);
-		contentPane.add(comboBox);
+		JComboBox comboBoxGrupo = new JComboBox();
+		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electr\u00F3nico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio t\u00E9cnico", "Unidades de soporte"}));
+		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxGrupo.setBounds(692, 445, 252, 22);
+		contentPane.add(comboBoxGrupo);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Configuraci\u00F3n de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
-		comboBox_1.setBounds(692, 393, 252, 22);
-		contentPane.add(comboBox_1);
+		JComboBox comboBoxClasificacion = new JComboBox();
+		comboBoxClasificacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxClasificacion.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Configuraci\u00F3n de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
+		comboBoxClasificacion.setBounds(692, 393, 252, 22);
+		contentPane.add(comboBoxClasificacion);
 	
 		JButton btnDerivar = new JButton("Derivar ticket");
 		btnDerivar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -198,31 +179,30 @@ public class InterfazDerivarTicket2 extends JFrame {
 		separator.setBounds(295, 80, 760, 2);
 		contentPane.add(separator);
 		
-		txtAbiertoDerivado = new JTextField();
-		txtAbiertoDerivado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		txtAbiertoDerivado.setText(" Abierto derivado");
-		txtAbiertoDerivado.setEditable(false);
-		txtAbiertoDerivado.setBackground(new Color(220, 220, 220));
-		txtAbiertoDerivado.setBounds(692, 345, 252, 22);
-		txtAbiertoDerivado.setEditable(false);
-		txtAbiertoDerivado.setBorder(new LineBorder(Color.gray));
-		contentPane.add(txtAbiertoDerivado);
-		txtAbiertoDerivado.setColumns(10);
+		txtNuevoEstado = new JTextField();
+		txtNuevoEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtNuevoEstado.setText(" Abierto derivado");
+		txtNuevoEstado.setEditable(false);
+		txtNuevoEstado.setBackground(new Color(220, 220, 220));
+		txtNuevoEstado.setBounds(692, 345, 252, 22);
+		txtNuevoEstado.setEditable(false);
+		txtNuevoEstado.setBorder(new LineBorder(Color.gray));
+		contentPane.add(txtNuevoEstado);
+		txtNuevoEstado.setColumns(10);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(692, 507, 252, 95);
 		contentPane.add(scrollPane);
 		
-		JTextArea observaciones = new JTextArea();
-		scrollPane.setViewportView(observaciones);
+		JTextArea txtAreaObservaciones = new JTextArea();
+		scrollPane.setViewportView(txtAreaObservaciones);
 		
 		btnDerivar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (observaciones.getText().isEmpty()) errorObs.setVisible(true);;
-				if(comboBox.getSelectedIndex() == 0) errorGrupo.setVisible(true);;
+				if (txtAreaObservaciones.getText().isEmpty()) errorObsVacio.setVisible(true);;
+				if(comboBoxGrupo.getSelectedIndex() == 0) errorGrupo.setVisible(true);;
 				
 			}
-		});
-		
-		}
+		});	
+	}
 }

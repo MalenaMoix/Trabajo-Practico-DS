@@ -1,43 +1,32 @@
 package todas;
-import java.awt.BorderLayout;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.Toolkit;
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
-import javax.swing.JProgressBar;
-import javax.swing.DropMode;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
-import javax.swing.JTextPane;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.JSeparator;
 import java.awt.Color;
 
 public class InterfazRegistrarTicket1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField txtFechaApertura;
+	private JTextField txtHoraApertura;
+	private JTextField txtNumeroTicket;
+	private JTextField txtNumeroLegajo;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -51,9 +40,7 @@ public class InterfazRegistrarTicket1 extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public InterfazRegistrarTicket1() {
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
@@ -66,20 +53,20 @@ public class InterfazRegistrarTicket1 extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.setBackground(new Color(230, 230, 250));
 		
-		JLabel lblNumeroDeTicket = new JLabel("Numero de ticket:");
-		lblNumeroDeTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblNumeroDeTicket.setBounds(379, 130, 156, 28);
-		contentPane.add(lblNumeroDeTicket);
+		JLabel lblNumeroTicket = new JLabel("Numero de ticket:");
+		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblNumeroTicket.setBounds(379, 130, 156, 28);
+		contentPane.add(lblNumeroTicket);
 		
-		JLabel lblNumeroDeLegajo = new JLabel("Numero de Legajo:");
-		lblNumeroDeLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblNumeroDeLegajo.setBounds(379, 253, 156, 23);
-		contentPane.add(lblNumeroDeLegajo);
+		JLabel lblNumeroLegajo = new JLabel("Numero de Legajo:");
+		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblNumeroLegajo.setBounds(379, 253, 156, 23);
+		contentPane.add(lblNumeroLegajo);
 		
-		JLabel lblClasificacionDeTicket = new JLabel("Clasificacion de ticket:");
-		lblClasificacionDeTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblClasificacionDeTicket.setBounds(379, 598, 172, 36);
-		contentPane.add(lblClasificacionDeTicket);
+		JLabel lblClasificacionTicket = new JLabel("Clasificacion de ticket:");
+		lblClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblClasificacionTicket.setBounds(379, 598, 172, 36);
+		contentPane.add(lblClasificacionTicket);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
@@ -89,49 +76,51 @@ public class InterfazRegistrarTicket1 extends JFrame {
 				JOptionPane.showConfirmDialog(null, "¿Desea cancelar el registro de este ticket? No se guardaran los cambios realizados.", "Registrar ticket", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
 			}
 		});
+		
 		btnCancelar.setBounds(1207, 655, 133, 37);
 		contentPane.add(btnCancelar);
 		
-		JButton btnNewButton = new JButton("Aceptar");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				InterfazRegistrarTicket2 observaciones = new InterfazRegistrarTicket2();
 				observaciones.setVisible(true);
 				InterfazRegistrarTicket1.this.dispose();
 			}
 		});
-		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnNewButton.setBounds(1020, 655, 133, 37);
-		contentPane.add(btnNewButton);
 		
-		JLabel lblDescripcionDelProblema = new JLabel("Descripcion del problema:");
-		lblDescripcionDelProblema.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblDescripcionDelProblema.setBounds(379, 305, 229, 29);
-		contentPane.add(lblDescripcionDelProblema);
+		btnAceptar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnAceptar.setBounds(1020, 655, 133, 37);
+		contentPane.add(btnAceptar);
 		
-		JComboBox comboBoxClasificacion = new JComboBox();
-		comboBoxClasificacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxClasificacion.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Configuraci\u00F3n de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
-		comboBoxClasificacion.setBounds(611, 605, 365, 24);
-		contentPane.add(comboBoxClasificacion);
+		JLabel lblDescripcion = new JLabel("Descripcion del problema:");
+		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblDescripcion.setBounds(379, 305, 229, 29);
+		contentPane.add(lblDescripcion);
 		
-		JLabel lblFechaDeApertura = new JLabel("Fecha de apertura:");
-		lblFechaDeApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblFechaDeApertura.setBounds(379, 171, 142, 28);
-		contentPane.add(lblFechaDeApertura);
+		JComboBox comboBoxClasificacionTicket = new JComboBox();
+		comboBoxClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxClasificacionTicket.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Configuraci\u00F3n de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
+		comboBoxClasificacionTicket.setBounds(611, 605, 365, 24);
+		contentPane.add(comboBoxClasificacionTicket);
 		
-		JLabel lblFechaDeCierre = new JLabel("Hora de apertura:");
-		lblFechaDeCierre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblFechaDeCierre.setBounds(379, 212, 133, 28);
-		contentPane.add(lblFechaDeCierre);
+		JLabel lblFechaApertura = new JLabel("Fecha de apertura:");
+		lblFechaApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblFechaApertura.setBounds(379, 171, 142, 28);
+		contentPane.add(lblFechaApertura);
+		
+		JLabel lblHoraApertura = new JLabel("Hora de apertura:");
+		lblHoraApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblHoraApertura.setBounds(379, 212, 133, 28);
+		contentPane.add(lblHoraApertura);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(611, 310, 365, 280);
 		contentPane.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
-		textArea.setLineWrap(true);
+		JTextArea textAreaDescripcion = new JTextArea();
+		scrollPane.setViewportView(textAreaDescripcion);
+		textAreaDescripcion.setLineWrap(true);
 		
 		JLabel lblRegistrarTicket = new JLabel("Registrar ticket");
 		lblRegistrarTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
@@ -143,33 +132,33 @@ public class InterfazRegistrarTicket1 extends JFrame {
 		separator.setBounds(295, 90, 760, 2);
 		contentPane.add(separator);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField.setBackground(new Color(220, 220, 220));
-		textField.setBounds(611, 174, 365, 24);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtFechaApertura = new JTextField();
+		txtFechaApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtFechaApertura.setBackground(new Color(220, 220, 220));
+		txtFechaApertura.setBounds(611, 174, 365, 24);
+		contentPane.add(txtFechaApertura);
+		txtFechaApertura.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField_1.setBackground(new Color(220, 220, 220));
-		textField_1.setColumns(10);
-		textField_1.setBounds(611, 215, 365, 24);
-		contentPane.add(textField_1);
+		txtHoraApertura = new JTextField();
+		txtHoraApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtHoraApertura.setBackground(new Color(220, 220, 220));
+		txtHoraApertura.setColumns(10);
+		txtHoraApertura.setBounds(611, 215, 365, 24);
+		contentPane.add(txtHoraApertura);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField_2.setColumns(10);
-		textField_2.setBackground(new Color(220, 220, 220));
-		textField_2.setBounds(611, 133, 365, 24);
-		contentPane.add(textField_2);
+		txtNumeroTicket = new JTextField();
+		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtNumeroTicket.setColumns(10);
+		txtNumeroTicket.setBackground(new Color(220, 220, 220));
+		txtNumeroTicket.setBounds(611, 133, 365, 24);
+		contentPane.add(txtNumeroTicket);
 		
-		textField_3 = new JTextField();
-		textField_3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField_3.setColumns(10);
-		textField_3.setBackground(new Color(220, 220, 220));
-		textField_3.setBounds(611, 253, 365, 24);
-		contentPane.add(textField_3);
+		txtNumeroLegajo = new JTextField();
+		txtNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtNumeroLegajo.setColumns(10);
+		txtNumeroLegajo.setBackground(new Color(220, 220, 220));
+		txtNumeroLegajo.setBounds(611, 253, 365, 24);
+		contentPane.add(txtNumeroLegajo);
 		
 		JLabel lblNewLabel = new JLabel("* Este campo no puede estar vacio.");
 		lblNewLabel.setForeground(Color.RED);
@@ -177,17 +166,17 @@ public class InterfazRegistrarTicket1 extends JFrame {
 		lblNewLabel.setBounds(988, 253, 219, 24);
 		contentPane.add(lblNewLabel);
 		
-		JLabel label = new JLabel("* Este campo no puede estar vacio.");
-		label.setForeground(Color.RED);
-		label.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		label.setBounds(988, 308, 219, 24);
-		contentPane.add(label);
+		JLabel errorDescripcionVacio = new JLabel("* Este campo no puede estar vacio.");
+		errorDescripcionVacio.setForeground(Color.RED);
+		errorDescripcionVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		errorDescripcionVacio.setBounds(988, 308, 219, 24);
+		contentPane.add(errorDescripcionVacio);
 		
-		JLabel lblDebeElegir = new JLabel("* Debe elegir una opcion.");
-		lblDebeElegir.setForeground(Color.RED);
-		lblDebeElegir.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		lblDebeElegir.setBounds(988, 605, 219, 24);
-		contentPane.add(lblDebeElegir);
+		JLabel errorDebeElegir = new JLabel("* Debe elegir una opcion.");
+		errorDebeElegir.setForeground(Color.RED);
+		errorDebeElegir.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		errorDebeElegir.setBounds(988, 605, 219, 24);
+		contentPane.add(errorDebeElegir);
 		
 		JLabel lblEsteNumero = new JLabel("* Este numero de legajo no se encuentra en el sistema.");
 		lblEsteNumero.setForeground(Color.RED);

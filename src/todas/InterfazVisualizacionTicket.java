@@ -1,10 +1,8 @@
 package todas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -12,7 +10,6 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
-import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
@@ -20,25 +17,22 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JScrollBar;
 
 public class InterfazVisualizacionTicket extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
+	private JTextField txtDescripcionCargo;
+	private JTextField txtLegajo;
+	private JTextField txtApellidoNombre;
+	private JTextField txtTelefonoInterno;
+	private JTextField txtTelefonoDirecto;
+	private JTextField txtCalle;
+	private JTextField txtNumero;
+	private JTextField txtPiso;
+	private JTextField txtOficina;
 	private JTable table;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -52,9 +46,7 @@ public class InterfazVisualizacionTicket extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public InterfazVisualizacionTicket() {
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
@@ -67,10 +59,10 @@ public class InterfazVisualizacionTicket extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Visualizaci\u00F3n ticket");
-		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblNewLabel.setBounds(481, 20, 385, 48);
-		contentPane.add(lblNewLabel);
+		JLabel lblVisualizacionTicket = new JLabel("Visualizaci\u00F3n ticket");
+		lblVisualizacionTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblVisualizacionTicket.setBounds(481, 20, 385, 48);
+		contentPane.add(lblVisualizacionTicket);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(275, 90, 800, 2);
@@ -86,45 +78,45 @@ public class InterfazVisualizacionTicket extends JFrame {
 		lblHistorialTicket.setBounds(679, 136, 172, 24);
 		contentPane.add(lblHistorialTicket);
 		
-		JLabel lblNewLabel_1 = new JLabel("Legajo: ");
-		lblNewLabel_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNewLabel_1.setBounds(220, 184, 156, 24);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblLegajo = new JLabel("Legajo: ");
+		lblLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblLegajo.setBounds(220, 184, 156, 24);
+		contentPane.add(lblLegajo);
 		
 		JLabel lblNombreYApellido = new JLabel("Apellido y nombre: ");
 		lblNombreYApellido.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblNombreYApellido.setBounds(220, 221, 156, 24);
 		contentPane.add(lblNombreYApellido);
 		
-		JLabel lblTelfonoInterno = new JLabel("Tel\u00E9fono interno: ");
-		lblTelfonoInterno.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblTelfonoInterno.setBounds(220, 258, 156, 24);
-		contentPane.add(lblTelfonoInterno);
+		JLabel lblTelefonoInterno = new JLabel("Tel\u00E9fono interno: ");
+		lblTelefonoInterno.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblTelefonoInterno.setBounds(220, 258, 156, 24);
+		contentPane.add(lblTelefonoInterno);
 		
-		JLabel lblTelfonoDirecto = new JLabel("Tel\u00E9fono directo: ");
-		lblTelfonoDirecto.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblTelfonoDirecto.setBounds(220, 295, 156, 24);
-		contentPane.add(lblTelfonoDirecto);
+		JLabel lblTelefonoDirecto = new JLabel("Tel\u00E9fono directo: ");
+		lblTelefonoDirecto.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblTelefonoDirecto.setBounds(220, 295, 156, 24);
+		contentPane.add(lblTelefonoDirecto);
 		
-		JLabel lblDescripcinDeCargo = new JLabel("Descripci\u00F3n de cargo: ");
-		lblDescripcinDeCargo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblDescripcinDeCargo.setBounds(220, 332, 148, 24);
-		contentPane.add(lblDescripcinDeCargo);
+		JLabel lblDescripcionCargo = new JLabel("Descripci\u00F3n de cargo: ");
+		lblDescripcionCargo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblDescripcionCargo.setBounds(220, 332, 148, 24);
+		contentPane.add(lblDescripcionCargo);
 		
-		JLabel lblDireccin = new JLabel("Direcci\u00F3n: ");
-		lblDireccin.setFont(new Font("Segoe UI Symbol", Font.BOLD, 15));
-		lblDireccin.setBounds(220, 434, 156, 24);
-		contentPane.add(lblDireccin);
+		JLabel lblDireccion = new JLabel("Direcci\u00F3n: ");
+		lblDireccion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 15));
+		lblDireccion.setBounds(220, 434, 156, 24);
+		contentPane.add(lblDireccion);
 		
 		JLabel lblCalle = new JLabel("Calle: ");
 		lblCalle.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		lblCalle.setBounds(220, 471, 72, 24);
 		contentPane.add(lblCalle);
 		
-		JLabel lblNmero = new JLabel("N\u00FAmero: ");
-		lblNmero.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNmero.setBounds(220, 510, 72, 24);
-		contentPane.add(lblNmero);
+		JLabel lblNumero = new JLabel("N\u00FAmero: ");
+		lblNumero.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblNumero.setBounds(220, 510, 72, 24);
+		contentPane.add(lblNumero);
 		
 		JLabel lblPiso = new JLabel("Piso: ");
 		lblPiso.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
@@ -136,68 +128,68 @@ public class InterfazVisualizacionTicket extends JFrame {
 		lblOficina.setBounds(220, 584, 72, 24);
 		contentPane.add(lblOficina);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField.setBackground(new Color(220, 220, 220));
-		textField.setBounds(380, 332, 245, 73);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtDescripcionCargo = new JTextField();
+		txtDescripcionCargo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtDescripcionCargo.setBackground(new Color(220, 220, 220));
+		txtDescripcionCargo.setBounds(380, 332, 245, 73);
+		contentPane.add(txtDescripcionCargo);
+		txtDescripcionCargo.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_1.setColumns(10);
-		textField_1.setBackground(new Color(220, 220, 220));
-		textField_1.setBounds(380, 184, 245, 24);
-		contentPane.add(textField_1);
+		txtLegajo = new JTextField();
+		txtLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtLegajo.setColumns(10);
+		txtLegajo.setBackground(new Color(220, 220, 220));
+		txtLegajo.setBounds(380, 184, 245, 24);
+		contentPane.add(txtLegajo);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_2.setColumns(10);
-		textField_2.setBackground(new Color(220, 220, 220));
-		textField_2.setBounds(380, 221, 245, 24);
-		contentPane.add(textField_2);
+		txtApellidoNombre = new JTextField();
+		txtApellidoNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtApellidoNombre.setColumns(10);
+		txtApellidoNombre.setBackground(new Color(220, 220, 220));
+		txtApellidoNombre.setBounds(380, 221, 245, 24);
+		contentPane.add(txtApellidoNombre);
 		
-		textField_3 = new JTextField();
-		textField_3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_3.setColumns(10);
-		textField_3.setBackground(new Color(220, 220, 220));
-		textField_3.setBounds(380, 258, 245, 24);
-		contentPane.add(textField_3);
+		txtTelefonoInterno = new JTextField();
+		txtTelefonoInterno.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtTelefonoInterno.setColumns(10);
+		txtTelefonoInterno.setBackground(new Color(220, 220, 220));
+		txtTelefonoInterno.setBounds(380, 258, 245, 24);
+		contentPane.add(txtTelefonoInterno);
 		
-		textField_4 = new JTextField();
-		textField_4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_4.setColumns(10);
-		textField_4.setBackground(new Color(220, 220, 220));
-		textField_4.setBounds(380, 295, 245, 24);
-		contentPane.add(textField_4);
+		txtTelefonoDirecto = new JTextField();
+		txtTelefonoDirecto.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtTelefonoDirecto.setColumns(10);
+		txtTelefonoDirecto.setBackground(new Color(220, 220, 220));
+		txtTelefonoDirecto.setBounds(380, 295, 245, 24);
+		contentPane.add(txtTelefonoDirecto);
 		
-		textField_5 = new JTextField();
-		textField_5.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_5.setColumns(10);
-		textField_5.setBackground(new Color(220, 220, 220));
-		textField_5.setBounds(327, 471, 180, 24);
-		contentPane.add(textField_5);
+		txtCalle = new JTextField();
+		txtCalle.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtCalle.setColumns(10);
+		txtCalle.setBackground(new Color(220, 220, 220));
+		txtCalle.setBounds(327, 471, 180, 24);
+		contentPane.add(txtCalle);
 		
-		textField_6 = new JTextField();
-		textField_6.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_6.setColumns(10);
-		textField_6.setBackground(new Color(220, 220, 220));
-		textField_6.setBounds(327, 510, 180, 24);
-		contentPane.add(textField_6);
+		txtNumero = new JTextField();
+		txtNumero.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtNumero.setColumns(10);
+		txtNumero.setBackground(new Color(220, 220, 220));
+		txtNumero.setBounds(327, 510, 180, 24);
+		contentPane.add(txtNumero);
 		
-		textField_7 = new JTextField();
-		textField_7.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_7.setColumns(10);
-		textField_7.setBackground(new Color(220, 220, 220));
-		textField_7.setBounds(327, 547, 180, 24);
-		contentPane.add(textField_7);
+		txtPiso = new JTextField();
+		txtPiso.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtPiso.setColumns(10);
+		txtPiso.setBackground(new Color(220, 220, 220));
+		txtPiso.setBounds(327, 547, 180, 24);
+		contentPane.add(txtPiso);
 		
-		textField_8 = new JTextField();
-		textField_8.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_8.setColumns(10);
-		textField_8.setBackground(new Color(220, 220, 220));
-		textField_8.setBounds(327, 584, 180, 24);
-		contentPane.add(textField_8);
+		txtOficina = new JTextField();
+		txtOficina.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtOficina.setColumns(10);
+		txtOficina.setBackground(new Color(220, 220, 220));
+		txtOficina.setBounds(327, 584, 180, 24);
+		contentPane.add(txtOficina);
 		
 		JLabel label_6 = new JLabel((String) null);
 		label_6.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
@@ -209,6 +201,7 @@ public class InterfazVisualizacionTicket extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
+		
 		btnAceptar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnAceptar.setBounds(1207, 655, 133, 37);
 		contentPane.add(btnAceptar);
@@ -239,6 +232,7 @@ public class InterfazVisualizacionTicket extends JFrame {
 				"Fecha", "Hora", "Operador", "Estado", "Grupo de resol.", "Clasif. ticket"
 			}
 		));
+		
 		table.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 11));
 		scrollPane_1.setViewportView(table);
 		
@@ -251,12 +245,10 @@ public class InterfazVisualizacionTicket extends JFrame {
 		scrollPane.setBounds(820, 438, 458, 170);
 		contentPane.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		scrollPane.setViewportView(textArea);
-		textArea.setBackground(new Color(220, 220, 220));
-		
+		JTextArea textAreaObservaciones = new JTextArea();
+		textAreaObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		scrollPane.setViewportView(textAreaObservaciones);
+		textAreaObservaciones.setBackground(new Color(220, 220, 220));
 		
 	}
 }
-

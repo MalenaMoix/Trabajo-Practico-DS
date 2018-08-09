@@ -30,12 +30,10 @@ import javax.swing.DefaultComboBoxModel;
 public class InterfazConsultarTicket extends JFrame {
 	private JTable table;
 	private JTable table_1;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtNumeroTicket;
+	private JTextField txtNumeroLegajo;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,9 +47,7 @@ public class InterfazConsultarTicket extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public InterfazConsultarTicket() {
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Usuario\\Desktop\\Diseño de Sistemas\\cool-flame-icon.png"));
@@ -100,12 +96,13 @@ public class InterfazConsultarTicket extends JFrame {
 				"Ticket", "Legajo", "Fecha apertura", "Hora apertura", "Operador", "Clasificaci\u00F3n actual", "Estado actual", "Ultimo cambio estado"
 			}
 		));
+		
 		scrollPane.setViewportView(table_1);
 		
-		JLabel lblNewLabel = new JLabel("Consultar ticket");
-		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblNewLabel.setBounds(514, 20, 319, 46);
-		contentPane.add(lblNewLabel);
+		JLabel lblConsultarTickets = new JLabel("Consultar ticket");
+		lblConsultarTickets.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblConsultarTickets.setBounds(514, 20, 319, 46);
+		contentPane.add(lblConsultarTickets);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(275, 90, 800, 2);
@@ -117,6 +114,7 @@ public class InterfazConsultarTicket extends JFrame {
 				System.exit(0);
 			}
 		});
+		
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCancelar.setBounds(1207, 650, 133, 37);
 		contentPane.add(btnCancelar);
@@ -134,6 +132,7 @@ public class InterfazConsultarTicket extends JFrame {
 				InterfazConsultarTicket.this.dispose();
 			}
 		});
+		
 		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCerrarTicket.setBounds(833, 650, 133, 37);
 		contentPane.add(btnCerrarTicket);
@@ -146,172 +145,173 @@ public class InterfazConsultarTicket extends JFrame {
 				InterfazConsultarTicket.this.dispose();
 			}
 		});
+		
 		btnVetTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnVetTicket.setBounds(646, 650, 133, 37);
 		contentPane.add(btnVetTicket);
 		
-		JLabel label = new JLabel("Criterios de b\u00FAsqueda:");
-		label.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		label.setBounds(36, 97, 261, 26);
-		contentPane.add(label);
+		JLabel lblCriterios = new JLabel("Criterios de b\u00FAsqueda:");
+		lblCriterios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		lblCriterios.setBounds(36, 97, 261, 26);
+		contentPane.add(lblCriterios);
 		
-		JLabel label_1 = new JLabel("N\u00FAmero de ticket: ");
-		label_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		label_1.setBounds(58, 128, 122, 21);
-		contentPane.add(label_1);
+		JLabel lblNumeroTicket = new JLabel("N\u00FAmero de ticket: ");
+		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblNumeroTicket.setBounds(58, 128, 122, 21);
+		contentPane.add(lblNumeroTicket);
 		
 		JLabel label_2 = new JLabel("-");
 		label_2.setFont(new Font("Tahoma", Font.BOLD, 18));
 		label_2.setBounds(46, 134, 8, 8);
 		contentPane.add(label_2);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField.setColumns(10);
-		textField.setBounds(190, 131, 185, 20);
-		contentPane.add(textField);
+		txtNumeroTicket = new JTextField();
+		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtNumeroTicket.setColumns(10);
+		txtNumeroTicket.setBounds(190, 131, 185, 20);
+		contentPane.add(txtNumeroTicket);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField_1.setColumns(10);
-		textField_1.setBounds(190, 156, 185, 20);
-		contentPane.add(textField_1);
+		txtNumeroLegajo = new JTextField();
+		txtNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtNumeroLegajo.setColumns(10);
+		txtNumeroLegajo.setBounds(190, 156, 185, 20);
+		contentPane.add(txtNumeroLegajo);
 		
-		JLabel label_3 = new JLabel("N\u00FAmero de legajo:");
-		label_3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		label_3.setBounds(58, 153, 133, 21);
-		contentPane.add(label_3);
+		JLabel lblNumeroLegajo = new JLabel("N\u00FAmero de legajo:");
+		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblNumeroLegajo.setBounds(58, 153, 133, 21);
+		contentPane.add(lblNumeroLegajo);
 		
 		JLabel label_4 = new JLabel("-");
 		label_4.setFont(new Font("Tahoma", Font.BOLD, 18));
 		label_4.setBounds(46, 159, 8, 8);
 		contentPane.add(label_4);
 		
-		JLabel label_5 = new JLabel("Clasificaci\u00F3n actual del ticket:  ");
-		label_5.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		label_5.setBounds(408, 128, 203, 21);
-		contentPane.add(label_5);
+		JLabel lblClasificacionActual = new JLabel("Clasificaci\u00F3n actual del ticket:  ");
+		lblClasificacionActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblClasificacionActual.setBounds(408, 128, 203, 21);
+		contentPane.add(lblClasificacionActual);
 		
 		JLabel label_6 = new JLabel("-");
 		label_6.setFont(new Font("Tahoma", Font.BOLD, 18));
 		label_6.setBounds(393, 134, 8, 8);
 		contentPane.add(label_6);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox.setEditable(true);
-		comboBox.setBounds(611, 129, 230, 20);
-		contentPane.add(comboBox);
+		JComboBox comboBoxClasificacionActual = new JComboBox();
+		comboBoxClasificacionActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxClasificacionActual.setEditable(true);
+		comboBoxClasificacionActual.setBounds(611, 129, 230, 20);
+		contentPane.add(comboBoxClasificacionActual);
 		
 		JLabel label_7 = new JLabel("-");
 		label_7.setFont(new Font("Tahoma", Font.BOLD, 18));
 		label_7.setBounds(393, 159, 8, 8);
 		contentPane.add(label_7);
 		
-		JLabel label_8 = new JLabel("Estado actual del ticket: ");
-		label_8.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		label_8.setBounds(408, 153, 161, 21);
-		contentPane.add(label_8);
+		JLabel lblEstadoActual = new JLabel("Estado actual del ticket: ");
+		lblEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblEstadoActual.setBounds(408, 153, 161, 21);
+		contentPane.add(lblEstadoActual);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_1.setEditable(true);
-		comboBox_1.setBounds(611, 156, 230, 20);
-		contentPane.add(comboBox_1);
+		JComboBox comboBoxEstadoActual = new JComboBox();
+		comboBoxEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxEstadoActual.setEditable(true);
+		comboBoxEstadoActual.setBounds(611, 156, 230, 20);
+		contentPane.add(comboBoxEstadoActual);
 		
 		JLabel label_9 = new JLabel("-");
 		label_9.setFont(new Font("Tahoma", Font.BOLD, 18));
 		label_9.setBounds(867, 134, 8, 8);
 		contentPane.add(label_9);
 		
-		JLabel label_10 = new JLabel("\u00DAltimo grupo de resoluci\u00F3n asignado: ");
-		label_10.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		label_10.setBounds(881, 128, 261, 21);
-		contentPane.add(label_10);
+		JLabel lblUltimoGrupo = new JLabel("\u00DAltimo grupo de resoluci\u00F3n asignado: ");
+		lblUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblUltimoGrupo.setBounds(881, 128, 261, 21);
+		contentPane.add(lblUltimoGrupo);
 		
 		JLabel label_11 = new JLabel("-");
 		label_11.setFont(new Font("Tahoma", Font.BOLD, 18));
 		label_11.setBounds(867, 159, 8, 8);
 		contentPane.add(label_11);
 		
-		JLabel label_12 = new JLabel("Fecha \u00FAltimo cambio de estado: ");
-		label_12.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		label_12.setBounds(881, 153, 222, 21);
-		contentPane.add(label_12);
+		JLabel lblFechaUltimoCambio = new JLabel("Fecha \u00FAltimo cambio de estado: ");
+		lblFechaUltimoCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblFechaUltimoCambio.setBounds(881, 153, 222, 21);
+		contentPane.add(lblFechaUltimoCambio);
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_2.setEditable(true);
-		comboBox_2.setBounds(1135, 129, 185, 20);
-		contentPane.add(comboBox_2);
+		JComboBox comboBoxUltimoGrupo = new JComboBox();
+		comboBoxUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxUltimoGrupo.setEditable(true);
+		comboBoxUltimoGrupo.setBounds(1135, 129, 185, 20);
+		contentPane.add(comboBoxUltimoGrupo);
 		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
-		comboBox_3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_3.setEditable(true);
-		comboBox_3.setBounds(1135, 155, 52, 22);
-		contentPane.add(comboBox_3);
+		JComboBox comboBoxDiaCambio = new JComboBox();
+		comboBoxDiaCambio.setModel(new DefaultComboBoxModel(new String[] {"DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		comboBoxDiaCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxDiaCambio.setEditable(true);
+		comboBoxDiaCambio.setBounds(1135, 155, 52, 22);
+		contentPane.add(comboBoxDiaCambio);
 		
 		JLabel label_13 = new JLabel("/");
 		label_13.setBounds(1189, 158, 13, 15);
 		contentPane.add(label_13);
 		
-		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"MM", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
-		comboBox_4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_4.setEditable(true);
-		comboBox_4.setBounds(1197, 155, 52, 22);
-		contentPane.add(comboBox_4);
+		JComboBox comboBoxMesCambio = new JComboBox();
+		comboBoxMesCambio.setModel(new DefaultComboBoxModel(new String[] {"MM", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
+		comboBoxMesCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxMesCambio.setEditable(true);
+		comboBoxMesCambio.setBounds(1197, 155, 52, 22);
+		contentPane.add(comboBoxMesCambio);
 		
 		JLabel label_14 = new JLabel("/");
 		label_14.setBounds(1252, 158, 13, 14);
 		contentPane.add(label_14);
 		
-		JComboBox comboBox_5 = new JComboBox();
-		comboBox_5.setModel(new DefaultComboBoxModel(new String[] {"AAAA"}));
-		comboBox_5.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_5.setEditable(true);
-		comboBox_5.setBounds(1258, 155, 62, 22);
-		contentPane.add(comboBox_5);
+		JComboBox comboBoxAnioCambio = new JComboBox();
+		comboBoxAnioCambio.setModel(new DefaultComboBoxModel(new String[] {"AAAA"}));
+		comboBoxAnioCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxAnioCambio.setEditable(true);
+		comboBoxAnioCambio.setBounds(1258, 155, 62, 22);
+		contentPane.add(comboBoxAnioCambio);
 		
 		JLabel label_15 = new JLabel("-");
 		label_15.setFont(new Font("Tahoma", Font.BOLD, 18));
 		label_15.setBounds(46, 184, 8, 8);
 		contentPane.add(label_15);
 		
-		JLabel label_16 = new JLabel("Fecha Apertura: ");
-		label_16.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		label_16.setBounds(58, 178, 107, 21);
-		contentPane.add(label_16);
+		JLabel lblFechaApertura = new JLabel("Fecha Apertura: ");
+		lblFechaApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		lblFechaApertura.setBounds(58, 178, 107, 21);
+		contentPane.add(lblFechaApertura);
 		
-		JComboBox comboBox_6 = new JComboBox();
-		comboBox_6.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_6.setModel(new DefaultComboBoxModel(new String[] {"DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
-		comboBox_6.setEditable(true);
-		comboBox_6.setBounds(190, 179, 52, 22);
-		contentPane.add(comboBox_6);
+		JComboBox comboBoxDiaApertura = new JComboBox();
+		comboBoxDiaApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxDiaApertura.setModel(new DefaultComboBoxModel(new String[] {"DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		comboBoxDiaApertura.setEditable(true);
+		comboBoxDiaApertura.setBounds(190, 179, 52, 22);
+		contentPane.add(comboBoxDiaApertura);
 		
 		JLabel label_17 = new JLabel("/");
 		label_17.setBounds(244, 183, 8, 15);
 		contentPane.add(label_17);
 		
-		JComboBox comboBox_7 = new JComboBox();
-		comboBox_7.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_7.setModel(new DefaultComboBoxModel(new String[] {"MM", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
-		comboBox_7.setEditable(true);
-		comboBox_7.setBounds(252, 179, 52, 22);
-		contentPane.add(comboBox_7);
+		JComboBox comboBoxMesApertura = new JComboBox();
+		comboBoxMesApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxMesApertura.setModel(new DefaultComboBoxModel(new String[] {"MM", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
+		comboBoxMesApertura.setEditable(true);
+		comboBoxMesApertura.setBounds(252, 179, 52, 22);
+		contentPane.add(comboBoxMesApertura);
 		
 		JLabel label_18 = new JLabel("/");
 		label_18.setBounds(306, 183, 13, 14);
 		contentPane.add(label_18);
 		
-		JComboBox comboBox_8 = new JComboBox();
-		comboBox_8.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBox_8.setModel(new DefaultComboBoxModel(new String[] {"AAAA"}));
-		comboBox_8.setEditable(true);
-		comboBox_8.setBounds(313, 179, 62, 22);
-		contentPane.add(comboBox_8);
+		JComboBox comboBoxAnioApertura = new JComboBox();
+		comboBoxAnioApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		comboBoxAnioApertura.setModel(new DefaultComboBoxModel(new String[] {"AAAA"}));
+		comboBoxAnioApertura.setEditable(true);
+		comboBoxAnioApertura.setBounds(313, 179, 62, 22);
+		contentPane.add(comboBoxAnioApertura);
 		
 		JButton btnImprimir = new JButton("Imprimir");
 		btnImprimir.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -326,10 +326,8 @@ public class InterfazConsultarTicket extends JFrame {
 				JOptionPane.showMessageDialog(null, "No existen tickets que cumplan con los criterios ingresados.");
 			}
 		});
+		
 		contentPane.add(btnBuscar);
 		
-		
-		
-	
 		}
 	}

@@ -83,10 +83,10 @@ public class HomeMesaAyuda extends JFrame {
 		btnSalir.setBounds(491, 428, 380, 45);
 		contentPane.add(btnSalir);
 		
-		JLabel lblLaLlamita = new JLabel("Home: Mesa de Ayuda");
-		lblLaLlamita.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblLaLlamita.setBounds(462, 20, 437, 62);
-		contentPane.add(lblLaLlamita);
+		JLabel lblHomeMesa = new JLabel("Home: Mesa de Ayuda");
+		lblHomeMesa.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblHomeMesa.setBounds(462, 20, 437, 62);
+		contentPane.add(lblHomeMesa);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);

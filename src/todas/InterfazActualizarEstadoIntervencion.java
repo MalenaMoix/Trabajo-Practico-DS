@@ -60,20 +60,20 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 		lblEstadoActual.setBounds(446, 165, 208, 21);
 		contentPane.add(lblEstadoActual);
 		
-		JLabel lblDescripcionDelProblema = new JLabel("Descripci\u00F3n del problema:");
-		lblDescripcionDelProblema.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblDescripcionDelProblema.setBounds(446, 244, 208, 21);
-		contentPane.add(lblDescripcionDelProblema);
+		JLabel lblDescripcionProblema = new JLabel("Descripci\u00F3n del problema:");
+		lblDescripcionProblema.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblDescripcionProblema.setBounds(446, 244, 208, 21);
+		contentPane.add(lblDescripcionProblema);
 		
 		JLabel lblNuevoEstado = new JLabel("Nuevo estado:");
 		lblNuevoEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblNuevoEstado.setBounds(446, 348, 208, 21);
 		contentPane.add(lblNuevoEstado);
 		
-		JLabel lblClasificacionDelTicket = new JLabel("Clasificaci\u00F3n del ticket:");
-		lblClasificacionDelTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblClasificacionDelTicket.setBounds(446, 424, 208, 21);
-		contentPane.add(lblClasificacionDelTicket);
+		JLabel lblClasificacionTicket = new JLabel("Clasificaci\u00F3n del ticket:");
+		lblClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblClasificacionTicket.setBounds(446, 424, 208, 21);
+		contentPane.add(lblClasificacionTicket);
 		
 		JLabel lblObservaciones = new JLabel("Observaciones:");
 		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
@@ -97,19 +97,19 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 		comboBoxClasificacion.setBounds(666, 423, 266, 25);
 		contentPane.add(comboBoxClasificacion);
 		
-		JLabel errorGrupo = new JLabel("* Este campo no puede estar vac\u00EDo.");
-		errorGrupo.setBackground(new Color(240, 240, 240));
-		errorGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		errorGrupo.setForeground(Color.RED);
-		errorGrupo.setBounds(970, 346, 400, 20);
-		errorGrupo.setVisible(false);
-		contentPane.add(errorGrupo);
+		JLabel errorGrupoVacio = new JLabel("* Este campo no puede estar vac\u00EDo.");
+		errorGrupoVacio.setBackground(new Color(240, 240, 240));
+		errorGrupoVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		errorGrupoVacio.setForeground(Color.RED);
+		errorGrupoVacio.setBounds(970, 346, 400, 20);
+		errorGrupoVacio.setVisible(false);
+		contentPane.add(errorGrupoVacio);
 		
-		JLabel errorObs = new JLabel("* Este campo no puede estar vacio.");
-		errorObs.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		errorObs.setForeground(Color.RED);
-		errorObs.setBounds(970, 500, 400, 20);
-		contentPane.add(errorObs);
+		JLabel errorObservacionesVacio = new JLabel("* Este campo no puede estar vacio.");
+		errorObservacionesVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		errorObservacionesVacio.setForeground(Color.RED);
+		errorObservacionesVacio.setBounds(970, 500, 400, 20);
+		contentPane.add(errorObservacionesVacio);
 		
 		JButton btnActualizar = new JButton("Actualizar");
 		btnActualizar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -117,7 +117,7 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (comboBoxNuevoEstado.getSelectedIndex() == 0){
-					errorGrupo.setVisible(true);
+					errorGrupoVacio.setVisible(true);
 				}
 				
 				//if (txtObservaciones.getText().isEmpty()) {
@@ -149,18 +149,18 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 		scrollPane.setBounds(666, 246, 266, 80);
 		contentPane.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(220, 220, 220));
-		textArea.setEditable(true);
-		scrollPane.setViewportView(textArea);
+		JTextArea textAreaDescripcion = new JTextArea();
+		textAreaDescripcion.setBackground(new Color(220, 220, 220));
+		textAreaDescripcion.setEditable(true);
+		scrollPane.setViewportView(textAreaDescripcion);
 		
 		JScrollPane scrollPane2 = new JScrollPane();
 		scrollPane2.setBounds(666, 502, 266, 80);
 		contentPane.add(scrollPane2);
 		
-		JTextArea textArea2 = new JTextArea();
-		textArea2.setBackground(new Color(220, 220, 220));
-		textArea2.setEditable(true);
-		scrollPane2.setViewportView(textArea2);
+		JTextArea textAreaObservaciones = new JTextArea();
+		textAreaObservaciones.setBackground(new Color(220, 220, 220));
+		textAreaObservaciones.setEditable(true);
+		scrollPane2.setViewportView(textAreaObservaciones);
 	}
 }

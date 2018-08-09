@@ -1,16 +1,13 @@
 package todas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import javax.swing.JSeparator;
 import javax.swing.JButton;
@@ -23,14 +20,12 @@ import java.awt.Toolkit;
 public class InterfazModificarClasificacionTicket extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField txtCodigo;
+	private JTextField txtNombre;
+	private JTextField txtEstado;
+	private JTextField txtGrupoResolucion;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -44,9 +39,7 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public InterfazModificarClasificacionTicket() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setTitle("La llamita");
@@ -59,40 +52,40 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblModificarClasificacinDe = new JLabel("Modificar clasificaci\u00F3n de ticket");
-		lblModificarClasificacinDe.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblModificarClasificacinDe.setBounds(361, 20, 625, 42);
-		contentPane.add(lblModificarClasificacinDe);
+		JLabel lblModificarClasificacion = new JLabel("Modificar clasificaci\u00F3n de ticket");
+		lblModificarClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblModificarClasificacion.setBounds(361, 20, 625, 42);
+		contentPane.add(lblModificarClasificacion);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(274, 90, 800, 2);
 		contentPane.add(separator);
 		
-		JLabel lblCdigo = new JLabel("C\u00F3digo:");
-		lblCdigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCdigo.setBounds(430, 173, 173, 25);
-		contentPane.add(lblCdigo);
+		JLabel lblCodigo = new JLabel("C\u00F3digo:");
+		lblCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblCodigo.setBounds(430, 173, 173, 25);
+		contentPane.add(lblCodigo);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblNombre.setBounds(430, 240, 173, 25);
 		contentPane.add(lblNombre);
 		
-		JLabel lblDescripcin = new JLabel("Descripci\u00F3n:");
-		lblDescripcin.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblDescripcin.setBounds(430, 307, 173, 25);
-		contentPane.add(lblDescripcin);
+		JLabel lblDescripcion = new JLabel("Descripci\u00F3n:");
+		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblDescripcion.setBounds(430, 307, 173, 25);
+		contentPane.add(lblDescripcion);
 		
 		JLabel lblEstado = new JLabel("Estado:");
 		lblEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblEstado.setBounds(430, 436, 173, 25);
 		contentPane.add(lblEstado);
 		
-		JLabel lblGruposDeResolucin = new JLabel("Grupos de resoluci\u00F3n:");
-		lblGruposDeResolucin.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblGruposDeResolucin.setBounds(430, 499, 173, 25);
-		contentPane.add(lblGruposDeResolucin);
+		JLabel lblGruposResolucion = new JLabel("Grupos de resoluci\u00F3n:");
+		lblGruposResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblGruposResolucion.setBounds(430, 499, 173, 25);
+		contentPane.add(lblGruposResolucion);
 		
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.addActionListener(new ActionListener() {
@@ -110,34 +103,35 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 				System.exit(0);
 			}
 		});
+		
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCancelar.setBounds(1207, 655, 133, 37);
 		contentPane.add(btnCancelar);
 		
-		textField = new JTextField();
-		textField.setBackground(new Color(220, 220, 220));
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField.setBounds(615, 174, 292, 24);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setBackground(new Color(220, 220, 220));
+		txtCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtCodigo.setBounds(615, 174, 292, 24);
+		contentPane.add(txtCodigo);
+		txtCodigo.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_1.setBounds(615, 241, 292, 24);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtNombre = new JTextField();
+		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtNombre.setBounds(615, 241, 292, 24);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_3.setBounds(615, 437, 292, 24);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		txtEstado = new JTextField();
+		txtEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtEstado.setBounds(615, 437, 292, 24);
+		contentPane.add(txtEstado);
+		txtEstado.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField_4.setBounds(615, 500, 292, 24);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+		txtGrupoResolucion = new JTextField();
+		txtGrupoResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtGrupoResolucion.setBounds(615, 500, 292, 24);
+		contentPane.add(txtGrupoResolucion);
+		txtGrupoResolucion.setColumns(10);
 		
 		JLabel errorNombre = new JLabel("* Este campo no puede estar vacio.");
 		errorNombre.setBackground(new Color(240, 240, 240));
@@ -154,12 +148,12 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		errorNombre2.setVisible(false);
 		contentPane.add(errorNombre2);
 		
-		JLabel errorDescripcion = new JLabel("* Este campo no puede estar vacio.");
-		errorDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		errorDescripcion.setForeground(Color.RED);
-		errorDescripcion.setBounds(940, 307, 400, 20);
-		errorDescripcion.setVisible(false);
-		contentPane.add(errorDescripcion);
+		JLabel errorDescripcionVacio = new JLabel("* Este campo no puede estar vacio.");
+		errorDescripcionVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		errorDescripcionVacio.setForeground(Color.RED);
+		errorDescripcionVacio.setBounds(940, 307, 400, 20);
+		errorDescripcionVacio.setVisible(false);
+		contentPane.add(errorDescripcionVacio);
 		
 		JLabel errorGrupo = new JLabel("* No se puede eliminar este grupo de resolucion.");
 		errorGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
@@ -186,10 +180,9 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		scrollPane.setBounds(615, 307, 292, 86);
 		contentPane.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(220, 220, 220));
-		textArea.setEditable(true);
-		scrollPane.setViewportView(textArea);
+		JTextArea textAreaDescripcion = new JTextArea();
+		textAreaDescripcion.setBackground(new Color(220, 220, 220));
+		textAreaDescripcion.setEditable(true);
+		scrollPane.setViewportView(textAreaDescripcion);
 	}
-
 }

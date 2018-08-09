@@ -1,10 +1,8 @@
 package todas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -21,9 +19,6 @@ public class InterfazCriteriosOrdenamientoEstadoActual extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,9 +32,7 @@ public class InterfazCriteriosOrdenamientoEstadoActual extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public InterfazCriteriosOrdenamientoEstadoActual() {
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
@@ -52,70 +45,70 @@ public class InterfazCriteriosOrdenamientoEstadoActual extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Criterios de ordenamiento");
-		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblNewLabel.setBounds(417, 20, 515, 61);
-		contentPane.add(lblNewLabel);
+		JLabel lblCriteriosOrdenamiento = new JLabel("Criterios de ordenamiento");
+		lblCriteriosOrdenamiento.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblCriteriosOrdenamiento.setBounds(417, 20, 515, 61);
+		contentPane.add(lblCriteriosOrdenamiento);
 		
-		JLabel lblSeleccionarCriteriosPor = new JLabel("Seleccionar los criterios por los que desea ordenar la visualizaci\u00F3n por estado actual del ticket: ");
-		lblSeleccionarCriteriosPor.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblSeleccionarCriteriosPor.setBounds(213, 200, 922, 32);
-		contentPane.add(lblSeleccionarCriteriosPor);
+		JLabel lblSeleccionarCriterios = new JLabel("Seleccionar los criterios por los que desea ordenar la visualizaci\u00F3n por estado actual del ticket: ");
+		lblSeleccionarCriterios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		lblSeleccionarCriterios.setBounds(213, 200, 922, 32);
+		contentPane.add(lblSeleccionarCriterios);
 		
-		JLabel lblNewLabel_1 = new JLabel("Criterio 1: ");
-		lblNewLabel_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(433, 294, 103, 22);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblCriterio1 = new JLabel("Criterio 1: ");
+		lblCriterio1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblCriterio1.setBounds(433, 294, 103, 22);
+		contentPane.add(lblCriterio1);
 		
-		JLabel lblCriterio = new JLabel("Criterio 2: ");
-		lblCriterio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCriterio.setBounds(433, 358, 86, 22);
-		contentPane.add(lblCriterio);
+		JLabel lblCriterio2 = new JLabel("Criterio 2: ");
+		lblCriterio2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblCriterio2.setBounds(433, 358, 86, 22);
+		contentPane.add(lblCriterio2);
 		
-		JLabel lblCriterio_1 = new JLabel("Criterio 3: ");
-		lblCriterio_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCriterio_1.setBounds(433, 421, 103, 22);
-		contentPane.add(lblCriterio_1);
+		JLabel lblCriterio3 = new JLabel("Criterio 3: ");
+		lblCriterio3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblCriterio3.setBounds(433, 421, 103, 22);
+		contentPane.add(lblCriterio3);
 		
-		JLabel lblCriterio_2 = new JLabel("Criterio 4: ");
-		lblCriterio_2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCriterio_2.setBounds(433, 483, 103, 22);
-		contentPane.add(lblCriterio_2);
+		JLabel lblCriterio4 = new JLabel("Criterio 4: ");
+		lblCriterio4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblCriterio4.setBounds(433, 483, 103, 22);
+		contentPane.add(lblCriterio4);
 		
-		JLabel lblCriterio_3 = new JLabel("Criterio 5: ");
-		lblCriterio_3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCriterio_3.setBounds(433, 544, 103, 22);
-		contentPane.add(lblCriterio_3);
+		JLabel lblCriterio5 = new JLabel("Criterio 5: ");
+		lblCriterio5.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblCriterio5.setBounds(433, 544, 103, 22);
+		contentPane.add(lblCriterio5);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
-		comboBox.setBounds(633, 294, 275, 24);
-		contentPane.add(comboBox);
+		JComboBox comboBoxCriterio1 = new JComboBox();
+		comboBoxCriterio1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBoxCriterio1.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio1.setBounds(633, 294, 275, 24);
+		contentPane.add(comboBoxCriterio1);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
-		comboBox_1.setBounds(633, 358, 275, 24);
-		contentPane.add(comboBox_1);
+		JComboBox comboBoxCriterio2 = new JComboBox();
+		comboBoxCriterio2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBoxCriterio2.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio2.setBounds(633, 358, 275, 24);
+		contentPane.add(comboBoxCriterio2);
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
-		comboBox_2.setBounds(633, 421, 275, 24);
-		contentPane.add(comboBox_2);
+		JComboBox comboBoxCriterio3 = new JComboBox();
+		comboBoxCriterio3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBoxCriterio3.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio3.setBounds(633, 421, 275, 24);
+		contentPane.add(comboBoxCriterio3);
 		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
-		comboBox_3.setBounds(633, 483, 275, 24);
-		contentPane.add(comboBox_3);
+		JComboBox comboBoxCriterio4 = new JComboBox();
+		comboBoxCriterio4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBoxCriterio4.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio4.setBounds(633, 483, 275, 24);
+		contentPane.add(comboBoxCriterio4);
 		
-		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
-		comboBox_4.setBounds(633, 544, 275, 24);
-		contentPane.add(comboBox_4);
+		JComboBox comboBoxCriterio5 = new JComboBox();
+		comboBoxCriterio5.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBoxCriterio5.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificaci\u00F3n actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio5.setBounds(633, 544, 275, 24);
+		contentPane.add(comboBoxCriterio5);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(275, 90, 800, 2);
@@ -129,10 +122,10 @@ public class InterfazCriteriosOrdenamientoEstadoActual extends JFrame {
 				InterfazCriteriosOrdenamientoEstadoActual.this.dispose();
 			}
 		});
+		
 		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnConfirmar.setBounds(1207, 655, 133, 37);
 		contentPane.add(btnConfirmar);
 		
 	}
-
 }

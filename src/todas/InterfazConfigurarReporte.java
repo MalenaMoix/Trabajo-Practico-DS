@@ -1,18 +1,14 @@
 package todas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JSeparator;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
@@ -22,9 +18,6 @@ public class InterfazConfigurarReporte extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,9 +31,7 @@ public class InterfazConfigurarReporte extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public InterfazConfigurarReporte() {
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
@@ -53,19 +44,19 @@ public class InterfazConfigurarReporte extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Configurar reporte");
-		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblNewLabel.setBounds(482, 10, 385, 60);
-		contentPane.add(lblNewLabel);
+		JLabel lblConfigurarReporte = new JLabel("Configurar reporte");
+		lblConfigurarReporte.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblConfigurarReporte.setBounds(482, 10, 385, 60);
+		contentPane.add(lblConfigurarReporte);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(275, 90, 800, 2);
 		contentPane.add(separator);
 		
-		JLabel lblNewLabel_1 = new JLabel("Criterio para agrupar los datos:  ");
-		lblNewLabel_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		lblNewLabel_1.setBounds(360, 200, 223, 27);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblCriterioAgrupar = new JLabel("Criterio para agrupar los datos:  ");
+		lblCriterioAgrupar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		lblCriterioAgrupar.setBounds(360, 200, 223, 27);
+		contentPane.add(lblCriterioAgrupar);
 		
 		JButton button = new JButton("Cancelar");
 		button.addActionListener(new ActionListener() {
@@ -73,48 +64,49 @@ public class InterfazConfigurarReporte extends JFrame {
 				System.exit(0);
 			}
 		});
+		
 		button.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		button.setBounds(1207, 655, 133, 37);
 		contentPane.add(button);
 		
-		JButton btnVerEnForma_1 = new JButton("Ver en forma descendente");
-		btnVerEnForma_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnVerEnForma_1.setBounds(964, 655, 200, 37);
-		contentPane.add(btnVerEnForma_1);
+		JButton btnVerDescendente = new JButton("Ver en forma descendente");
+		btnVerDescendente.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnVerDescendente.setBounds(964, 655, 200, 37);
+		contentPane.add(btnVerDescendente);
 		
-		JButton btnVerEnForma = new JButton("Ver en forma ascendente");
-		btnVerEnForma.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnVerEnForma.setBounds(726, 655, 200, 37);
-		contentPane.add(btnVerEnForma);
+		JButton btnVerAscendente = new JButton("Ver en forma ascendente");
+		btnVerAscendente.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnVerAscendente.setBounds(726, 655, 200, 37);
+		contentPane.add(btnVerAscendente);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Numero de ticket");
-		rdbtnNewRadioButton.setBackground(new Color(230, 230, 250));
-		rdbtnNewRadioButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		rdbtnNewRadioButton.setBounds(700, 271, 256, 20);
-		contentPane.add(rdbtnNewRadioButton);
+		JRadioButton radioButtonNumeroTicket = new JRadioButton("Numero de ticket");
+		radioButtonNumeroTicket.setBackground(new Color(230, 230, 250));
+		radioButtonNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		radioButtonNumeroTicket.setBounds(700, 271, 256, 20);
+		contentPane.add(radioButtonNumeroTicket);
 		
-		JRadioButton rdbtnNmeroDeLegajo = new JRadioButton("Numero de legajo");
-		rdbtnNmeroDeLegajo.setBackground(new Color(230, 230, 250));
-		rdbtnNmeroDeLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		rdbtnNmeroDeLegajo.setBounds(700, 341, 256, 20);
-		contentPane.add(rdbtnNmeroDeLegajo);
+		JRadioButton radioButtonNumeroLegajo = new JRadioButton("Numero de legajo");
+		radioButtonNumeroLegajo.setBackground(new Color(230, 230, 250));
+		radioButtonNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		radioButtonNumeroLegajo.setBounds(700, 341, 256, 20);
+		contentPane.add(radioButtonNumeroLegajo);
 		
-		JRadioButton rdbtnEstadoActualDel = new JRadioButton("Estado actual del ticket");
-		rdbtnEstadoActualDel.setBackground(new Color(230, 230, 250));
-		rdbtnEstadoActualDel.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		rdbtnEstadoActualDel.setBounds(700, 404, 256, 20);
-		contentPane.add(rdbtnEstadoActualDel);
+		JRadioButton radioButtonEstadoActual = new JRadioButton("Estado actual del ticket");
+		radioButtonEstadoActual.setBackground(new Color(230, 230, 250));
+		radioButtonEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		radioButtonEstadoActual.setBounds(700, 404, 256, 20);
+		contentPane.add(radioButtonEstadoActual);
 		
-		JRadioButton rdbtnltimoGrupoDe = new JRadioButton("Ultimo grupo de resolucion");
-		rdbtnltimoGrupoDe.setBackground(new Color(230, 230, 250));
-		rdbtnltimoGrupoDe.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		rdbtnltimoGrupoDe.setBounds(700, 470, 256, 20);
-		contentPane.add(rdbtnltimoGrupoDe);
+		JRadioButton radioButtonUltimoGrupo = new JRadioButton("Ultimo grupo de resolucion");
+		radioButtonUltimoGrupo.setBackground(new Color(230, 230, 250));
+		radioButtonUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		radioButtonUltimoGrupo.setBounds(700, 470, 256, 20);
+		contentPane.add(radioButtonUltimoGrupo);
 		
-		JRadioButton rdbtnClasificacinActualDel = new JRadioButton("Clasificacion actual del ticket");
-		rdbtnClasificacinActualDel.setBackground(new Color(230, 230, 250));
-		rdbtnClasificacinActualDel.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		rdbtnClasificacinActualDel.setBounds(700, 536, 256, 20);
-		contentPane.add(rdbtnClasificacinActualDel);
+		JRadioButton radioButtonClasificacinActual = new JRadioButton("Clasificacion actual del ticket");
+		radioButtonClasificacinActual.setBackground(new Color(230, 230, 250));
+		radioButtonClasificacinActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		radioButtonClasificacinActual.setBounds(700, 536, 256, 20);
+		contentPane.add(radioButtonClasificacinActual);
 	}
 }

@@ -43,10 +43,10 @@ public class HomeGrupoResolucion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblHomeGrupoDe = new JLabel("Home: Grupo de Resoluci\u00F3n");
-		lblHomeGrupoDe.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblHomeGrupoDe.setBounds(401, 20, 546, 54);
-		contentPane.add(lblHomeGrupoDe);
+		JLabel lblHomeGrupo = new JLabel("Home: Grupo de Resoluci\u00F3n");
+		lblHomeGrupo.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblHomeGrupo.setBounds(401, 20, 546, 54);
+		contentPane.add(lblHomeGrupo);
 		
 		JButton btnConsultarIntervenciones = new JButton("Consultar intervenciones");
 		btnConsultarIntervenciones.addActionListener(new ActionListener() {
@@ -61,8 +61,8 @@ public class HomeGrupoResolucion extends JFrame {
 		btnConsultarIntervenciones.setBounds(462, 183, 424, 45);
 		contentPane.add(btnConsultarIntervenciones);
 		
-		JButton btnRegistracionClasificacionDe = new JButton("Registrar clasificaci\u00F3n de ticket");
-		btnRegistracionClasificacionDe.addActionListener(new ActionListener() {
+		JButton btnRegistrarClasificacion = new JButton("Registrar clasificaci\u00F3n de ticket");
+		btnRegistrarClasificacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				InterfazRegistrarClasificacionTicket1 comentario = new InterfazRegistrarClasificacionTicket1();
 				comentario.setVisible(true);
@@ -70,9 +70,9 @@ public class HomeGrupoResolucion extends JFrame {
 			}
 		});
 		
-		btnRegistracionClasificacionDe.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 25));
-		btnRegistracionClasificacionDe.setBounds(462, 304, 424, 45);
-		contentPane.add(btnRegistracionClasificacionDe);
+		btnRegistrarClasificacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 25));
+		btnRegistrarClasificacion.setBounds(462, 304, 424, 45);
+		contentPane.add(btnRegistrarClasificacion);
 		
 		JButton btnBuscarClasificacion = new JButton("Buscar clasificaci\u00F3n");
 		btnBuscarClasificacion.addActionListener(new ActionListener() {

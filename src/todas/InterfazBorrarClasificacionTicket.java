@@ -1,11 +1,9 @@
 package todas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,13 +20,10 @@ import java.awt.event.ActionEvent;
 public class InterfazBorrarClasificacionTicket extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField textFieldEstado;
+	private JTextField textFieldNombre;
+	private JTextField textFieldCodigoNumerico;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -42,9 +37,7 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public InterfazBorrarClasificacionTicket() {
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
@@ -57,20 +50,20 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Borrar clasificaci\u00F3n de ticket");
-		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
-		lblNewLabel.setBounds(396, 20, 558, 54);
-		contentPane.add(lblNewLabel);
+		JLabel lblBorrarClasificacionTicket = new JLabel("Borrar clasificaci\u00F3n de ticket");
+		lblBorrarClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
+		lblBorrarClasificacionTicket.setBounds(396, 20, 558, 54);
+		contentPane.add(lblBorrarClasificacionTicket);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(295, 80, 760, 2);
 		contentPane.add(separator);
 		
-		JLabel lblDatosDeLa = new JLabel("Clasificaci\u00F3n a borrar:");
-		lblDatosDeLa.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblDatosDeLa.setBounds(295, 163, 233, 25);
-		contentPane.add(lblDatosDeLa);
+		JLabel lblClasificacionABorrar = new JLabel("Clasificaci\u00F3n a borrar:");
+		lblClasificacionABorrar.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		lblClasificacionABorrar.setBounds(295, 163, 233, 25);
+		contentPane.add(lblClasificacionABorrar);
 		
 		JLabel lblCodigoNumerico = new JLabel("C\u00F3digo num\u00E9rico:");
 		lblCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
@@ -87,65 +80,65 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		lblEstado.setBounds(450, 375, 203, 31);
 		contentPane.add(lblEstado);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField.setBackground(new Color(220, 220, 220));
-		textField.setEditable(false);
-		textField.setBounds(665, 380, 369, 24);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textFieldEstado = new JTextField();
+		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldEstado.setBackground(new Color(220, 220, 220));
+		textFieldEstado.setEditable(false);
+		textFieldEstado.setBounds(665, 380, 369, 24);
+		contentPane.add(textFieldEstado);
+		textFieldEstado.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField_1.setBackground(new Color(220, 220, 220));
-		textField_1.setEditable(false);
-		textField_1.setColumns(10);
-		textField_1.setBounds(665, 321, 369, 24);
-		contentPane.add(textField_1);
+		textFieldNombre = new JTextField();
+		textFieldNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldNombre.setBackground(new Color(220, 220, 220));
+		textFieldNombre.setEditable(false);
+		textFieldNombre.setColumns(10);
+		textFieldNombre.setBounds(665, 321, 369, 24);
+		contentPane.add(textFieldNombre);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(665, 450, 369, 114);
 		contentPane.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
-		textArea.setBackground(new Color(220, 220, 220));
-		textArea.setEditable(false);
+		JTextArea textAreaDescripcion = new JTextArea();
+		scrollPane.setViewportView(textAreaDescripcion);
+		textAreaDescripcion.setBackground(new Color(220, 220, 220));
+		textAreaDescripcion.setEditable(false);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textField_2.setEditable(false);
-		textField_2.setColumns(10);
-		textField_2.setBackground(new Color(220, 220, 220));
-		textField_2.setBounds(665, 256, 369, 24);
-		contentPane.add(textField_2);
+		textFieldCodigoNumerico = new JTextField();
+		textFieldCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldCodigoNumerico.setEditable(false);
+		textFieldCodigoNumerico.setColumns(10);
+		textFieldCodigoNumerico.setBackground(new Color(220, 220, 220));
+		textFieldCodigoNumerico.setBounds(665, 256, 369, 24);
+		contentPane.add(textFieldCodigoNumerico);
 		
-		JLabel lblDescripcinCompleta = new JLabel("Descripci\u00F3n completa:");
-		lblDescripcinCompleta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblDescripcinCompleta.setBounds(450, 446, 203, 25);
-		contentPane.add(lblDescripcinCompleta);
+		JLabel lblDescripcionCompleta = new JLabel("Descripci\u00F3n completa:");
+		lblDescripcionCompleta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblDescripcionCompleta.setBounds(450, 446, 203, 25);
+		contentPane.add(lblDescripcionCompleta);
 		
-		JButton btnDerivar = new JButton("Confirmar");
-		btnDerivar.addActionListener(new ActionListener() {
+		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null, "No es posible eliminar esta clasificaci�n de ticket ya que fue utilizada anteriormente.");
 				JOptionPane.showMessageDialog(null, "Desea borrar esta clasificaci�n de ticket?");
 			}
 		});
-		btnDerivar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnDerivar.setBounds(1020, 650, 133, 37);
-		contentPane.add(btnDerivar);
 		
-		JButton btnNewButton = new JButton("Cancelar");
-		btnNewButton.addActionListener(new ActionListener() {
+		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnConfirmar.setBounds(1020, 650, 133, 37);
+		contentPane.add(btnConfirmar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
 		});
-		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnNewButton.setBounds(1207, 650, 133, 37);
-		contentPane.add(btnNewButton);
 		
-		
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 650, 133, 37);
+		contentPane.add(btnCancelar);
 	}
 }

@@ -1,8 +1,6 @@
 package todas;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -14,12 +12,9 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Color;
-import java.awt.Window.Type;
 import javax.swing.JSeparator;
-import javax.swing.JProgressBar;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.SystemColor;
 import java.awt.Toolkit;
 
 public class InterfazConsultarIntervenciones extends JFrame {
@@ -86,12 +81,12 @@ public class InterfazConsultarIntervenciones extends JFrame {
 		lblFechaHasta.setBounds(426, 535, 195, 16);
 		contentPane.add(lblFechaHasta);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBox.setForeground(Color.BLACK);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Asignada", "Interrumpida", "Terminada", "Todos"}));
-		comboBox.setBounds(630, 363, 267, 27);
-		contentPane.add(comboBox);
+		JComboBox comboBoxEstado = new JComboBox();
+		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBoxEstado.setForeground(Color.BLACK);
+		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Asignada", "Interrumpida", "Terminada", "Todos"}));
+		comboBoxEstado.setBounds(630, 363, 267, 27);
+		contentPane.add(comboBoxEstado);
 		
 		txtNumeroTicket = new JTextField();
 		txtNumeroTicket.setBounds(630, 182, 270, 27);
@@ -113,20 +108,20 @@ public class InterfazConsultarIntervenciones extends JFrame {
 		contentPane.add(txtFechaHasta);
 		txtFechaHasta.setColumns(10);
 		
-		JLabel fecha1 = new JLabel("* Fecha desde debe ser mayor a fecha hasta.");
-		fecha1.setBackground(new Color(240, 240, 240));
-		fecha1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		fecha1.setForeground(Color.RED);
-		fecha1.setBounds(950, 454, 400, 20);
-		fecha1.setVisible(false);
-		contentPane.add(fecha1);
+		JLabel errorFechaDesde = new JLabel("* Fecha desde debe ser mayor a fecha hasta.");
+		errorFechaDesde.setBackground(new Color(240, 240, 240));
+		errorFechaDesde.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		errorFechaDesde.setForeground(Color.RED);
+		errorFechaDesde.setBounds(950, 454, 400, 20);
+		errorFechaDesde.setVisible(false);
+		contentPane.add(errorFechaDesde);
 		
-		JLabel fecha2 = new JLabel("* Fecha hasta debe ser mayor a la fecha actual.");
-		fecha2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		fecha2.setForeground(Color.RED);
-		fecha2.setBounds(950, 535, 400, 20);
-		fecha2.setVisible(false);
-		contentPane.add(fecha2);
+		JLabel errorFechaHasta = new JLabel("* Fecha hasta debe ser mayor a la fecha actual.");
+		errorFechaHasta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		errorFechaHasta.setForeground(Color.RED);
+		errorFechaHasta.setBounds(950, 535, 400, 20);
+		errorFechaHasta.setVisible(false);
+		contentPane.add(errorFechaHasta);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -141,14 +136,13 @@ public class InterfazConsultarIntervenciones extends JFrame {
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			JOptionPane.showMessageDialog(null, "No existen tickets que cumplan con los criterios ingresados.");
-			
-			InterfazConsultarIntervencionesPaginacion comentario = new InterfazConsultarIntervencionesPaginacion();
-			comentario.setVisible(true);
-			InterfazConsultarIntervenciones.this.dispose();
-			
+				JOptionPane.showMessageDialog(null, "No existen tickets que cumplan con los criterios ingresados.");
+				InterfazConsultarIntervencionesPaginacion comentario = new InterfazConsultarIntervencionesPaginacion();
+				comentario.setVisible(true);
+				InterfazConsultarIntervenciones.this.dispose();
 			}
 		});
+		
 		btnBuscar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnBuscar.setBounds(1020, 650, 133, 37);
 		contentPane.add(btnBuscar);

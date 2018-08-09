@@ -1,9 +1,6 @@
 package todas;
 
-import java.awt.BorderLayout;
-
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -11,12 +8,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
-import java.awt.SystemColor;
 import javax.swing.JSeparator;
 import java.awt.Toolkit;
 
@@ -24,9 +19,6 @@ public class InterfazModificarComentarios extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -40,9 +32,7 @@ public class InterfazModificarComentarios extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public InterfazModificarComentarios() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setTitle("La llamita");
@@ -77,6 +67,7 @@ public class InterfazModificarComentarios extends JFrame {
 				System.exit(0);
 			}
 		});
+		
 		btnCancelar.setBounds(1207, 655, 133, 37);
 		contentPane.add(btnCancelar);
 		
@@ -89,10 +80,9 @@ public class InterfazModificarComentarios extends JFrame {
 		scrollPane.setBounds(460, 202, 600, 280);
 		contentPane.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(220, 220, 220));
-		textArea.setEditable(true);
-		scrollPane.setViewportView(textArea);
+		JTextArea textAreaObservaciones = new JTextArea();
+		textAreaObservaciones.setBackground(new Color(220, 220, 220));
+		textAreaObservaciones.setEditable(true);
+		scrollPane.setViewportView(textAreaObservaciones);
 	}
-
 }
