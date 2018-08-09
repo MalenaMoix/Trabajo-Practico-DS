@@ -1,4 +1,4 @@
-package todas;
+package interfacesGraficas;
 
 import java.awt.Color;
 import java.awt.Dimension;
