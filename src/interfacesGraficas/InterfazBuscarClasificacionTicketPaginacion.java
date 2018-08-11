@@ -23,6 +23,10 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 	private JTextField textFieldNombre;
 	private JTextField textFieldEstado;
 	private JTextField textFieldCantidad;
+	private JTextField txtCodigoNumerico;
+	private JTextField txtParteNombre;
+	private JTextField txtGrupo;
+	private JTextField txtEstado;
 
 	
 	public static void main(String[] args) {
@@ -81,54 +85,33 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		lblEstado.setBounds(334, 529, 183, 31);
 		contentPane.add(lblEstado);
 		
-		JLabel lblCodigoDeArriba = new JLabel("Codigo numerico: ");
+		JLabel lblCodigoDeArriba = new JLabel("-Codigo numerico: ");
 		lblCodigoDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblCodigoDeArriba.setBounds(169, 84, 183, 21);
+		lblCodigoDeArriba.setBounds(132, 84, 156, 21);
 		contentPane.add(lblCodigoDeArriba);
 		
 		
-		JLabel label = new JLabel("-");
-		label.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label.setBounds(153, 90, 8, 8);
-		contentPane.add(label);
-		
-		
-		JLabel lblClasificacionDeTicket = new JLabel("Clasificaci\u00F3n de ticket        de ");
+		JLabel lblClasificacionDeTicket = new JLabel("Clasificacion de ticket        de ");
 		lblClasificacionDeTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
 		lblClasificacionDeTicket.setBounds(489, 228, 285, 22);
 		contentPane.add(lblClasificacionDeTicket);
 		
-		JLabel label_1 = new JLabel("-");
-		label_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_1.setBounds(153, 122, 8, 8);
-		contentPane.add(label_1);
-		
-		JLabel lblParteDelNombre = new JLabel("Parte del nombre: ");
+		JLabel lblParteDelNombre = new JLabel("-Parte del nombre: ");
 		lblParteDelNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblParteDelNombre.setBounds(169, 116, 183, 21);
+		lblParteDelNombre.setBounds(132, 116, 156, 21);
 		contentPane.add(lblParteDelNombre);
 		
-		JLabel label_2 = new JLabel("-");
-		label_2.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_2.setBounds(153, 153, 8, 8);
-		contentPane.add(label_2);
-		
-		JLabel lblGrupoDeResolucion = new JLabel("Grupo de resoluci\u00F3n: ");
+		JLabel lblGrupoDeResolucion = new JLabel("-Grupo de resolucion: ");
 		lblGrupoDeResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblGrupoDeResolucion.setBounds(169, 150, 241, 21);
+		lblGrupoDeResolucion.setBounds(132, 150, 156, 21);
 		contentPane.add(lblGrupoDeResolucion);
 		
-		JLabel label_3 = new JLabel("-");
-		label_3.setFont(new Font("Tahoma", Font.BOLD, 18));
-		label_3.setBounds(153, 187, 8, 8);
-		contentPane.add(label_3);
-		
-		JLabel lblEstadoDeArriba = new JLabel("Estado:");
+		JLabel lblEstadoDeArriba = new JLabel("-Estado:");
 		lblEstadoDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblEstadoDeArriba.setBounds(169, 181, 241, 21);
+		lblEstadoDeArriba.setBounds(132, 181, 156, 21);
 		contentPane.add(lblEstadoDeArriba);
 		
-		JLabel lblDescripcionCompleta = new JLabel("Descripci\u00F3n completa:");
+		JLabel lblDescripcionCompleta = new JLabel("Descripcion completa:");
 		lblDescripcionCompleta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblDescripcionCompleta.setBounds(334, 390, 203, 25);
 		contentPane.add(lblDescripcionCompleta);
@@ -172,6 +155,32 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		textFieldCantidad.setColumns(10);
 		textFieldCantidad.setBounds(761, 229, 61, 22);
 		contentPane.add(textFieldCantidad);
+		textFieldCantidad.setEditable(false);
+		
+		
+		txtCodigoNumerico = new JTextField();
+		txtCodigoNumerico.setBounds(300, 85, 217, 21);
+		contentPane.add(txtCodigoNumerico);
+		txtCodigoNumerico.setColumns(10);
+		txtCodigoNumerico.setEditable(false);
+		
+		txtParteNombre = new JTextField();
+		txtParteNombre.setColumns(10);
+		txtParteNombre.setBounds(300, 117, 217, 21);
+		contentPane.add(txtParteNombre);
+		txtParteNombre.setEditable(false);
+		
+		txtGrupo = new JTextField();
+		txtGrupo.setColumns(10);
+		txtGrupo.setBounds(300, 151, 217, 21);
+		contentPane.add(txtGrupo);
+		txtGrupo.setEditable(false);
+		
+		txtEstado = new JTextField();
+		txtEstado.setColumns(10);
+		txtEstado.setBounds(300, 182, 217, 21);
+		contentPane.add(txtEstado);
+		txtEstado.setEditable(false);
 		
 		
 		
@@ -204,6 +213,7 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JFrame {
 		buttonDerecha.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
 		buttonDerecha.setBounds(906, 226, 42, 25);
 		contentPane.add(buttonDerecha);
+		
 		
 		
 		btnSeleccionar.addActionListener(new ActionListener() {

@@ -23,7 +23,6 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 	private JTextField txtCodigo;
 	private JTextField txtNombre;
 	private JTextField txtEstado;
-	private JTextField txtGrupoResolucion;
 
 
 	public static void main(String[] args) {
@@ -41,6 +40,14 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 
 
 	public InterfazModificarClasificacionTicket() {
+		
+		//NOMBRE EDITABLE SOLO SI LA CLASIFICACION JAMAS FUE USADA
+		//DESCRIPCION EDITABLE POR LOS GRUPOS DE RESOLUCION ASOCIADOS A LA CLASIFICACION
+		
+		//SI EL ESTADO PASA DE ACTIVO A INACTIVO ADVERTIR QUE LA CLASIFICACION NO ESTARA DISPONIBLE PARA USARSE EN ADELANTE
+		//SI VICEVERSA, LO CONTRARIO
+		
+		
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setTitle("La llamita");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,6 +73,16 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		textAreaDescripcion.setBackground(new Color(220, 220, 220));
 		textAreaDescripcion.setEditable(true);
 		scrollPane.setViewportView(textAreaDescripcion);
+		
+		
+		JScrollPane scrollPane2 = new JScrollPane();
+		scrollPane2.setBounds(615, 500, 292, 95);
+		contentPane.add(scrollPane2);
+		
+		JTextArea txtListaGrupos = new JTextArea();
+		txtListaGrupos.setBackground(new Color(220, 220, 220));
+		txtListaGrupos.setEditable(true);
+		scrollPane2.setViewportView(txtListaGrupos);
 		
 		
 		
@@ -128,7 +145,7 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		errorGrupo.setVisible(false);
 		contentPane.add(errorGrupo);
 		
-		JLabel errorGrupo2 = new JLabel("* Este campo no puede estar vacío.");
+		JLabel errorGrupo2 = new JLabel("* Este campo no puede estar vacio.");
 		errorGrupo2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		errorGrupo2.setForeground(Color.RED);
 		errorGrupo2.setBounds(940, 499, 400, 20);
@@ -149,6 +166,7 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		txtCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		txtCodigo.setBounds(615, 174, 292, 24);
 		contentPane.add(txtCodigo);
+		txtCodigo.setEditable(false);
 		txtCodigo.setColumns(10);
 		
 		txtNombre = new JTextField();
@@ -162,12 +180,6 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		txtEstado.setBounds(615, 437, 292, 24);
 		contentPane.add(txtEstado);
 		txtEstado.setColumns(10);
-		
-		txtGrupoResolucion = new JTextField();
-		txtGrupoResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		txtGrupoResolucion.setBounds(615, 500, 292, 24);
-		contentPane.add(txtGrupoResolucion);
-		txtGrupoResolucion.setColumns(10);
 		
 		
 		
@@ -183,7 +195,24 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Desea guardar los cambios realizados?");
+				
+				if (txtNombre.getText().isEmpty()) {
+					errorNombre.setVisible(true);
+				}
+				else if (textAreaDescripcion.getText().isEmpty()) {
+					errorDescripcionVacio.setVisible(true);
+				}
+				else if (txtListaGrupos.getText().isEmpty()) {
+					errorGrupo2.setVisible(true);
+				}
+				else {
+					int dialogButton = JOptionPane.YES_NO_OPTION;
+					//INFORMAR ADEMAS SI CAMBIA EL ESTADO
+					int dialogResult = JOptionPane.showConfirmDialog (null, "Desea guardar los cambios realizados?","Warning",dialogButton);
+					if(dialogResult == JOptionPane.YES_OPTION){
+					  //PASA ALGO
+					}
+				}
 			}
 		});
 

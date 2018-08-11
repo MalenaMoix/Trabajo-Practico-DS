@@ -27,7 +27,12 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 	private JTextField txtEstadoIntervencion;
 	private JTextField txtGrupoResolucion;
 	private JTextField txtNumeroPagina;
-	private JTextField textFieldCantidad;
+	private JTextField txtCantidad;
+	private JTextField textFieldNumeroTicket;
+	private JTextField textFieldEstado;
+	private JTextField textFieldNumeroLegajo;
+	private JTextField textFieldFechaDesde;
+	private JTextField textFieldFechaHasta;
 
 
 	public static void main(String[] args) {
@@ -64,7 +69,7 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 		
 		JTextArea textAreaObservaciones = new JTextArea();
 		textAreaObservaciones.setBackground(new Color(220, 220, 220));
-		textAreaObservaciones.setEditable(true);
+		textAreaObservaciones.setEditable(false);
 		scrollPane.setViewportView(textAreaObservaciones);
 		
 		
@@ -121,22 +126,22 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 		
 		JLabel lblClasificacionDeTicket = new JLabel("Clasificacion de ticket        de ");
 		lblClasificacionDeTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
-		lblClasificacionDeTicket.setBounds(532, 200, 285, 22);
+		lblClasificacionDeTicket.setBounds(532, 200, 271, 22);
 		contentPane.add(lblClasificacionDeTicket);
 		
 		JLabel lblNumeroTicketDeArriba = new JLabel("-Numero ticket:");
 		lblNumeroTicketDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNumeroTicketDeArriba.setBounds(169, 92, 183, 21);
+		lblNumeroTicketDeArriba.setBounds(169, 92, 116, 21);
 		contentPane.add(lblNumeroTicketDeArriba);
 		
 		JLabel lblNumeroLegajoDeArriba = new JLabel("-Numero legajo:");
 		lblNumeroLegajoDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNumeroLegajoDeArriba.setBounds(169, 160, 241, 21);
+		lblNumeroLegajoDeArriba.setBounds(169, 160, 116, 21);
 		contentPane.add(lblNumeroLegajoDeArriba);
 		
 		JLabel lblEstadoDearriba = new JLabel("-Estado:");
 		lblEstadoDearriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblEstadoDearriba.setBounds(169, 126, 241, 21);
+		lblEstadoDearriba.setBounds(169, 126, 116, 21);
 		contentPane.add(lblEstadoDearriba);
 		
 		JLabel lblfechaDesdeDeArriba = new JLabel("-Fecha desde:");
@@ -156,48 +161,56 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 		txtNumeroTicket.setBounds(436, 264, 202, 22);
 		contentPane.add(txtNumeroTicket);
 		txtNumeroTicket.setColumns(10);
+		txtNumeroTicket.setEditable(false);
 		
 		txtNumeroLegajo = new JTextField();
 		txtNumeroLegajo.setBackground(new Color(220, 220, 220));
 		txtNumeroLegajo.setBounds(436, 313, 202, 22);
 		contentPane.add(txtNumeroLegajo);
 		txtNumeroLegajo.setColumns(10);
+		txtNumeroLegajo.setEditable(false);
 		
 		txtFechaApertura = new JTextField();
 		txtFechaApertura.setBackground(new Color(220, 220, 220));
 		txtFechaApertura.setBounds(436, 459, 202, 22);
 		contentPane.add(txtFechaApertura);
 		txtFechaApertura.setColumns(10);
+		txtFechaApertura.setEditable(false);
 		
 		txtClasificacion = new JTextField();
 		txtClasificacion.setBackground(new Color(220, 220, 220));
 		txtClasificacion.setBounds(436, 361, 202, 22);
 		contentPane.add(txtClasificacion);
 		txtClasificacion.setColumns(10);
+		txtClasificacion.setEditable(false);
 		
 		txtEstadoTicket = new JTextField();
 		txtEstadoTicket.setBackground(new Color(220, 220, 220));
 		txtEstadoTicket.setBounds(436, 410, 202, 22);
 		contentPane.add(txtEstadoTicket);
 		txtEstadoTicket.setColumns(10);
+		txtEstadoTicket.setEditable(false);
 		
 		txtFechaAsignacion = new JTextField();
 		txtFechaAsignacion.setBackground(new Color(220, 220, 220));
 		txtFechaAsignacion.setBounds(977, 264, 202, 22);
 		contentPane.add(txtFechaAsignacion);
 		txtFechaAsignacion.setColumns(10);
+		txtFechaAsignacion.setEditable(false);
 		
 		txtEstadoIntervencion = new JTextField();
 		txtEstadoIntervencion.setBackground(new Color(220, 220, 220));
 		txtEstadoIntervencion.setBounds(976, 313, 202, 22);
 		contentPane.add(txtEstadoIntervencion);
 		txtEstadoIntervencion.setColumns(10);
+		txtEstadoIntervencion.setEditable(false);
 		
 		txtGrupoResolucion = new JTextField();
 		txtGrupoResolucion.setBackground(new Color(220, 220, 220));
 		txtGrupoResolucion.setBounds(976, 361, 202, 22);
 		contentPane.add(txtGrupoResolucion);
 		txtGrupoResolucion.setColumns(10);
+		txtGrupoResolucion.setEditable(false);
 		
 		txtNumeroPagina = new JTextField();
 		txtNumeroPagina.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
@@ -205,10 +218,48 @@ public class InterfazConsultarIntervencionesPaginacion extends JFrame {
 		contentPane.add(txtNumeroPagina);
 		txtNumeroPagina.setColumns(10);
 		
-		textFieldCantidad = new JTextField();
-		textFieldCantidad.setBounds(803, 203, 57, 22);
-		contentPane.add(textFieldCantidad);
-		textFieldCantidad.setColumns(10);
+		txtCantidad = new JTextField();
+		txtCantidad.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		txtCantidad.setBounds(803, 203, 57, 22);
+		contentPane.add(txtCantidad);
+		txtCantidad.setColumns(10);
+		txtCantidad.setEditable(false);
+		
+		
+		textFieldNumeroTicket = new JTextField();
+		textFieldNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldNumeroTicket.setBounds(297, 92, 130, 21);
+		contentPane.add(textFieldNumeroTicket);
+		textFieldNumeroTicket.setColumns(10);
+		textFieldNumeroTicket.setEditable(false);
+		
+		textFieldEstado = new JTextField();
+		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldEstado.setColumns(10);
+		textFieldEstado.setBounds(297, 126, 130, 21);
+		contentPane.add(textFieldEstado);
+		textFieldEstado.setEditable(false);
+		
+		textFieldNumeroLegajo = new JTextField();
+		textFieldNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldNumeroLegajo.setColumns(10);
+		textFieldNumeroLegajo.setBounds(297, 160, 130, 21);
+		contentPane.add(textFieldNumeroLegajo);
+		textFieldNumeroLegajo.setEditable(false);
+		
+		textFieldFechaDesde = new JTextField();
+		textFieldFechaDesde.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldFechaDesde.setColumns(10);
+		textFieldFechaDesde.setBounds(616, 92, 116, 21);
+		contentPane.add(textFieldFechaDesde);
+		textFieldFechaDesde.setEditable(false);
+		
+		textFieldFechaHasta = new JTextField();
+		textFieldFechaHasta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldFechaHasta.setColumns(10);
+		textFieldFechaHasta.setBounds(616, 126, 116, 21);
+		contentPane.add(textFieldFechaHasta);
+		textFieldFechaHasta.setEditable(false);
 		
 		
 		

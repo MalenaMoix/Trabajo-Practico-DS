@@ -24,6 +24,8 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 	private JTextField textFieldNombre;
 	private JTextField textFieldEstado;
 	private JTable table_1;
+	private JTextField txtCantidad;
+	private JTextField txtCantidadTotal;
 
 
 	public static void main(String[] args) {
@@ -100,22 +102,12 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 		
 		JLabel lblCantidadTotalTickets = new JLabel("Cantidad total de tickets:");
 		lblCantidadTotalTickets.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCantidadTotalTickets.setBounds(103, 277, 230, 25);
+		lblCantidadTotalTickets.setBounds(103, 277, 209, 25);
 		contentPane.add(lblCantidadTotalTickets);
-		
-		JLabel lblCantidadTickets2 = new JLabel("3");
-		lblCantidadTickets2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCantidadTickets2.setBounds(330, 241, 230, 25);
-		contentPane.add(lblCantidadTickets2);
-		
-		JLabel lblCantidadTotal2 = new JLabel("15");
-		lblCantidadTotal2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCantidadTotal2.setBounds(305, 277, 230, 25);
-		contentPane.add(lblCantidadTotal2);
 		
 		JLabel lblListaTickets = new JLabel("Lista de tickets actualmente derivados al Actor:");
 		lblListaTickets.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblListaTickets.setBounds(103, 316, 482, 25);
+		lblListaTickets.setBounds(103, 316, 385, 25);
 		contentPane.add(lblListaTickets);
 		
 		
@@ -174,7 +166,7 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 				{null, null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"Ticket", "Legajo", "Apellido y Nombre", "Telefono Interno", "Telefono Directo", "Fecha de derivacion", "Hora de derivacion", "Estado de la intervencion"
+				"Ticket", "Legajo", "Apellido y Nombre", "Telefono Interno", "Telefono Directo", "Fecha derivacion", "Hora derivacion", "Estado intervencion"
 			}
 		));
 		
@@ -183,6 +175,20 @@ public class InterfazClasificacionTicketSeleccionada extends JFrame {
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCancelar.setBounds(1207, 650, 133, 37);
 		contentPane.add(btnCancelar);
+		
+		txtCantidad = new JTextField();
+		txtCantidad.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtCantidad.setBounds(345, 245, 81, 22);
+		contentPane.add(txtCantidad);
+		txtCantidad.setColumns(10);
+		txtCantidad.setEditable(false);
+		
+		txtCantidadTotal = new JTextField();
+		txtCantidadTotal.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtCantidadTotal.setColumns(10);
+		txtCantidadTotal.setBounds(345, 281, 81, 22);
+		contentPane.add(txtCantidadTotal);
+		txtCantidadTotal.setEditable(false);
 		
 		
 		btnCancelar.addActionListener(new ActionListener() {

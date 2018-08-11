@@ -33,6 +33,9 @@ public class InterfazDerivarTicket1 extends JFrame {
 
 
 	public InterfazDerivarTicket1() {
+		
+		//LA LISTA DE GRUPO RESOLUCION DEPENDE DE LA CLASIFICACION DEL PROBLEMA
+		
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

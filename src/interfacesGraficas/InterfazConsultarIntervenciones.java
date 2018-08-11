@@ -40,6 +40,11 @@ public class InterfazConsultarIntervenciones extends JFrame {
 
 	
 	public InterfazConsultarIntervenciones() {
+		
+		//ACTOR : GRUPO DE RESOLUCION
+		//PUEDE NO INGRESAR NINGUN CRITERIO
+		//UN GRUPO DE RESOLUCION SOLO PUEDE MODIFICAR EL ESTADO DE UNA INTERVENCION ASIGNADA A EL
+		
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setTitle("La llamita");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

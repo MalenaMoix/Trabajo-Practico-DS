@@ -64,6 +64,14 @@ public class InterfazRegistrarTicket2 extends JFrame {
 		textAreaObservaciones.setLineWrap(true);
 		
 		
+		JLabel errorObsVacio = new JLabel("Este campo no puede estar vacio.");
+		errorObsVacio.setForeground(Color.RED);
+		errorObsVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		errorObsVacio.setBounds(1039, 253, 219, 24);
+		contentPane.add(errorObsVacio);
+		errorObsVacio.setVisible(false);
+		
+		
 		JLabel lblRegistrarTicket = new JLabel("Registrar ticket");
 		lblRegistrarTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblRegistrarTicket.setBounds(532, 20, 298, 54);
@@ -116,18 +124,30 @@ public class InterfazRegistrarTicket2 extends JFrame {
 		
 		btnDerivarTicket.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InterfazDerivarTicket1 derivoticket = new InterfazDerivarTicket1();
-				derivoticket.setVisible(true);
-				InterfazRegistrarTicket2.this.dispose();
+				
+				if (textAreaObservaciones.getText().isEmpty()) {
+					errorObsVacio.setVisible(true);
+				}
+				else {
+					InterfazDerivarTicket1 derivoticket = new InterfazDerivarTicket1();
+					derivoticket.setVisible(true);
+					InterfazRegistrarTicket2.this.dispose();
+				}
 			}
 		});
 		
 
 		btnCerrarTicket.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				InterfazCerrarTicket cierroticket = new InterfazCerrarTicket();
-				cierroticket.setVisible(true);
-				InterfazRegistrarTicket2.this.dispose();
+				
+				if (textAreaObservaciones.getText().isEmpty()) {
+					errorObsVacio.setVisible(true);
+				}
+				else {
+					InterfazCerrarTicket cierroticket = new InterfazCerrarTicket();
+					cierroticket.setVisible(true);
+					InterfazRegistrarTicket2.this.dispose();
+				}
 			}
 		});
 	}

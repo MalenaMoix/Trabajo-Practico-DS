@@ -39,6 +39,11 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 
 
 	public InterfazBorrarClasificacionTicket() {
+		
+		//ACTOR : GRUPO DE RESOLUCION
+		//VALIDAR QUE LA CLASIFICACION NUNCA FUE USADA
+		
+		
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -144,10 +149,10 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 				JOptionPane.showMessageDialog(null, "No es posible eliminar esta clasificacion de ticket ya que fue utilizada anteriormente.");
 				
 				int dialogButton = JOptionPane.YES_NO_OPTION;
-			    JOptionPane.showConfirmDialog (null, "Desea borrar esta clasificacion de ticket?","Warning",dialogButton);
-			    if (dialogButton == JOptionPane.YES_OPTION) {
-			    	//Pasa algo
-			    }
+				int dialogResult = JOptionPane.showConfirmDialog (null, "Desea borrar esta clasificacion de ticket?","Warning",dialogButton);
+				if(dialogResult == JOptionPane.YES_OPTION){
+				  //PASA ALGO
+				}
 			}
 		});
 		

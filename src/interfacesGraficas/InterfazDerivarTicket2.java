@@ -44,6 +44,10 @@ public class InterfazDerivarTicket2 extends JFrame {
 
 	
 	public InterfazDerivarTicket2() {
+		
+		//SI EL GRUPO AL CUAL SE ESTA DERIVANDO EL TICKET TIENE UNA INTERVENCION EN ESPERA
+		//SE LLEVA A CABO UNA REASIGNACION DE DICHA INTERVENCION (NO SE CREA UNA NUEVA)
+		
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -117,7 +121,7 @@ public class InterfazDerivarTicket2 extends JFrame {
 		contentPane.add(lblObservaciones);
 		
 		
-		JLabel errorGrupo = new JLabel("* Debes seleccionar una opcion.");
+		JLabel errorGrupo = new JLabel("* Debe seleccionar una opcion.");
 		errorGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 13));
 		errorGrupo.setForeground(Color.RED);
 		errorGrupo.setBounds(970, 447, 400, 20);
@@ -167,7 +171,7 @@ public class InterfazDerivarTicket2 extends JFrame {
 		txtNuevoEstado.setEditable(false);
 		txtNuevoEstado.setBackground(new Color(220, 220, 220));
 		txtNuevoEstado.setBounds(692, 345, 252, 22);
-		txtNuevoEstado.setEditable(false);
+		txtNuevoEstado.setText("Abierto derivado");
 		txtNuevoEstado.setBorder(new LineBorder(Color.gray));
 		contentPane.add(txtNuevoEstado);
 		txtNuevoEstado.setColumns(10);
@@ -175,14 +179,16 @@ public class InterfazDerivarTicket2 extends JFrame {
 
 		
 		JComboBox comboBoxGrupo = new JComboBox();
-		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electr\u00F3nico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio t\u00E9cnico", "Unidades de soporte"}));
+		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"}));
 		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxGrupo.setBounds(692, 445, 252, 22);
 		contentPane.add(comboBoxGrupo);
 		
+		
+		//SE DEBE MOSTRAR LA ACTUAL POR DEFECTO
 		JComboBox comboBoxClasificacion = new JComboBox();
 		comboBoxClasificacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxClasificacion.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Configuraci\u00F3n de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
+		comboBoxClasificacion.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificacion en los perfiles de usuarios", "Problemas con el correo electronico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticacion", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicacion o sistema", "Otros"}));
 		comboBoxClasificacion.setBounds(692, 393, 252, 22);
 		contentPane.add(comboBoxClasificacion);
 		
@@ -202,11 +208,12 @@ public class InterfazDerivarTicket2 extends JFrame {
 		btnDerivar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (txtAreaObservaciones.getText().isEmpty()) {
-					errorObsVacio.setVisible(true);;
+					errorObsVacio.setVisible(true);
 				}
 				if(comboBoxGrupo.getSelectedIndex() == 0) {
-					errorGrupo.setVisible(true);;
+					errorGrupo.setVisible(true);
 				}
+				
 				
 			}
 		});	

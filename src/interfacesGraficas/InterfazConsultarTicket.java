@@ -1,24 +1,17 @@
 package interfacesGraficas;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
@@ -49,6 +42,9 @@ public class InterfazConsultarTicket extends JFrame {
 
 
 	public InterfazConsultarTicket() {
+		
+		//OPCIONES DE BUSQUEDA NO EXCLUYENTES
+		
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Usuario\\Desktop\\Diseño de Sistemas\\cool-flame-icon.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -181,18 +177,21 @@ public class InterfazConsultarTicket extends JFrame {
 		
 		
 		JComboBox comboBoxClasificacionActual = new JComboBox();
+		comboBoxClasificacionActual.setModel(new DefaultComboBoxModel(new String[] {"Todas", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
 		comboBoxClasificacionActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxClasificacionActual.setEditable(true);
 		comboBoxClasificacionActual.setBounds(611, 129, 230, 20);
 		contentPane.add(comboBoxClasificacionActual);
 		
 		JComboBox comboBoxEstadoActual = new JComboBox();
+		comboBoxEstadoActual.setModel(new DefaultComboBoxModel(new String[] {"Abierto en Mesa de Ayuda", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK", "Todos"}));
 		comboBoxEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxEstadoActual.setEditable(true);
 		comboBoxEstadoActual.setBounds(611, 156, 230, 20);
 		contentPane.add(comboBoxEstadoActual);
 		
 		JComboBox comboBoxUltimoGrupo = new JComboBox();
+		comboBoxUltimoGrupo.setModel(new DefaultComboBoxModel(new String[] {"Todos", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electr\u00F3nico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio t\u00E9cnico", "Unidades de soporte"}));
 		comboBoxUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxUltimoGrupo.setEditable(true);
 		comboBoxUltimoGrupo.setBounds(1135, 129, 185, 20);
@@ -213,7 +212,7 @@ public class InterfazConsultarTicket extends JFrame {
 		contentPane.add(comboBoxMesCambio);
 		
 		JComboBox comboBoxAnioCambio = new JComboBox();
-		comboBoxAnioCambio.setModel(new DefaultComboBoxModel(new String[] {"AAAA"}));
+		comboBoxAnioCambio.setModel(new DefaultComboBoxModel(new String[] {"AAAA", "2018"}));
 		comboBoxAnioCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxAnioCambio.setEditable(true);
 		comboBoxAnioCambio.setBounds(1258, 155, 62, 22);
@@ -235,7 +234,7 @@ public class InterfazConsultarTicket extends JFrame {
 		
 		JComboBox comboBoxAnioApertura = new JComboBox();
 		comboBoxAnioApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxAnioApertura.setModel(new DefaultComboBoxModel(new String[] {"AAAA"}));
+		comboBoxAnioApertura.setModel(new DefaultComboBoxModel(new String[] {"AAAA", "2018"}));
 		comboBoxAnioApertura.setEditable(true);
 		comboBoxAnioApertura.setBounds(313, 179, 62, 22);
 		contentPane.add(comboBoxAnioApertura);
@@ -294,6 +293,8 @@ public class InterfazConsultarTicket extends JFrame {
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null, "No existen tickets que cumplan con los criterios ingresados.");
+				JOptionPane.showMessageDialog(null, "Fecha de apertura invalida. Vuelva a ingresarla.");
+				JOptionPane.showMessageDialog(null, "Fecha ultimo cambio de estado invalida. Vuelva a ingresarla.");
 			}
 		});
 		

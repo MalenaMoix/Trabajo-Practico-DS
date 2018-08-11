@@ -105,29 +105,33 @@ public class InterfazRegistrarTicket1 extends JFrame {
 		lblRegistrarTicket.setBounds(526, 20, 298, 59);
 		contentPane.add(lblRegistrarTicket);
 		
-		JLabel lblNewLabel = new JLabel("* Este campo no puede estar vacio.");
-		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		lblNewLabel.setBounds(988, 253, 219, 24);
-		contentPane.add(lblNewLabel);
+		JLabel errorLegajoVacio = new JLabel("* Este campo no puede estar vacio.");
+		errorLegajoVacio.setForeground(Color.RED);
+		errorLegajoVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		errorLegajoVacio.setBounds(988, 253, 219, 24);
+		contentPane.add(errorLegajoVacio);
+		errorLegajoVacio.setVisible(false);
 		
 		JLabel errorDescripcionVacio = new JLabel("* Este campo no puede estar vacio.");
 		errorDescripcionVacio.setForeground(Color.RED);
 		errorDescripcionVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		errorDescripcionVacio.setBounds(988, 308, 219, 24);
 		contentPane.add(errorDescripcionVacio);
+		errorDescripcionVacio.setVisible(false);
 		
 		JLabel errorDebeElegir = new JLabel("* Debe elegir una opcion.");
 		errorDebeElegir.setForeground(Color.RED);
 		errorDebeElegir.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		errorDebeElegir.setBounds(988, 605, 219, 24);
 		contentPane.add(errorDebeElegir);
+		errorDebeElegir.setVisible(false);
 		
-		JLabel lblEsteNumero = new JLabel("* Este numero de legajo no se encuentra en el sistema.");
-		lblEsteNumero.setForeground(Color.RED);
-		lblEsteNumero.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		lblEsteNumero.setBounds(988, 253, 339, 24);
-		contentPane.add(lblEsteNumero);
+		JLabel errorLegajoExistente = new JLabel("* Este numero de legajo no se encuentra en el sistema.");
+		errorLegajoExistente.setForeground(Color.RED);
+		errorLegajoExistente.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		errorLegajoExistente.setBounds(988, 253, 339, 24);
+		contentPane.add(errorLegajoExistente);
+		errorLegajoExistente.setVisible(false);
 		
 		
 		
@@ -137,6 +141,7 @@ public class InterfazRegistrarTicket1 extends JFrame {
 		txtFechaApertura.setBounds(611, 174, 365, 24);
 		contentPane.add(txtFechaApertura);
 		txtFechaApertura.setColumns(10);
+		txtFechaApertura.setEditable(false);
 		
 		txtHoraApertura = new JTextField();
 		txtHoraApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -144,6 +149,7 @@ public class InterfazRegistrarTicket1 extends JFrame {
 		txtHoraApertura.setColumns(10);
 		txtHoraApertura.setBounds(611, 215, 365, 24);
 		contentPane.add(txtHoraApertura);
+		txtHoraApertura.setEditable(false);
 		
 		txtNumeroTicket = new JTextField();
 		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -162,7 +168,7 @@ public class InterfazRegistrarTicket1 extends JFrame {
 		
 		JComboBox comboBoxClasificacionTicket = new JComboBox();
 		comboBoxClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxClasificacionTicket.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opci\u00F3n...", "Configuraci\u00F3n de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
+		comboBoxClasificacionTicket.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
 		comboBoxClasificacionTicket.setBounds(611, 605, 365, 24);
 		contentPane.add(comboBoxClasificacionTicket);
 		
@@ -183,19 +189,34 @@ public class InterfazRegistrarTicket1 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				int dialogButton = JOptionPane.YES_NO_OPTION;
-			    JOptionPane.showConfirmDialog (null, "¿Desea cancelar el registro de este ticket? No se guardaran los cambios realizados.","Warning",dialogButton);
-			    if (dialogButton == JOptionPane.YES_OPTION) {
-			    	//Pasa algo
-			    }
+				int dialogResult = JOptionPane.showConfirmDialog (null, "Desea cancelar el registro del ticket? Los cambios no seran guardados.","Warning",dialogButton);
+				if(dialogResult == JOptionPane.YES_OPTION){
+				  HomeMesaAyuda mesa = new HomeMesaAyuda();
+				  mesa.setVisible(true);
+				  InterfazRegistrarTicket1.this.dispose();
+				}
+				
 			}
 		});
 		
 		
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				InterfazRegistrarTicket2 observaciones = new InterfazRegistrarTicket2();
-				observaciones.setVisible(true);
-				InterfazRegistrarTicket1.this.dispose();
+				
+				if (txtNumeroLegajo.getText().isEmpty()) {
+					errorLegajoVacio.setVisible(true);
+				}
+				else if (textAreaDescripcion.getText().isEmpty()) {
+					errorDescripcionVacio.setVisible(true);
+				}
+				else if (comboBoxClasificacionTicket.getSelectedIndex()==0) {
+					errorDebeElegir.setVisible(true);
+				}
+				else {
+					InterfazRegistrarTicket2 observaciones = new InterfazRegistrarTicket2();
+					observaciones.setVisible(true);
+					InterfazRegistrarTicket1.this.dispose();
+				}
 			}
 		});
 	}

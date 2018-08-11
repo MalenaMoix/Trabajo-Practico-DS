@@ -34,6 +34,11 @@ public class InterfazModificarComentarios extends JFrame {
 
 
 	public InterfazModificarComentarios() {
+		
+		//ACTOR : GRUPO DE RESOLUCION
+		//INGRESA INFO ADICIONAL O MODIFICA LO QUE YA ESTABA
+		
+		
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setTitle("La llamita");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

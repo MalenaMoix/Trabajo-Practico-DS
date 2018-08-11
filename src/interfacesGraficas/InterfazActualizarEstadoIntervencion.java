@@ -38,6 +38,14 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 
 
 	public InterfazActualizarEstadoIntervencion() {
+		
+		//ACTOR : GRUPO DE RESOLUCION
+		
+		//CLASIFICACION ACTUAL DEL TICKET POR DEFECTO
+		
+		//CUANDO EL GRUPO DE RESOLUCION RECIBE UNA ASIGNACION DEBE INGRESAR EN EL SISTEMA CUANDO COMIENZA
+		//A TRABAJAR EN LA MISMA
+		
 
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setTitle("La llamita");
@@ -79,7 +87,7 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 		
 		JTextArea textAreaDescripcion = new JTextArea();
 		textAreaDescripcion.setBackground(new Color(220, 220, 220));
-		textAreaDescripcion.setEditable(true);
+		textAreaDescripcion.setEditable(false);
 		scrollPane.setViewportView(textAreaDescripcion);
 		
 		
@@ -124,6 +132,9 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 		txtEstadoActual.setBounds(666, 166, 266, 25);
 		contentPane.add(txtEstadoActual);
 		txtEstadoActual.setColumns(10);
+		txtEstadoActual.setEditable(false);
+		
+		
 		
 		JComboBox comboBoxNuevoEstado = new JComboBox();
 		comboBoxNuevoEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
@@ -138,18 +149,19 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 		contentPane.add(comboBoxClasificacion);
 		
 		
-		JLabel errorGrupoVacio = new JLabel("* Este campo no puede estar vac\u00EDo.");
-		errorGrupoVacio.setBackground(new Color(240, 240, 240));
-		errorGrupoVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		errorGrupoVacio.setForeground(Color.RED);
-		errorGrupoVacio.setBounds(970, 346, 400, 20);
-		errorGrupoVacio.setVisible(false);
-		contentPane.add(errorGrupoVacio);
+		JLabel errorEstadoVacio = new JLabel("* Debe seleccionar una opcion.");
+		errorEstadoVacio.setBackground(new Color(240, 240, 240));
+		errorEstadoVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		errorEstadoVacio.setForeground(Color.RED);
+		errorEstadoVacio.setBounds(970, 346, 400, 20);
+		errorEstadoVacio.setVisible(false);
+		contentPane.add(errorEstadoVacio);
 		
 		JLabel errorObservacionesVacio = new JLabel("* Este campo no puede estar vacio.");
 		errorObservacionesVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		errorObservacionesVacio.setForeground(Color.RED);
 		errorObservacionesVacio.setBounds(970, 500, 400, 20);
+		errorObservacionesVacio.setVisible(false);
 		contentPane.add(errorObservacionesVacio);
 		
 		
@@ -158,7 +170,7 @@ public class InterfazActualizarEstadoIntervencion extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (comboBoxNuevoEstado.getSelectedIndex() == 0){
-					errorGrupoVacio.setVisible(true);
+					errorEstadoVacio.setVisible(true);
 				}
 				
 				if (textAreaObservaciones.getText().isEmpty()) {

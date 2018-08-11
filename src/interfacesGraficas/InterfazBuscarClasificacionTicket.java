@@ -114,14 +114,14 @@ public class InterfazBuscarClasificacionTicket extends JFrame {
 		
 		JComboBox comboBoxGrupo = new JComboBox();
 		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"}));
-		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxGrupo.setBounds(696, 481, 296, 24);
+		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBoxGrupo.setBounds(696, 481, 296, 25);
 		contentPane.add(comboBoxGrupo);
 		
 		JComboBox comboBoxEstado = new JComboBox();
-		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK"}));
-		comboBoxEstado.setBounds(696, 550, 296, 24);
+		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK", "TODOS"}));
+		comboBoxEstado.setBounds(696, 550, 296, 25);
 		contentPane.add(comboBoxEstado);
 		
 		

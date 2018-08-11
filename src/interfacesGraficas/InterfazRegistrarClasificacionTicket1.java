@@ -17,6 +17,8 @@ import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JList;
+import javax.swing.AbstractListModel;
 
 public class InterfazRegistrarClasificacionTicket1 extends JFrame {
 
@@ -41,6 +43,14 @@ public class InterfazRegistrarClasificacionTicket1 extends JFrame {
 
 	public InterfazRegistrarClasificacionTicket1() {
 		
+		//ACTOR : GRUPO DE RESOLUCION
+		
+		//NOMBRE MAXIMO 30 CARACTERES
+		
+		//PUEDE ELEGIR MAS DE UN GRUPO
+		//LISTA DE GRUPOS DE RESOLUCION
+		
+		
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,13 +70,13 @@ public class InterfazRegistrarClasificacionTicket1 extends JFrame {
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(612, 253, 327, 139);
+		scrollPane.setBounds(612, 174, 327, 139);
 		contentPane.add(scrollPane);
 		
 		JTextArea textAreaDescripcion = new JTextArea();
-		textAreaDescripcion.setBounds(612, 253, 327, 139);
+		textAreaDescripcion.setBounds(612, 212, 327, 139);
 		scrollPane.setViewportView(textAreaDescripcion);
-		contentPane.add(textAreaDescripcion);
+		//contentPane.add(textAreaDescripcion);
 		
 		
 		
@@ -77,59 +87,54 @@ public class InterfazRegistrarClasificacionTicket1 extends JFrame {
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblNombre.setBounds(407, 157, 193, 31);
+		lblNombre.setBounds(407, 129, 193, 31);
 		contentPane.add(lblNombre);
 		
-		JLabel errorGrupo = new JLabel("* Debe seleccionar una opcion.");
+		JLabel errorGrupo = new JLabel("* Debe seleccionar al menos una opcion.");
 		errorGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		errorGrupo.setForeground(Color.RED);
-		errorGrupo.setBounds(990, 467, 400, 20);
+		errorGrupo.setBounds(990, 335, 273, 20);
 		errorGrupo.setVisible(false);
 		contentPane.add(errorGrupo);
 		
 		JLabel errorDescripcionVacio = new JLabel("* Este campo no puede estar vacio.");
 		errorDescripcionVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		errorDescripcionVacio.setForeground(Color.RED);
-		errorDescripcionVacio.setBounds(990, 254, 400, 20);
+		errorDescripcionVacio.setBounds(990, 175, 254, 20);
 		errorDescripcionVacio.setVisible(false);
 		contentPane.add(errorDescripcionVacio);
 		
-		JLabel lblNewLabel_1 = new JLabel("* Este campo no puede estar vacio.");
-		lblNewLabel_1.setForeground(new Color(255, 0, 0));
-		lblNewLabel_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		lblNewLabel_1.setBounds(990, 164, 225, 20);
-		contentPane.add(lblNewLabel_1);
+		JLabel errorNombreVacio = new JLabel("* Este campo no puede estar vacio.");
+		errorNombreVacio.setForeground(new Color(255, 0, 0));
+		errorNombreVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		errorNombreVacio.setBounds(990, 136, 225, 20);
+		errorNombreVacio.setVisible(false);
+		contentPane.add(errorNombreVacio);
 		
-		JLabel lblNewLabel_2 = new JLabel("* Este nombre ya existe en el sistema.");
-		lblNewLabel_2.setForeground(new Color(255, 0, 0));
-		lblNewLabel_2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		lblNewLabel_2.setBounds(990, 157, 254, 28);
-		contentPane.add(lblNewLabel_2);
+		JLabel errorNombreExistente = new JLabel("* Este nombre ya existe en el sistema.");
+		errorNombreExistente.setForeground(new Color(255, 0, 0));
+		errorNombreExistente.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		errorNombreExistente.setBounds(990, 132, 254, 28);
+		errorNombreExistente.setVisible(false);
+		contentPane.add(errorNombreExistente);
 		
 		
 		
 		lblDescripcion = new JLabel("Descripcion:");
 		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblDescripcion.setBounds(407, 247, 193, 31);
+		lblDescripcion.setBounds(407, 173, 193, 31);
 		contentPane.add(lblDescripcion);
 		
 		lblGruposResolucion = new JLabel("Grupos de Resolucion:");
 		lblGruposResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblGruposResolucion.setBounds(407, 457, 193, 37);
+		lblGruposResolucion.setBounds(407, 325, 193, 37);
 		contentPane.add(lblGruposResolucion);
 		
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		txtNombre.setBounds(612, 163, 327, 24);
+		txtNombre.setBounds(612, 134, 327, 24);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
-		
-		
-		JComboBox comboBoxGrupo = new JComboBox();
-		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"}));
-		comboBoxGrupo.setBounds(612, 465, 327, 24);
-		contentPane.add(comboBoxGrupo);
 		
 		
 		
@@ -143,12 +148,32 @@ public class InterfazRegistrarClasificacionTicket1 extends JFrame {
 		btnCancelar.setBounds(1207, 650, 133, 37);
 		contentPane.add(btnCancelar);
 		
+		JList<Object> list = new JList();
+		list.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		list.setModel(new AbstractListModel<Object>() {
+			String[] values = new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		list.setBounds(612, 333, 327, 307);
+		contentPane.add(list);
+		
 		
 
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (textAreaDescripcion.getText().isEmpty()) errorDescripcionVacio.setVisible(true);;
-				if(comboBoxGrupo.getSelectedIndex() == 0) errorGrupo.setVisible(true);;
+				if (textAreaDescripcion.getText().isEmpty()) {
+					errorDescripcionVacio.setVisible(true);
+				}
+				
+				if (txtNombre.getText().isEmpty()) {
+					errorNombreVacio.setVisible(true);
+				}
+				
 			}
 		});
 		

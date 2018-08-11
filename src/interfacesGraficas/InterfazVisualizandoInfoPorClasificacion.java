@@ -20,9 +20,17 @@ public class InterfazVisualizandoInfoPorClasificacion extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
-	private JTextField textField;
 	private JTextField txtNombre;
-	private JTable table_1;
+	private JTextField textFieldNumeroTicket;
+	private JTextField textFieldNumeroLegajo;
+	private JTextField textFieldClasificacion;
+	private JTextField textFieldEstadoActual;
+	private JTextField textFieldFechaApertura;
+	private JTextField textFieldFechaUltimoCambio;
+	private JTextField textFieldUltimoGrupo;
+	private JTextField textFieldNumeroLegajoEnForma;
+	private JTextField txtCantidadPaginacion;
+	private JTextField textField_1;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -78,111 +86,160 @@ public class InterfazVisualizandoInfoPorClasificacion extends JFrame {
 		panel.add(lblVisualizando);
 		
 		JLabel lblCriterios = new JLabel("Criterios:");
+		lblCriterios.setBounds(12, 80, 222, 26);
 		lblCriterios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblCriterios.setBounds(64, 104, 261, 26);
 		panel.add(lblCriterios);
 		
-		JLabel lblCriteriosOrdenamiento = new JLabel("Criterios de ordenamiento:");
-		lblCriteriosOrdenamiento.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblCriteriosOrdenamiento.setBounds(64, 219, 261, 37);
-		panel.add(lblCriteriosOrdenamiento);
+		JLabel lblNumeroTicket = new JLabel("-Numero de ticket: ");
+		lblNumeroTicket.setBounds(41, 111, 209, 21);
+		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblNumeroTicket);
 		
-		JLabel lblNumeroTicketDeArriba = new JLabel("-Numero de ticket: ");
-		lblNumeroTicketDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNumeroTicketDeArriba.setBounds(86, 135, 183, 21);
-		panel.add(lblNumeroTicketDeArriba);
+		JLabel lblNumeroLegajo = new JLabel("-Numero de legajo: ");
+		lblNumeroLegajo.setBounds(41, 136, 209, 21);
+		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblNumeroLegajo);
 		
-		JLabel lblNumeroLegajoDeArriba = new JLabel("-Numero de legajo: ");
-		lblNumeroLegajoDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNumeroLegajoDeArriba.setBounds(86, 160, 183, 21);
-		panel.add(lblNumeroLegajoDeArriba);
+		JLabel lblClasificacionActual = new JLabel("-Clasificacion actual del ticket: ");
+		lblClasificacionActual.setBounds(41, 161, 209, 21);
+		lblClasificacionActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblClasificacionActual);
 		
-		JLabel lblClasificacionActualDeArriba = new JLabel("-Clasificacion actual del ticket: ");
-		lblClasificacionActualDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblClasificacionActualDeArriba.setBounds(86, 185, 270, 21);
-		panel.add(lblClasificacionActualDeArriba);
+		JLabel lblEstadoActual = new JLabel("-Estado actual del ticket: ");
+		lblEstadoActual.setBounds(419, 111, 252, 21);
+		lblEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblEstadoActual);
 		
-		JLabel lblEstadoActualDeArriba = new JLabel("-Estado actual del ticket: ");
-		lblEstadoActualDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblEstadoActualDeArriba.setBounds(419, 135, 282, 21);
-		panel.add(lblEstadoActualDeArriba);
+		JLabel lblFechaApertura = new JLabel("-Fecha Apertura: ");
+		lblFechaApertura.setBounds(419, 136, 252, 21);
+		lblFechaApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblFechaApertura);
 		
-		JLabel lblFechaAperturaDeArriba = new JLabel("-Fecha Apertura: ");
-		lblFechaAperturaDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblFechaAperturaDeArriba.setBounds(419, 160, 282, 21);
-		panel.add(lblFechaAperturaDeArriba);
+		JLabel lblFechaUltimoCambio = new JLabel("-Fecha del ultimo cambio de estado: ");
+		lblFechaUltimoCambio.setBounds(419, 161, 252, 21);
+		lblFechaUltimoCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblFechaUltimoCambio);
 		
-		JLabel lblFechaUltimoCambioDeArriba = new JLabel("-Fecha del ultimo cambio de estado: ");
-		lblFechaUltimoCambioDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblFechaUltimoCambioDeArriba.setBounds(419, 185, 324, 21);
-		panel.add(lblFechaUltimoCambioDeArriba);
+		JLabel lblUltimoGrupo = new JLabel("-Ultimo grupo de resolucion asignado: ");
+		lblUltimoGrupo.setBounds(840, 111, 269, 21);
+		lblUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblUltimoGrupo);
 		
-		JLabel lblUltimoGrupoDeArriba = new JLabel("-Ultimo grupo de resolucion asignado: ");
-		lblUltimoGrupoDeArriba.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblUltimoGrupoDeArriba.setBounds(815, 135, 509, 21);
-		panel.add(lblUltimoGrupoDeArriba);
+		JLabel lblNumeroLegajoForma = new JLabel("-Clasificacion actual del ticket en forma: ");
+		lblNumeroLegajoForma.setBounds(840, 136, 269, 21);
+		lblNumeroLegajoForma.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		panel.add(lblNumeroLegajoForma);
 		
-		JLabel lblClasificacionActualForma = new JLabel("-Clasificacion actual del ticket en forma ascendente");
-		lblClasificacionActualForma.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblClasificacionActualForma.setBounds(815, 160, 361, 21);
-		panel.add(lblClasificacionActualForma);
+		JLabel lblDatosTicket = new JLabel("Criterios de ordenamiento:");
+		lblDatosTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
+		lblDatosTicket.setBounds(12, 195, 261, 26);
+		panel.add(lblDatosTicket);
 		
 		JLabel lblNumeroTicketOrdenamiento = new JLabel("Numero de ticket");
 		lblNumeroTicketOrdenamiento.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNumeroTicketOrdenamiento.setBounds(95, 259, 261, 21);
+		lblNumeroTicketOrdenamiento.setBounds(57, 223, 141, 21);
 		panel.add(lblNumeroTicketOrdenamiento);
 		
 		JLabel lbl1 = new JLabel("1.");
 		lbl1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lbl1.setBounds(74, 256, 96, 26);
+		lbl1.setBounds(41, 220, 96, 26);
 		panel.add(lbl1);
 		
 		JLabel lbl2 = new JLabel("2.");
 		lbl2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lbl2.setBounds(368, 254, 96, 26);
+		lbl2.setBounds(297, 220, 96, 26);
 		panel.add(lbl2);
 		
 		JLabel lblClasificacionActualOrdenamiento = new JLabel("Clasificacion actual del ticket");
 		lblClasificacionActualOrdenamiento.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblClasificacionActualOrdenamiento.setBounds(389, 259, 261, 21);
+		lblClasificacionActualOrdenamiento.setBounds(313, 223, 261, 21);
 		panel.add(lblClasificacionActualOrdenamiento);
 		
-		JLabel lblClasificacion = new JLabel("Clasificacion        de 23");
+		JLabel lblClasificacion = new JLabel("Clasificacion        de ");
 		lblClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
 		lblClasificacion.setBounds(560, 293, 207, 37);
 		panel.add(lblClasificacion);
 		
 		JLabel lblDatosClasificacion = new JLabel("Datos de la clasificacion:");
 		lblDatosClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblDatosClasificacion.setBounds(64, 334, 329, 37);
+		lblDatosClasificacion.setBounds(12, 334, 329, 37);
 		panel.add(lblDatosClasificacion);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		lblNombre.setBounds(74, 378, 78, 21);
+		lblNombre.setBounds(41, 380, 78, 21);
 		panel.add(lblNombre);
 		
 		JLabel lblTicketsAsociados = new JLabel("Tickets asociados:");
 		lblTicketsAsociados.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
-		lblTicketsAsociados.setBounds(64, 414, 261, 37);
+		lblTicketsAsociados.setBounds(12, 414, 261, 37);
 		panel.add(lblTicketsAsociados);
 		
 		
 		
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		textField.setColumns(10);
-		textField.setBounds(681, 301, 33, 22);
-		panel.add(textField);
+		txtCantidadPaginacion = new JTextField();
+		txtCantidadPaginacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtCantidadPaginacion.setColumns(10);
+		txtCantidadPaginacion.setBounds(681, 301, 33, 22);
+		panel.add(txtCantidadPaginacion);
 		
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtNombre.setEditable(false);
 		txtNombre.setColumns(10);
 		txtNombre.setBackground(new Color(220, 220, 220));
-		txtNombre.setBounds(164, 379, 440, 20);
+		txtNombre.setBounds(131, 381, 440, 20);
 		panel.add(txtNombre);
+		
+		
+		textFieldNumeroTicket = new JTextField();
+		textFieldNumeroTicket.setBounds(247, 112, 150, 21);
+		panel.add(textFieldNumeroTicket);
+		textFieldNumeroTicket.setColumns(10);
+		textFieldNumeroTicket.setEditable(false);
+		
+		textFieldNumeroLegajo = new JTextField();
+		textFieldNumeroLegajo.setColumns(10);
+		textFieldNumeroLegajo.setBounds(247, 137, 150, 21);
+		panel.add(textFieldNumeroLegajo);
+		textFieldNumeroLegajo.setEditable(false);
+		
+		textFieldClasificacion = new JTextField();
+		textFieldClasificacion.setColumns(10);
+		textFieldClasificacion.setBounds(247, 162, 150, 21);
+		panel.add(textFieldClasificacion);
+		textFieldClasificacion.setEditable(false);
+		
+		textFieldEstadoActual = new JTextField();
+		textFieldEstadoActual.setColumns(10);
+		textFieldEstadoActual.setBounds(665, 112, 150, 21);
+		panel.add(textFieldEstadoActual);
+		textFieldEstadoActual.setEditable(false);
+		
+		textFieldFechaApertura = new JTextField();
+		textFieldFechaApertura.setColumns(10);
+		textFieldFechaApertura.setBounds(665, 137, 150, 21);
+		panel.add(textFieldFechaApertura);
+		textFieldFechaApertura.setEditable(false);
+		
+		textFieldFechaUltimoCambio = new JTextField();
+		textFieldFechaUltimoCambio.setColumns(10);
+		textFieldFechaUltimoCambio.setBounds(665, 162, 150, 21);
+		panel.add(textFieldFechaUltimoCambio);
+		textFieldFechaUltimoCambio.setEditable(false);
+		
+		textFieldUltimoGrupo = new JTextField();
+		textFieldUltimoGrupo.setColumns(10);
+		textFieldUltimoGrupo.setBounds(1121, 112, 150, 21);
+		panel.add(textFieldUltimoGrupo);
+		textFieldUltimoGrupo.setEditable(false);
+		
+		textFieldNumeroLegajoEnForma = new JTextField();
+		textFieldNumeroLegajoEnForma.setColumns(10);
+		textFieldNumeroLegajoEnForma.setBounds(1121, 137, 150, 21);
+		panel.add(textFieldNumeroLegajoEnForma);
+		textFieldNumeroLegajoEnForma.setEditable(false);
 		
 		
 		
@@ -218,12 +275,18 @@ public class InterfazVisualizandoInfoPorClasificacion extends JFrame {
 		
 		JButton btnIzquierda = new JButton("<");
 		btnIzquierda.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
-		btnIzquierda.setBounds(797, 301, 44, 25);
+		btnIzquierda.setBounds(818, 301, 44, 25);
 		panel.add(btnIzquierda);
 		
 		JButton btnDerecha = new JButton(">");
 		btnDerecha.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
-		btnDerecha.setBounds(843, 301, 42, 25);
+		btnDerecha.setBounds(864, 301, 42, 25);
 		panel.add(btnDerecha);
+		
+		textField_1 = new JTextField();
+		textField_1.setEditable(false);
+		textField_1.setColumns(10);
+		textField_1.setBounds(751, 303, 44, 22);
+		panel.add(textField_1);
 	}
 }

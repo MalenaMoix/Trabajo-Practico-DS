@@ -60,7 +60,7 @@ public class InterfazRegistrarClasificacionTicket2 extends JFrame {
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(610, 262, 393, 155);
+		scrollPane.setBounds(610, 238, 393, 155);
 		contentPane.add(scrollPane);
 		
 		JTextArea textAreaDescripcion = new JTextArea();
@@ -68,7 +68,20 @@ public class InterfazRegistrarClasificacionTicket2 extends JFrame {
 		textAreaDescripcion.setEditable(false);
 		textAreaDescripcion.setBounds(669, 253, 295, 139);
 		scrollPane.setViewportView(textAreaDescripcion);
-		contentPane.add(textAreaDescripcion);
+		//contentPane.add(textAreaDescripcion);
+		
+		
+		JScrollPane scrollPane2 = new JScrollPane();
+		scrollPane2.setBounds(610, 417, 393, 87);
+		contentPane.add(scrollPane2);
+		
+		JTextArea txtListaGrupos = new JTextArea();
+		txtListaGrupos.setBackground(new Color(220, 220, 220));
+		txtListaGrupos.setEditable(false);
+		txtListaGrupos.setBounds(610, 416, 393, 87);
+		scrollPane2.setViewportView(txtListaGrupos);
+		//contentPane.add(txtListaGrupos);
+		
 		
 		
 		
@@ -79,17 +92,17 @@ public class InterfazRegistrarClasificacionTicket2 extends JFrame {
 		
 		JLabel lblCodigo = new JLabel("Codigo:");
 		lblCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblCodigo.setBounds(335, 201, 263, 31);
+		lblCodigo.setBounds(335, 189, 263, 31);
 		contentPane.add(lblCodigo);
 		
 		JLabel lblDescripcion = new JLabel("Descripcion:");
 		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblDescripcion.setBounds(335, 262, 263, 31);
+		lblDescripcion.setBounds(335, 237, 263, 31);
 		contentPane.add(lblDescripcion);
 		
 		JLabel lblGruposResolucion = new JLabel("Grupos de Resolucion:");
 		lblGruposResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblGruposResolucion.setBounds(335, 469, 263, 22);
+		lblGruposResolucion.setBounds(335, 409, 263, 31);
 		contentPane.add(lblGruposResolucion);
 		
 		JLabel lblActor = new JLabel("Actor que realizo la registracion:");
@@ -121,7 +134,7 @@ public class InterfazRegistrarClasificacionTicket2 extends JFrame {
 		txtCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtCodigo.setBackground(new Color(220, 220, 220));
 		txtCodigo.setEditable(false);
-		txtCodigo.setBounds(610, 207, 393, 24);
+		txtCodigo.setBounds(610, 194, 393, 24);
 		contentPane.add(txtCodigo);
 		txtCodigo.setColumns(10);
 		
@@ -140,15 +153,6 @@ public class InterfazRegistrarClasificacionTicket2 extends JFrame {
 		txtActor.setBounds(610, 532, 393, 24);
 		contentPane.add(txtActor);
 		txtActor.setColumns(10);
-		
-		
-		
-		JComboBox comboBoxGrupo = new JComboBox();
-		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"}));
-		comboBoxGrupo.setBackground(new Color(220, 220, 220));
-		comboBoxGrupo.setBounds(610, 470, 393, 24);
-		contentPane.add(comboBoxGrupo);
 		
 		
 		

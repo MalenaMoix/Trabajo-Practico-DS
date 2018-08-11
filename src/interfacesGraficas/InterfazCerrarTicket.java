@@ -40,6 +40,9 @@ public class InterfazCerrarTicket extends JFrame {
 
 
 	public InterfazCerrarTicket() {
+		
+		//SOLO PUEDE CERRARSE SI PREVIAMENTE SE ENCUENTRA EN "Solucionado a la espera OK"
+		
 		setTitle("La llamita");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -88,7 +91,7 @@ public class InterfazCerrarTicket extends JFrame {
 		lblObservaciones.setBounds(498, 420, 148, 26);
 		contentPane.add(lblObservaciones);
 		
-		JLabel errorObsVacio = new JLabel("* Este campo no puede ser estar vacio.");
+		JLabel errorObsVacio = new JLabel("* Este campo no puede estar vacio.");
 		errorObsVacio.setBounds(1083, 423, 241, 26);
 		errorObsVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		errorObsVacio.setForeground(Color.RED);
@@ -109,10 +112,12 @@ public class InterfazCerrarTicket extends JFrame {
 		textFieldLegajo.setColumns(10);
 		
 		textFieldNuevoEstado = new JTextField();
-		textFieldNuevoEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		textFieldNuevoEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		textFieldNuevoEstado.setBounds(701, 345, 200, 24);
 		contentPane.add(textFieldNuevoEstado);
 		textFieldNuevoEstado.setColumns(10);
+		textFieldNuevoEstado.setEditable(false);
+		textFieldNuevoEstado.setText("Cerrado");
 		
 		
 		
@@ -135,10 +140,10 @@ public class InterfazCerrarTicket extends JFrame {
 				}
 				
 				int dialogButton = JOptionPane.YES_NO_OPTION;
-			    JOptionPane.showConfirmDialog (null, "Desea cerrar el ticket?","Warning",dialogButton);
-			    if (dialogButton == JOptionPane.YES_OPTION) {
-			    	//Pasa algo
-			    }
+				int dialogResult = JOptionPane.showConfirmDialog (null, "Desea cerrar el ticket?","Warning",dialogButton);
+				if(dialogResult == JOptionPane.YES_OPTION){
+				  //PASA ALGO
+				}
 			}
 		});
 		
