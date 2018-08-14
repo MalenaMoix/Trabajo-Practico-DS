@@ -137,7 +137,7 @@ public class InterfazVisualizandoInfoPorEstadoActual extends JFrame {
 		lblUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblUltimoGrupo);
 		
-		JLabel lblNumeroLegajoForma = new JLabel("-Estado actual en forma: ");
+		JLabel lblNumeroLegajoForma = new JLabel("-Estado actual del ticket en forma: ");
 		lblNumeroLegajoForma.setBounds(840, 136, 269, 21);
 		lblNumeroLegajoForma.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblNumeroLegajoForma);
@@ -308,12 +308,12 @@ public class InterfazVisualizandoInfoPorEstadoActual extends JFrame {
 		
 		JButton btnIzquierda = new JButton("<");
 		btnIzquierda.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
-		btnIzquierda.setBounds(864, 275, 44, 25);
+		btnIzquierda.setBounds(864, 276, 44, 25);
 		panel.add(btnIzquierda);
 		
 		JButton btnDerecha = new JButton(">");
 		btnDerecha.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
-		btnDerecha.setBounds(910, 275, 42, 25);
+		btnDerecha.setBounds(910, 276, 42, 25);
 		panel.add(btnDerecha);
 	}
 }

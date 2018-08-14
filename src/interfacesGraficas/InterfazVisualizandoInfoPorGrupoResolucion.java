@@ -29,7 +29,7 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 	private JTextField textFieldFechaApertura;
 	private JTextField textFieldFechaUltimoCambio;
 	private JTextField textFieldUltimoGrupo;
-	private JTextField textFieldNumeroLegajoEnForma;
+	private JTextField textFieldGrupoEnForma;
 	private JTextField txtCantidadPaginacion;
 
 	public static void main(String[] args) {
@@ -131,7 +131,7 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		lblUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblUltimoGrupo);
 		
-		JLabel lblNumeroGrupoForma = new JLabel("-Numero de grupo en forma: ");
+		JLabel lblNumeroGrupoForma = new JLabel("-Grupo de resolucion en forma: ");
 		lblNumeroGrupoForma.setBounds(840, 136, 269, 21);
 		lblNumeroGrupoForma.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblNumeroGrupoForma);
@@ -242,11 +242,11 @@ public class InterfazVisualizandoInfoPorGrupoResolucion extends JFrame {
 		panel.add(textFieldUltimoGrupo);
 		textFieldUltimoGrupo.setEditable(false);
 		
-		textFieldNumeroLegajoEnForma = new JTextField();
-		textFieldNumeroLegajoEnForma.setColumns(10);
-		textFieldNumeroLegajoEnForma.setBounds(1103, 137, 150, 21);
-		panel.add(textFieldNumeroLegajoEnForma);
-		textFieldNumeroLegajoEnForma.setEditable(false);
+		textFieldGrupoEnForma = new JTextField();
+		textFieldGrupoEnForma.setColumns(10);
+		textFieldGrupoEnForma.setBounds(1103, 137, 150, 21);
+		panel.add(textFieldGrupoEnForma);
+		textFieldGrupoEnForma.setEditable(false);
 		
 		
 		

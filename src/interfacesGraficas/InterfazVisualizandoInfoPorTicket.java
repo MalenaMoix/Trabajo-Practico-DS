@@ -40,6 +40,7 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 	private JTextField textFieldFechaUltimoCambio;
 	private JTextField textFieldUltimoGrupo;
 	private JTextField textFieldNumeroTicketEnForma;
+	private JTextField txtCantidadPaginacion;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -159,7 +160,7 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 		lblNumeroTicketForma.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		panel.add(lblNumeroTicketForma);
 		
-		JLabel lblTicket = new JLabel("Ticket         de 23");
+		JLabel lblTicket = new JLabel("Ticket         de ");
 		lblTicket.setBounds(462, 211, 167, 29);
 		lblTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 18));
 		panel.add(lblTicket);
@@ -414,13 +415,19 @@ public class InterfazVisualizandoInfoPorTicket extends JFrame {
 		
 		JButton btnIzquierda = new JButton("<");
 		btnIzquierda.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
-		btnIzquierda.setBounds(641, 211, 44, 25);
+		btnIzquierda.setBounds(662, 215, 44, 25);
 		panel.add(btnIzquierda);
 		
 		JButton btnDerecha = new JButton(">");
 		btnDerecha.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
-		btnDerecha.setBounds(687, 211, 42, 25);
+		btnDerecha.setBounds(708, 215, 42, 25);
 		panel.add(btnDerecha);
+		
+		txtCantidadPaginacion = new JTextField();
+		txtCantidadPaginacion.setEditable(false);
+		txtCantidadPaginacion.setColumns(10);
+		txtCantidadPaginacion.setBounds(605, 217, 44, 22);
+		panel.add(txtCantidadPaginacion);
 		
 	}
 }
