@@ -1,9 +1,8 @@
 package interfacesGraficas;
 
 import java.awt.Color;
-import java.awt.EventQueue;
+import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,54 +16,36 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class InterfazBorrarClasificacionTicket extends JFrame {
+public class InterfazBorrarClasificacionTicket extends JPanel {
 
-	private JPanel contentPane;
+	private JFrame ventana;
 	private JTextField textFieldEstado;
 	private JTextField textFieldNombre;
 	private JTextField textFieldCodigoNumerico;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					InterfazBorrarClasificacionTicket frame = new InterfazBorrarClasificacionTicket();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-
-	public InterfazBorrarClasificacionTicket() {
+	public InterfazBorrarClasificacionTicket(JFrame frame) {
 		
 		//ACTOR : GRUPO DE RESOLUCION
 		//VALIDAR QUE LA CLASIFICACION NUNCA FUE USADA
 		
+		this.ventana=frame;
+		ventana.setContentPane(this);
+		this.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.setPreferredSize(new Dimension(1366, 768));
+		this.setBackground(new Color(230, 230, 250));
+		this.setLayout(null);
 		
-		setTitle("La llamita");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1366 , 768);
-		//setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(230, 230, 250));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(295, 80, 760, 2);
-		contentPane.add(separator);
+		this.add(separator);
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(665, 450, 369, 114);
-		contentPane.add(scrollPane);
+		this.add(scrollPane);
 		
 		
 		JTextArea textAreaDescripcion = new JTextArea();
@@ -77,44 +58,34 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		JLabel lblBorrarClasificacionTicket = new JLabel("Borrar clasificacion de ticket");
 		lblBorrarClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblBorrarClasificacionTicket.setBounds(396, 20, 558, 54);
-		contentPane.add(lblBorrarClasificacionTicket);
+		this.add(lblBorrarClasificacionTicket);
 		
 		JLabel lblClasificacionABorrar = new JLabel("Clasificacion a borrar:");
 		lblClasificacionABorrar.setFont(new Font("Segoe UI Symbol", Font.BOLD, 20));
 		lblClasificacionABorrar.setBounds(295, 163, 233, 25);
-		contentPane.add(lblClasificacionABorrar);
+		this.add(lblClasificacionABorrar);
 		
 		JLabel lblCodigoNumerico = new JLabel("Codigo numerico:");
 		lblCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblCodigoNumerico.setBounds(450, 254, 203, 25);
-		contentPane.add(lblCodigoNumerico);
+		this.add(lblCodigoNumerico);
 		
 		JLabel lblNombreCompleto = new JLabel("Nombre completo:");
 		lblNombreCompleto.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblNombreCompleto.setBounds(450, 319, 203, 25);
-		contentPane.add(lblNombreCompleto);
+		this.add(lblNombreCompleto);
 		
 		JLabel lblEstado = new JLabel("Estado:");
 		lblEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblEstado.setBounds(450, 375, 203, 31);
-		contentPane.add(lblEstado);
+		this.add(lblEstado);
 		
 		
 		JLabel lblDescripcionCompleta = new JLabel("Descripcion completa:");
 		lblDescripcionCompleta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblDescripcionCompleta.setBounds(450, 446, 203, 25);
-		contentPane.add(lblDescripcionCompleta);
+		this.add(lblDescripcionCompleta);
 		
-		
-		JButton btnConfirmar = new JButton("Confirmar");
-		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnConfirmar.setBounds(1020, 650, 133, 37);
-		contentPane.add(btnConfirmar);
-		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		btnCancelar.setBounds(1207, 650, 133, 37);
-		contentPane.add(btnCancelar);
 		
 		
 		textFieldEstado = new JTextField();
@@ -122,8 +93,8 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		textFieldEstado.setBackground(new Color(220, 220, 220));
 		textFieldEstado.setEditable(false);
 		textFieldEstado.setBounds(665, 380, 369, 24);
-		contentPane.add(textFieldEstado);
 		textFieldEstado.setColumns(10);
+		this.add(textFieldEstado);
 		
 		textFieldNombre = new JTextField();
 		textFieldNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -131,8 +102,7 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		textFieldNombre.setEditable(false);
 		textFieldNombre.setColumns(10);
 		textFieldNombre.setBounds(665, 321, 369, 24);
-		contentPane.add(textFieldNombre);
-		
+		this.add(textFieldNombre);
 		
 		textFieldCodigoNumerico = new JTextField();
 		textFieldCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -140,7 +110,19 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		textFieldCodigoNumerico.setColumns(10);
 		textFieldCodigoNumerico.setBackground(new Color(220, 220, 220));
 		textFieldCodigoNumerico.setBounds(665, 256, 369, 24);
-		contentPane.add(textFieldCodigoNumerico);
+		this.add(textFieldCodigoNumerico);
+		
+		
+		
+		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnConfirmar.setBounds(1020, 650, 133, 37);
+		this.add(btnConfirmar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		btnCancelar.setBounds(1207, 650, 133, 37);
+		this.add(btnCancelar);
 		
 		
 		
@@ -159,9 +141,8 @@ public class InterfazBorrarClasificacionTicket extends JFrame {
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
+				//VUELVE
 			}
 		});
-		
 	}
 }

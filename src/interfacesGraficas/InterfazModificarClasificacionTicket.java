@@ -1,7 +1,7 @@
 package interfacesGraficas;
 
 import java.awt.Color;
-import java.awt.EventQueue;
+import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -15,31 +15,15 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
-import java.awt.Toolkit;
 
-public class InterfazModificarClasificacionTicket extends JFrame {
+public class InterfazModificarClasificacionTicket extends JPanel {
 
-	private JPanel contentPane;
+	private JFrame ventana;
 	private JTextField txtCodigo;
 	private JTextField txtNombre;
 	private JTextField txtEstado;
 
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					InterfazModificarClasificacionTicket frame = new InterfazModificarClasificacionTicket();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-
-	public InterfazModificarClasificacionTicket() {
+	public InterfazModificarClasificacionTicket(JFrame frame) {
 		
 		//NOMBRE EDITABLE SOLO SI LA CLASIFICACION JAMAS FUE USADA
 		//DESCRIPCION EDITABLE POR LOS GRUPOS DE RESOLUCION ASOCIADOS A LA CLASIFICACION
@@ -48,26 +32,23 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		//SI VICEVERSA, LO CONTRARIO
 		
 		
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
-		setTitle("La llamita");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1366, 768);
-		//setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(230, 230, 250));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		this.ventana=frame;
+		ventana.setContentPane(this);
+		this.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.setPreferredSize(new Dimension(1366, 768));
+		this.setBackground(new Color(230, 230, 250));
+		this.setLayout(null);
+		
 		
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(274, 90, 800, 2);
-		contentPane.add(separator);
+		this.add(separator);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(615, 307, 292, 86);
-		contentPane.add(scrollPane);
+		this.add(scrollPane);
 		
 		JTextArea textAreaDescripcion = new JTextArea();
 		textAreaDescripcion.setBackground(new Color(220, 220, 220));
@@ -77,7 +58,7 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		
 		JScrollPane scrollPane2 = new JScrollPane();
 		scrollPane2.setBounds(615, 500, 292, 95);
-		contentPane.add(scrollPane2);
+		this.add(scrollPane2);
 		
 		JTextArea txtListaGrupos = new JTextArea();
 		txtListaGrupos.setBackground(new Color(220, 220, 220));
@@ -89,32 +70,32 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		JLabel lblModificarClasificacion = new JLabel("Modificar clasificacion de ticket");
 		lblModificarClasificacion.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblModificarClasificacion.setBounds(361, 20, 625, 42);
-		contentPane.add(lblModificarClasificacion);
+		this.add(lblModificarClasificacion);
 		
 		JLabel lblCodigo = new JLabel("Codigo:");
 		lblCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblCodigo.setBounds(430, 173, 173, 25);
-		contentPane.add(lblCodigo);
+		this.add(lblCodigo);
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblNombre.setBounds(430, 240, 173, 25);
-		contentPane.add(lblNombre);
+		this.add(lblNombre);
 		
 		JLabel lblDescripcion = new JLabel("Descripcion:");
 		lblDescripcion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblDescripcion.setBounds(430, 307, 173, 25);
-		contentPane.add(lblDescripcion);
+		this.add(lblDescripcion);
 		
 		JLabel lblEstado = new JLabel("Estado:");
 		lblEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblEstado.setBounds(430, 436, 173, 25);
-		contentPane.add(lblEstado);
+		this.add(lblEstado);
 		
 		JLabel lblGruposResolucion = new JLabel("Grupos de resolucion:");
 		lblGruposResolucion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		lblGruposResolucion.setBounds(430, 499, 173, 25);
-		contentPane.add(lblGruposResolucion);
+		this.add(lblGruposResolucion);
 		
 		JLabel errorNombre = new JLabel("* Este campo no puede estar vacio.");
 		errorNombre.setBackground(new Color(240, 240, 240));
@@ -122,42 +103,42 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		errorNombre.setForeground(Color.RED);
 		errorNombre.setBounds(940, 240, 400, 20);
 		errorNombre.setVisible(false);
-		contentPane.add(errorNombre);
+		this.add(errorNombre);
 		
 		JLabel errorNombre2 = new JLabel("* Este nombre ya existe en el sistema.");
 		errorNombre2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		errorNombre2.setForeground(Color.RED);
 		errorNombre2.setBounds(940, 240, 400, 20);
 		errorNombre2.setVisible(false);
-		contentPane.add(errorNombre2);
+		this.add(errorNombre2);
 		
 		JLabel errorDescripcionVacio = new JLabel("* Este campo no puede estar vacio.");
 		errorDescripcionVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		errorDescripcionVacio.setForeground(Color.RED);
 		errorDescripcionVacio.setBounds(940, 307, 400, 20);
 		errorDescripcionVacio.setVisible(false);
-		contentPane.add(errorDescripcionVacio);
+		this.add(errorDescripcionVacio);
 		
 		JLabel errorGrupo = new JLabel("* No se puede eliminar este grupo de resolucion.");
 		errorGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		errorGrupo.setForeground(Color.RED);
 		errorGrupo.setBounds(940, 499, 400, 20);
 		errorGrupo.setVisible(false);
-		contentPane.add(errorGrupo);
+		this.add(errorGrupo);
 		
 		JLabel errorGrupo2 = new JLabel("* Este campo no puede estar vacio.");
 		errorGrupo2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		errorGrupo2.setForeground(Color.RED);
 		errorGrupo2.setBounds(940, 499, 400, 20);
 		errorGrupo2.setVisible(false);
-		contentPane.add(errorGrupo2);
+		this.add(errorGrupo2);
 		
 		JLabel errorClasificacion = new JLabel("* No se puede desactivar esta clasificacion.");
 		errorClasificacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		errorClasificacion.setForeground(Color.RED);
 		errorClasificacion.setBounds(940, 436, 400, 20);
 		errorClasificacion.setVisible(false);
-		contentPane.add(errorClasificacion);
+		this.add(errorClasificacion);
 		
 		
 
@@ -165,33 +146,34 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		txtCodigo.setBackground(new Color(220, 220, 220));
 		txtCodigo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		txtCodigo.setBounds(615, 174, 292, 24);
-		contentPane.add(txtCodigo);
 		txtCodigo.setEditable(false);
 		txtCodigo.setColumns(10);
+		this.add(txtCodigo);
 		
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		txtNombre.setBounds(615, 241, 292, 24);
-		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
+		this.add(txtNombre);
 		
 		txtEstado = new JTextField();
 		txtEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		txtEstado.setBounds(615, 437, 292, 24);
-		contentPane.add(txtEstado);
 		txtEstado.setColumns(10);
+		this.add(txtEstado);
 		
 		
 		
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnGuardar.setBounds(1020, 655, 133, 37);
-		contentPane.add(btnGuardar);
+		this.add(btnGuardar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCancelar.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnCancelar);
+		this.add(btnCancelar);
+		
 		
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -219,7 +201,7 @@ public class InterfazModificarClasificacionTicket extends JFrame {
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				//VUELVE
 			}
 		});
 	}

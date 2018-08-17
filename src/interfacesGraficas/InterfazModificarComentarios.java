@@ -1,64 +1,45 @@
 package interfacesGraficas;
 
-import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JSeparator;
-import java.awt.Toolkit;
 
-public class InterfazModificarComentarios extends JFrame {
+public class InterfazModificarComentarios extends JPanel {
 
-	private JPanel contentPane;
+	private JFrame ventana;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					InterfazModificarComentarios frame = new InterfazModificarComentarios();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-
-	public InterfazModificarComentarios() {
+	public InterfazModificarComentarios(JFrame frame) {
 		
 		//ACTOR : GRUPO DE RESOLUCION
 		//INGRESA INFO ADICIONAL O MODIFICA LO QUE YA ESTABA
 		
+		this.ventana=frame;
+		ventana.setContentPane(this);
+		this.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.setPreferredSize(new Dimension(1366, 768));
+		this.setBackground(new Color(230, 230, 250));
+		this.setLayout(null);
 		
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Malena Moix\\Desktop\\cool-flame-icon.png"));
-		setTitle("La llamita");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1366, 768);
-		//setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(230, 230, 250));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.GRAY);
 		separator.setBounds(274, 90, 800, 2);
-		contentPane.add(separator);
+		this.add(separator);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(460, 202, 600, 280);
-		contentPane.add(scrollPane);
+		this.add(scrollPane);
 		
 		JTextArea textAreaObservaciones = new JTextArea();
 		textAreaObservaciones.setBackground(new Color(220, 220, 220));
@@ -70,29 +51,29 @@ public class InterfazModificarComentarios extends JFrame {
 		JLabel lblModificarComentarios = new JLabel("Modificar comentarios");
 		lblModificarComentarios.setFont(new Font("Segoe UI Symbol", Font.BOLD, 40));
 		lblModificarComentarios.setBounds(455, 20, 438, 45);
-		contentPane.add(lblModificarComentarios);
+		this.add(lblModificarComentarios);
 		
 		JLabel lblObservaciones = new JLabel("Observaciones:");
 		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
 		lblObservaciones.setBounds(286, 202, 143, 25);
-		contentPane.add(lblObservaciones);
+		this.add(lblObservaciones);
 		
 		
 		
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnAceptar.setBounds(1020, 655, 133, 37);
-		contentPane.add(btnAceptar);
+		this.add(btnAceptar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		btnCancelar.setBounds(1207, 655, 133, 37);
-		contentPane.add(btnCancelar);
+		this.add(btnCancelar);
 		
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				//PASA ALGO
 			}
 		});
 	}
