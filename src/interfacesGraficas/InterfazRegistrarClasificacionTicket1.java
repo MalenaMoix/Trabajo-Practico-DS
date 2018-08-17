@@ -145,11 +145,15 @@ public class InterfazRegistrarClasificacionTicket1 extends JPanel {
 
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (textAreaDescripcion.getText().isEmpty()) {
+				if (txtNombre.getText().isEmpty()) {
+					errorNombreVacio.setVisible(true);
+				}
+				else if (textAreaDescripcion.getText().isEmpty()) {
 					errorDescripcionVacio.setVisible(true);
 				}
-				else if (txtNombre.getText().isEmpty()) {
-					errorNombreVacio.setVisible(true);
+				else {
+					ventana.setContentPane(new InterfazRegistrarClasificacionTicket2(ventana));
+					ventana.pack();
 				}
 			}
 		});
@@ -157,7 +161,8 @@ public class InterfazRegistrarClasificacionTicket1 extends JPanel {
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//VUELVE
+				ventana.setContentPane(new HomeGrupoResolucion(ventana));
+				ventana.pack();
 			}
 		});
 	}

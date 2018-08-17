@@ -270,6 +270,14 @@ public class InterfazConsultarTicket extends JPanel {
 		});
 		
 		
+		btnDerivar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ventana.setContentPane(new InterfazDerivarTicket1(ventana));
+				ventana.pack();
+			}
+		});
+		
+		
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null, "No existen tickets que cumplan con los criterios ingresados.");

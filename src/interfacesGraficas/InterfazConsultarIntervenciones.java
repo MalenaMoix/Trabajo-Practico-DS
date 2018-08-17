@@ -133,9 +133,17 @@ public class InterfazConsultarIntervenciones extends JPanel {
 		
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "No existen tickets que cumplan con los criterios ingresados.");
+				JOptionPane.showMessageDialog(null, "No existen intervenciones que cumplan con los criterios ingresados.");
 
 				ventana.setContentPane(new InterfazConsultarIntervencionesPaginacion(ventana));
+				ventana.pack();
+			}
+		});
+		
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ventana.setContentPane(new HomeGrupoResolucion(ventana));
 				ventana.pack();
 			}
 		});

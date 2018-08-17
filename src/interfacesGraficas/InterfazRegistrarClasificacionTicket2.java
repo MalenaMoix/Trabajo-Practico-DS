@@ -150,7 +150,8 @@ public class InterfazRegistrarClasificacionTicket2 extends JPanel {
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//VUELVE
+				ventana.setContentPane(new InterfazRegistrarClasificacionTicket1(ventana));
+				ventana.pack();
 			}
 		});
 	}

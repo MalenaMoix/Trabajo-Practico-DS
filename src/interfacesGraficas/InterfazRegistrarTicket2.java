@@ -96,13 +96,18 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		
 		JButton btnDerivarTicket = new JButton("Derivar ticket");
 		btnDerivarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnDerivarTicket.setBounds(1207, 655, 133, 37);
+		btnDerivarTicket.setBounds(1020, 655, 133, 37);
 		this.add(btnDerivarTicket);
 		
 		JButton btnCerrarTicket = new JButton("Cerrar ticket");
 		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnCerrarTicket.setBounds(1020, 655, 133, 37);
+		btnCerrarTicket.setBounds(833, 655, 133, 37);
 		this.add(btnCerrarTicket);
+		
+		JButton atras = new JButton("Atras");
+		atras.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		atras.setBounds(1207, 655, 133, 37);
+		this.add(atras);
 		
 		
 		btnDerivarTicket.addActionListener(new ActionListener() {
@@ -129,6 +134,14 @@ public class InterfazRegistrarTicket2 extends JPanel {
 					ventana.setContentPane(new InterfazCerrarTicket(ventana));
 					ventana.pack();
 				}
+			}
+		});
+		
+		
+		atras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ventana.setContentPane(new InterfazRegistrarTicket1(ventana));
+				ventana.pack();
 			}
 		});
 	}

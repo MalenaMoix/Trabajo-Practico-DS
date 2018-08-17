@@ -287,7 +287,8 @@ public class InterfazConsultarIntervencionesPaginacion extends JPanel {
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//VUELVE
+				ventana.setContentPane(new InterfazConsultarIntervenciones(ventana));
+				ventana.pack();
 			}
 		});
 	}

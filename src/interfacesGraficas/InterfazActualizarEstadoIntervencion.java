@@ -163,7 +163,8 @@ public class InterfazActualizarEstadoIntervencion extends JPanel {
 		
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//VUELVE
+				ventana.setContentPane(new InterfazConsultarIntervencionesPaginacion(ventana));
+				ventana.pack();
 			}
 		});
 	}

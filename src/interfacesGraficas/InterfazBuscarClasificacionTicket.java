@@ -131,7 +131,8 @@ public class InterfazBuscarClasificacionTicket extends JPanel {
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//VUELVE
+				ventana.setContentPane(new HomeGrupoResolucion(ventana));
+				ventana.pack();
 			}
 		});
 	}
