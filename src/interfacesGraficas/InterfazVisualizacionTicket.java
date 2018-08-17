@@ -59,8 +59,9 @@ public class InterfazVisualizacionTicket extends JPanel {
 		
 		JTextArea textAreaObservaciones = new JTextArea();
 		textAreaObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		scrollPane.setViewportView(textAreaObservaciones);
 		textAreaObservaciones.setBackground(new Color(220, 220, 220));
+		textAreaObservaciones.setEditable(false);
+		scrollPane.setViewportView(textAreaObservaciones);
 		
 		
 		
@@ -146,6 +147,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtDescripcionCargo.setBackground(new Color(220, 220, 220));
 		txtDescripcionCargo.setBounds(380, 332, 245, 73);
 		txtDescripcionCargo.setColumns(10);
+		txtDescripcionCargo.setEditable(false);
 		this.add(txtDescripcionCargo);
 		
 		txtLegajo = new JTextField();
@@ -153,6 +155,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtLegajo.setColumns(10);
 		txtLegajo.setBackground(new Color(220, 220, 220));
 		txtLegajo.setBounds(380, 184, 245, 24);
+		txtLegajo.setEditable(false);
 		this.add(txtLegajo);
 		
 		txtApellidoNombre = new JTextField();
@@ -160,6 +163,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtApellidoNombre.setColumns(10);
 		txtApellidoNombre.setBackground(new Color(220, 220, 220));
 		txtApellidoNombre.setBounds(380, 221, 245, 24);
+		txtApellidoNombre.setEditable(false);
 		this.add(txtApellidoNombre);
 		
 		txtTelefonoInterno = new JTextField();
@@ -167,6 +171,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtTelefonoInterno.setColumns(10);
 		txtTelefonoInterno.setBackground(new Color(220, 220, 220));
 		txtTelefonoInterno.setBounds(380, 258, 245, 24);
+		txtTelefonoInterno.setEditable(false);
 		this.add(txtTelefonoInterno);
 		
 		txtTelefonoDirecto = new JTextField();
@@ -174,6 +179,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtTelefonoDirecto.setColumns(10);
 		txtTelefonoDirecto.setBackground(new Color(220, 220, 220));
 		txtTelefonoDirecto.setBounds(380, 295, 245, 24);
+		txtTelefonoDirecto.setEditable(false);
 		this.add(txtTelefonoDirecto);
 		
 		txtCalle = new JTextField();
@@ -181,6 +187,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtCalle.setColumns(10);
 		txtCalle.setBackground(new Color(220, 220, 220));
 		txtCalle.setBounds(327, 471, 180, 24);
+		txtCalle.setEditable(false);
 		this.add(txtCalle);
 		
 		txtNumero = new JTextField();
@@ -188,6 +195,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtNumero.setColumns(10);
 		txtNumero.setBackground(new Color(220, 220, 220));
 		txtNumero.setBounds(327, 510, 180, 24);
+		txtNumero.setEditable(false);
 		this.add(txtNumero);
 		
 		txtPiso = new JTextField();
@@ -195,6 +203,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtPiso.setColumns(10);
 		txtPiso.setBackground(new Color(220, 220, 220));
 		txtPiso.setBounds(327, 547, 180, 24);
+		txtPiso.setEditable(false);
 		this.add(txtPiso);
 		
 		txtOficina = new JTextField();
@@ -202,6 +211,7 @@ public class InterfazVisualizacionTicket extends JPanel {
 		txtOficina.setColumns(10);
 		txtOficina.setBackground(new Color(220, 220, 220));
 		txtOficina.setBounds(327, 584, 180, 24);
+		txtOficina.setEditable(false);
 		this.add(txtOficina);
 		
 		
@@ -239,7 +249,8 @@ public class InterfazVisualizacionTicket extends JPanel {
 		
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				ventana.setContentPane(new InterfazConsultarTicket(ventana));
+				ventana.pack();
 			}
 		});
 	}

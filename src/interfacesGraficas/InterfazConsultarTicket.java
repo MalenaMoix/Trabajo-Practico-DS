@@ -275,13 +275,16 @@ public class InterfazConsultarTicket extends JPanel {
 				JOptionPane.showMessageDialog(null, "No existen tickets que cumplan con los criterios ingresados.");
 				JOptionPane.showMessageDialog(null, "Fecha de apertura invalida. Vuelva a ingresarla.");
 				JOptionPane.showMessageDialog(null, "Fecha ultimo cambio de estado invalida. Vuelva a ingresarla.");
+				
+				//MOSTRAR RESULTADOS EN LA TABLA
 			}
 		});
 		
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//VUELVE
+				ventana.setContentPane(new HomeMesaAyuda(ventana));
+				ventana.pack();
 			}
 		});		
 	}
