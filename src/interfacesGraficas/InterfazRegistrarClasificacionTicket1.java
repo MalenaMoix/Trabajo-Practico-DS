@@ -19,6 +19,10 @@ import javax.swing.AbstractListModel;
 
 public class InterfazRegistrarClasificacionTicket1 extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JFrame ventana;
 	private JTextField txtNombre;
 	private JLabel lblDescripcion;
@@ -127,14 +131,18 @@ public class InterfazRegistrarClasificacionTicket1 extends JPanel {
 		btnCancelar.setBounds(1207, 650, 133, 37);
 		this.add(btnCancelar);
 		
-		JList<Object> list = new JList();
+		JList<String> list = new JList<String>();
 		list.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		list.setModel(new AbstractListModel<Object>() {
+		list.setModel(new AbstractListModel<String>() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
 			String[] values = new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"};
 			public int getSize() {
 				return values.length;
 			}
-			public Object getElementAt(int index) {
+			public String getElementAt(int index) {
 				return values[index];
 			}
 		});

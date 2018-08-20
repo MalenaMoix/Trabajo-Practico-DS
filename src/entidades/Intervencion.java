@@ -1,19 +1,27 @@
 package entidades;
 
-import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Intervencion {
 	
 	private String estado;
-	private Date fechaAsignacion;
-	private Date fechaFinAsignacion;
-	private Time horaAsignacion;
-	private Time horaFinAsignacion;
+	private LocalDate fechaAsignacion;
+	private LocalDate fechaFinAsignacion;
+	private LocalTime horaAsignacion;
+	private LocalTime horaFinAsignacion;
+	
 	
 	public Intervencion() {
 		
 	}
+	
+	public Intervencion(String est, LocalDate fechaAsig, LocalTime horaAsig) {
+		this.estado = est;
+		this.fechaAsignacion = fechaAsig;
+		this.horaAsignacion = horaAsig;
+	}
+
 
 	public String getEstado() {
 		return estado;
@@ -23,38 +31,36 @@ public class Intervencion {
 		this.estado = estado;
 	}
 
-	public Date getFechaAsignacion() {
+	public LocalDate getFechaAsignacion() {
 		return fechaAsignacion;
 	}
 
-	public void setFechaAsignacion(Date fechaAsignacion) {
+	public void setFechaAsignacion(LocalDate fechaAsignacion) {
 		this.fechaAsignacion = fechaAsignacion;
 	}
 
-	public Date getFechaFinAsignacion() {
+	public LocalDate getFechaFinAsignacion() {
 		return fechaFinAsignacion;
 	}
 
-	public void setFechaFinAsignacion(Date fechaFinAsignacion) {
+	public void setFechaFinAsignacion(LocalDate fechaFinAsignacion) {
 		this.fechaFinAsignacion = fechaFinAsignacion;
 	}
 
-	public Time getHoraAsignacion() {
+	public LocalTime getHoraAsignacion() {
 		return horaAsignacion;
 	}
 
-	public void setHoraAsignacion(Time horaAsignacion) {
+	public void setHoraAsignacion(LocalTime horaAsignacion) {
 		this.horaAsignacion = horaAsignacion;
 	}
 
-	public Time getHoraFinAsignacion() {
+	public LocalTime getHoraFinAsignacion() {
 		return horaFinAsignacion;
 	}
 
-	public void setHoraFinAsignacion(Time horaFinAsignacion) {
+	public void setHoraFinAsignacion(LocalTime horaFinAsignacion) {
 		this.horaFinAsignacion = horaFinAsignacion;
 	}
 	
-	
-
 }

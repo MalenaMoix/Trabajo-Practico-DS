@@ -12,6 +12,8 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
@@ -19,7 +21,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 public class InterfazRegistrarTicket1 extends JPanel {
-
+	
 	private JFrame ventana;
 	private JTextField txtFechaApertura;
 	private JTextField txtHoraApertura;
@@ -125,6 +127,10 @@ public class InterfazRegistrarTicket1 extends JPanel {
 		txtFechaApertura.setColumns(10);
 		txtFechaApertura.setEditable(false);
 		this.add(txtFechaApertura);
+		//FECHA ACTUAL
+		LocalDate fechaApertura = LocalDate.now();
+		txtFechaApertura.setText(fechaApertura.toString());
+		
 		
 		txtHoraApertura = new JTextField();
 		txtHoraApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -133,6 +139,10 @@ public class InterfazRegistrarTicket1 extends JPanel {
 		txtHoraApertura.setBounds(611, 215, 365, 24);
 		txtHoraApertura.setEditable(false);
 		this.add(txtHoraApertura);
+		//HORA ACTUAL
+		LocalTime horaApertura = LocalTime.now();
+		txtHoraApertura.setText(horaApertura.toString());
+		
 		
 		txtNumeroTicket = new JTextField();
 		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -149,9 +159,9 @@ public class InterfazRegistrarTicket1 extends JPanel {
 		this.add(txtNumeroLegajo);
 		
 		
-		JComboBox comboBoxClasificacionTicket = new JComboBox();
+		JComboBox<String> comboBoxClasificacionTicket = new JComboBox<String>();
 		comboBoxClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxClasificacionTicket.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
+		comboBoxClasificacionTicket.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione una opcion...", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
 		comboBoxClasificacionTicket.setBounds(611, 605, 365, 24);
 		this.add(comboBoxClasificacionTicket);
 		

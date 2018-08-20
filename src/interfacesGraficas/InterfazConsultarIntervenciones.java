@@ -91,10 +91,10 @@ public class InterfazConsultarIntervenciones extends JPanel {
 		this.add(errorFechaHasta);
 		
 		
-		JComboBox comboBoxEstado = new JComboBox();
+		JComboBox<String> comboBoxEstado = new JComboBox<String>();
 		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		comboBoxEstado.setForeground(Color.BLACK);
-		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Asignada", "Interrumpida", "Terminada", "Todos"}));
+		comboBoxEstado.setModel(new DefaultComboBoxModel<String>(new String[] {"Asignada", "Interrumpida", "Terminada", "Todos"}));
 		comboBoxEstado.setBounds(630, 363, 267, 27);
 		this.add(comboBoxEstado);
 		

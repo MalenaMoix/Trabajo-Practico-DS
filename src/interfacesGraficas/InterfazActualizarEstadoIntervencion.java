@@ -123,15 +123,15 @@ public class InterfazActualizarEstadoIntervencion extends JPanel {
 		
 		
 		
-		JComboBox comboBoxNuevoEstado = new JComboBox();
+		JComboBox<String> comboBoxNuevoEstado = new JComboBox<String>();
 		comboBoxNuevoEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxNuevoEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado a la espera OK"}));
+		comboBoxNuevoEstado.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione una opcion...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado a la espera OK"}));
 		comboBoxNuevoEstado.setBounds(666, 347, 266, 25);
 		this.add(comboBoxNuevoEstado);
 		
-		JComboBox comboBoxClasificacion = new JComboBox();
+		JComboBox<String> comboBoxClasificacion = new JComboBox<String>();
 		comboBoxClasificacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxClasificacion.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificacion en los perfiles de usuarios", "Problemas con el correo electronico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticacion", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalacion de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicacion o sistema", "Otros"}));
+		comboBoxClasificacion.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione una opcion...", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificacion en los perfiles de usuarios", "Problemas con el correo electronico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticacion", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalacion de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicacion o sistema", "Otros"}));
 		comboBoxClasificacion.setBounds(666, 423, 266, 25);
 		this.add(comboBoxClasificacion);
 		

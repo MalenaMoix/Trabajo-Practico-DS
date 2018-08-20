@@ -1,48 +1,55 @@
 package entidades;
 
-import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class IntervaloTrabajo {
 	
-	private Date fechaInicio;
-	private Date fechaFin;
-	private Time horaInicio;
-	private Time horaFin;
+	private LocalDate fechaInicio;
+	private LocalDate fechaFin;
+	private LocalTime horaInicio;
+	private LocalTime horaFin;
+	
 	
 	public IntervaloTrabajo() {
 		
 	}
+	
+	public IntervaloTrabajo(LocalDate fInicio, LocalTime hInicio) {
+		this.fechaInicio = fInicio;
+		this.horaInicio = hInicio;
+	}
 
-	public Date getFechaInicio() {
+
+	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(LocalDate fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 
-	public Date getFechaFin() {
+	public LocalDate getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
-	public Time getHoraInicio() {
+	public LocalTime getHoraInicio() {
 		return horaInicio;
 	}
 
-	public void setHoraInicio(Time horaInicio) {
+	public void setHoraInicio(LocalTime horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public Time getHoraFin() {
+	public LocalTime getHoraFin() {
 		return horaFin;
 	}
 
-	public void setHoraFin(Time horaFin) {
+	public void setHoraFin(LocalTime horaFin) {
 		this.horaFin = horaFin;
 	}
 

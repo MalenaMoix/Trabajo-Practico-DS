@@ -28,13 +28,13 @@ public class Principal extends JFrame {
 		
 		
 		//DEPENDIENDO SI SE REGISTRE COMO MESA DE AYUDA O GRUPO DE RESOLUCION
-		if (false) {
+		if (true) {
 			this.setContentPane(new HomeMesaAyuda(this));
 			this.pack();
 		}
-		else {
+		/*else {
 			this.setContentPane(new HomeGrupoResolucion(this));
 			this.pack();
-		}
+		}*/
 	}
 }

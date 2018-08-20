@@ -7,9 +7,19 @@ public class Empleado {
 	private Integer numeroLegajo;
 	private String mail;
 	
+	
 	public Empleado() {
 		
 	}
+	
+	public Empleado(Integer dNI, String n, Integer legajo, String m) {
+		this.dni = dNI;
+		this.nombre = n;
+		this.numeroLegajo = legajo;
+		this.mail = m;
+	}
+
+
 
 	public Integer getDni() {
 		return dni;

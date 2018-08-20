@@ -1,29 +1,35 @@
 package entidades;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class DuracionClasificacion {
 	
-	private Date fechaInicio;
-	private Date fechaFin;
+	private LocalDate fechaInicio;
+	private LocalDate fechaFin;
+	
 	
 	public DuracionClasificacion() {
 		
 	}
 
-	public Date getFechaInicio() {
+	public DuracionClasificacion(LocalDate fInicio) {
+		this.fechaInicio = fInicio;
+	}
+
+
+	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(LocalDate fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 
-	public Date getFechaFin() {
+	public LocalDate getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 

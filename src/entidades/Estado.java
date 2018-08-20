@@ -6,9 +6,17 @@ public class Estado {
 	private String descripcion;
 	private Integer id_estado;
 	
+	
 	public Estado() {
 		
 	}
+	
+	public Estado(String n, String desc) {
+		this.nombre = n;
+		this.descripcion = desc;
+	}
+
+
 
 	public String getNombre() {
 		return nombre;

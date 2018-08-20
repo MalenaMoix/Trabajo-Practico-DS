@@ -1,13 +1,13 @@
 package entidades;
 
-import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 public class Reporte {
 	
-	private Date fechaEjecucion;
-	private Time horaEjecucion;
+	private LocalDate fechaEjecucion;
+	private LocalTime horaEjecucion;
 
 	private List<Ticket> listaTickets;
 
@@ -16,19 +16,26 @@ public class Reporte {
 		
 	}
 	
-	public Date getFechaEjecucion() {
+	public Reporte(LocalDate fechaEjec, LocalTime horaEjec) {
+		this.fechaEjecucion = fechaEjec;
+		this.horaEjecucion = horaEjec;
+	}
+
+
+	
+	public LocalDate getFechaEjecucion() {
 		return fechaEjecucion;
 	}
 
-	public void setFechaEjecucion(Date fechaEjecucion) {
+	public void setFechaEjecucion(LocalDate fechaEjecucion) {
 		this.fechaEjecucion = fechaEjecucion;
 	}
 
-	public Time getHoraEjecucion() {
+	public LocalTime getHoraEjecucion() {
 		return horaEjecucion;
 	}
 
-	public void setHoraEjecucion(Time horaEjecucion) {
+	public void setHoraEjecucion(LocalTime horaEjecucion) {
 		this.horaEjecucion = horaEjecucion;
 	}
 	

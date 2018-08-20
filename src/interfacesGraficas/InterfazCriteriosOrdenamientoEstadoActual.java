@@ -71,33 +71,33 @@ public class InterfazCriteriosOrdenamientoEstadoActual extends JPanel {
 		
 		
 		
-		JComboBox comboBoxCriterio1 = new JComboBox();
+		JComboBox<String> comboBoxCriterio1 = new JComboBox<String>();
 		comboBoxCriterio1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio1.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio1.setModel(new DefaultComboBoxModel<String>(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
 		comboBoxCriterio1.setBounds(633, 294, 275, 24);
 		this.add(comboBoxCriterio1);
 		
-		JComboBox comboBoxCriterio2 = new JComboBox();
+		JComboBox<String> comboBoxCriterio2 = new JComboBox<String>();
 		comboBoxCriterio2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio2.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio2.setModel(new DefaultComboBoxModel<String>(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
 		comboBoxCriterio2.setBounds(633, 358, 275, 24);
 		this.add(comboBoxCriterio2);
 		
-		JComboBox comboBoxCriterio3 = new JComboBox();
+		JComboBox<String> comboBoxCriterio3 = new JComboBox<String>();
 		comboBoxCriterio3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio3.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio3.setModel(new DefaultComboBoxModel<String>(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
 		comboBoxCriterio3.setBounds(633, 421, 275, 24);
 		this.add(comboBoxCriterio3);
 		
-		JComboBox comboBoxCriterio4 = new JComboBox();
+		JComboBox<String> comboBoxCriterio4 = new JComboBox<String>();
 		comboBoxCriterio4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio4.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio4.setModel(new DefaultComboBoxModel<String>(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
 		comboBoxCriterio4.setBounds(633, 483, 275, 24);
 		this.add(comboBoxCriterio4);
 		
-		JComboBox comboBoxCriterio5 = new JComboBox();
+		JComboBox<String> comboBoxCriterio5 = new JComboBox<String>();
 		comboBoxCriterio5.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxCriterio5.setModel(new DefaultComboBoxModel(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
+		comboBoxCriterio5.setModel(new DefaultComboBoxModel<String>(new String[] {"Por defecto", "Clasificacion actual del ticket", "Fecha apertura", "N\u00FAmero de ticket", "Tiempo acumulado total de atenci\u00F3n", "Ultimo grupo de resoluci\u00F3n"}));
 		comboBoxCriterio5.setBounds(633, 544, 275, 24);
 		this.add(comboBoxCriterio5);
 		

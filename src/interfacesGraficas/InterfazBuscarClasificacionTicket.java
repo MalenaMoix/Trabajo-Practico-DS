@@ -96,15 +96,15 @@ public class InterfazBuscarClasificacionTicket extends JPanel {
 		this.add(textFieldCodigo);
 		
 		
-		JComboBox comboBoxGrupo = new JComboBox();
-		comboBoxGrupo.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"}));
+		JComboBox<String> comboBoxGrupo = new JComboBox<String>();
+		comboBoxGrupo.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione una opcion...", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electronico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio tecnico", "Unidades de soporte"}));
 		comboBoxGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		comboBoxGrupo.setBounds(696, 481, 296, 25);
 		this.add(comboBoxGrupo);
 		
-		JComboBox comboBoxEstado = new JComboBox();
+		JComboBox<String> comboBoxEstado = new JComboBox<String>();
 		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK", "TODOS"}));
+		comboBoxEstado.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione una opcion...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK", "TODOS"}));
 		comboBoxEstado.setBounds(696, 550, 296, 25);
 		this.add(comboBoxEstado);
 		

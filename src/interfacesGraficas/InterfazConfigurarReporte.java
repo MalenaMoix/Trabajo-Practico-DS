@@ -47,9 +47,9 @@ public class InterfazConfigurarReporte extends JPanel {
 		this.add(lblCriterioAgrupar);
 		
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Numero de ticket", "Numero de legajo", "Estado actual del ticket", "Ultimo grupo de resolucion", "Clasificacion actual del ticket"}));
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Numero de ticket", "Numero de legajo", "Estado actual del ticket", "Ultimo grupo de resolucion", "Clasificacion actual del ticket"}));
 		comboBox.setBounds(655, 268, 298, 25);
 		this.add(comboBox);
 		

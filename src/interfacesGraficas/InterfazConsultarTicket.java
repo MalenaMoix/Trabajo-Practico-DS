@@ -22,7 +22,6 @@ import javax.swing.DefaultComboBoxModel;
 public class InterfazConsultarTicket extends JPanel {
 	
 	private JFrame ventana;
-	private JTable table;
 	private JTable table_1;
 	private JTextField txtNumeroTicket;
 	private JTextField txtNumeroLegajo;
@@ -158,65 +157,65 @@ public class InterfazConsultarTicket extends JPanel {
 		this.add(txtNumeroLegajo);
 		
 		
-		JComboBox comboBoxClasificacionActual = new JComboBox();
-		comboBoxClasificacionActual.setModel(new DefaultComboBoxModel(new String[] {"Todas", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
+		JComboBox<String> comboBoxClasificacionActual = new JComboBox<String>();
+		comboBoxClasificacionActual.setModel(new DefaultComboBoxModel<String>(new String[] {"Todas", "Configuracion de Sistema Operativo", "Mal funcionamiento de Hardware", "Modificaci\u00F3n en los perfiles de usuarios", "Problemas con el correo electr\u00F3nico", "Problemas de acceso a la red local o remota", "Problemas en el funcionamiento del Sistema Operativo", "Problemas en la autenticaci\u00F3n", "Problemas en los sistemas de la empresa", "Solicitud de cambio de contrase\u00F1as", "Solicitud de instalaci\u00F3n de aplicaciones", "Solicitud de nuevos puestos de trabajo", "Solicitud de usuarios de red", "Solicitud de usuarios de Sistemas informaticos", "Solicitud soporte en el uso de alguna aplicaci\u00F3n o sistema", "Otros"}));
 		comboBoxClasificacionActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxClasificacionActual.setEditable(true);
 		comboBoxClasificacionActual.setBounds(611, 129, 230, 20);
 		this.add(comboBoxClasificacionActual);
 		
-		JComboBox comboBoxEstadoActual = new JComboBox();
-		comboBoxEstadoActual.setModel(new DefaultComboBoxModel(new String[] {"Abierto en Mesa de Ayuda", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK", "Todos"}));
+		JComboBox<String> comboBoxEstadoActual = new JComboBox<String>();
+		comboBoxEstadoActual.setModel(new DefaultComboBoxModel<String>(new String[] {"Abierto en Mesa de Ayuda", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK", "Todos"}));
 		comboBoxEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxEstadoActual.setEditable(true);
 		comboBoxEstadoActual.setBounds(611, 156, 230, 20);
 		this.add(comboBoxEstadoActual);
 		
-		JComboBox comboBoxUltimoGrupo = new JComboBox();
-		comboBoxUltimoGrupo.setModel(new DefaultComboBoxModel(new String[] {"Todos", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electr\u00F3nico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio t\u00E9cnico", "Unidades de soporte"}));
+		JComboBox<String> comboBoxUltimoGrupo = new JComboBox<String>();
+		comboBoxUltimoGrupo.setModel(new DefaultComboBoxModel<String>(new String[] {"Todos", "Administrador DEBIAN", "Administrador de Base de Datos", "Administrador LAN", "Administrador Proxy y correo electr\u00F3nico", "Administrador SUSE Linux", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema de Reclamos", "Desarrollo Sistema RRHH", "Mesa de ayuda", "Servicio t\u00E9cnico", "Unidades de soporte"}));
 		comboBoxUltimoGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxUltimoGrupo.setEditable(true);
 		comboBoxUltimoGrupo.setBounds(1135, 129, 185, 20);
 		this.add(comboBoxUltimoGrupo);
 		
-		JComboBox comboBoxDiaCambio = new JComboBox();
-		comboBoxDiaCambio.setModel(new DefaultComboBoxModel(new String[] {"DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		JComboBox<String> comboBoxDiaCambio = new JComboBox<String>();
+		comboBoxDiaCambio.setModel(new DefaultComboBoxModel<String>(new String[] {"DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
 		comboBoxDiaCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxDiaCambio.setEditable(true);
 		comboBoxDiaCambio.setBounds(1135, 155, 52, 22);
 		this.add(comboBoxDiaCambio);
 		
-		JComboBox comboBoxMesCambio = new JComboBox();
-		comboBoxMesCambio.setModel(new DefaultComboBoxModel(new String[] {"MM", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
+		JComboBox<String> comboBoxMesCambio = new JComboBox<String>();
+		comboBoxMesCambio.setModel(new DefaultComboBoxModel<String>(new String[] {"MM", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
 		comboBoxMesCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxMesCambio.setEditable(true);
 		comboBoxMesCambio.setBounds(1197, 155, 52, 22);
 		this.add(comboBoxMesCambio);
 		
-		JComboBox comboBoxAnioCambio = new JComboBox();
-		comboBoxAnioCambio.setModel(new DefaultComboBoxModel(new String[] {"AAAA", "2018"}));
+		JComboBox<String> comboBoxAnioCambio = new JComboBox<String>();
+		comboBoxAnioCambio.setModel(new DefaultComboBoxModel<String>(new String[] {"AAAA", "2018"}));
 		comboBoxAnioCambio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxAnioCambio.setEditable(true);
 		comboBoxAnioCambio.setBounds(1258, 155, 62, 22);
 		this.add(comboBoxAnioCambio);
 		
-		JComboBox comboBoxDiaApertura = new JComboBox();
+		JComboBox<String> comboBoxDiaApertura = new JComboBox<String>();
 		comboBoxDiaApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxDiaApertura.setModel(new DefaultComboBoxModel(new String[] {"DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		comboBoxDiaApertura.setModel(new DefaultComboBoxModel<String>(new String[] {"DD", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
 		comboBoxDiaApertura.setEditable(true);
 		comboBoxDiaApertura.setBounds(190, 179, 52, 22);
 		this.add(comboBoxDiaApertura);
 		
-		JComboBox comboBoxMesApertura = new JComboBox();
+		JComboBox<String> comboBoxMesApertura = new JComboBox<String>();
 		comboBoxMesApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxMesApertura.setModel(new DefaultComboBoxModel(new String[] {"MM", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
+		comboBoxMesApertura.setModel(new DefaultComboBoxModel<String>(new String[] {"MM", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
 		comboBoxMesApertura.setEditable(true);
 		comboBoxMesApertura.setBounds(252, 179, 52, 22);
 		this.add(comboBoxMesApertura);
 		
-		JComboBox comboBoxAnioApertura = new JComboBox();
+		JComboBox<String> comboBoxAnioApertura = new JComboBox<String>();
 		comboBoxAnioApertura.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		comboBoxAnioApertura.setModel(new DefaultComboBoxModel(new String[] {"AAAA", "2018"}));
+		comboBoxAnioApertura.setModel(new DefaultComboBoxModel<String>(new String[] {"AAAA", "2018"}));
 		comboBoxAnioApertura.setEditable(true);
 		comboBoxAnioApertura.setBounds(313, 179, 62, 22);
 		this.add(comboBoxAnioApertura);
