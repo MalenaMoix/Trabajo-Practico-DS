@@ -21,7 +21,7 @@ public class InterfazRegistrarTicket2 extends JPanel {
 	private JTextField txtNumeroTicket;
 	private JTextField txtNumeroLegajo;
 
-	public InterfazRegistrarTicket2(JFrame frame) {
+	public InterfazRegistrarTicket2(JFrame frame, String numeroTicket, String numeroLegajo) {
 
 		this.ventana=frame;
 		ventana.setContentPane(this);
@@ -42,12 +42,12 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		this.add(scrollPane);
 		
 		JTextArea textAreaObservaciones = new JTextArea();
-		textAreaObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		textAreaObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		scrollPane.setViewportView(textAreaObservaciones);
 		textAreaObservaciones.setLineWrap(true);
 		
 		
-		JLabel errorObsVacio = new JLabel("Este campo no puede estar vacio.");
+		JLabel errorObsVacio = new JLabel("* Este campo no puede estar vacio.");
 		errorObsVacio.setForeground(Color.RED);
 		errorObsVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		errorObsVacio.setBounds(1039, 253, 219, 24);
@@ -70,27 +70,31 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		lblNumeroTicket.setBounds(319, 152, 175, 27);
 		this.add(lblNumeroTicket);
 		
-		JLabel lblNumeroLegajo = new JLabel("Numero de Legajo:");
+		JLabel lblNumeroLegajo = new JLabel("Numero de legajo:");
 		lblNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
 		lblNumeroLegajo.setBounds(319, 192, 176, 27);
 		this.add(lblNumeroLegajo);
 		
 		
 		txtNumeroTicket = new JTextField();
-		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		txtNumeroTicket.setBackground(new Color(220, 220, 220));
 		txtNumeroTicket.setBounds(503, 158, 520, 22);
 		txtNumeroTicket.setColumns(10);
 		txtNumeroTicket.setEditable(false);
 		this.add(txtNumeroTicket);
 		
+		txtNumeroTicket.setText(numeroTicket);
+		
 		txtNumeroLegajo = new JTextField();
-		txtNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		txtNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		txtNumeroLegajo.setColumns(10);
 		txtNumeroLegajo.setBackground(new Color(220, 220, 220));
 		txtNumeroLegajo.setBounds(503, 198, 520, 22);
 		txtNumeroLegajo.setEditable(false);
 		this.add(txtNumeroLegajo);
+		
+		txtNumeroLegajo.setText(numeroLegajo);
 		
 		
 		

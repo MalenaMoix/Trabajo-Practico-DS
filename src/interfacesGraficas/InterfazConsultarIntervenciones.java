@@ -135,7 +135,7 @@ public class InterfazConsultarIntervenciones extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null, "No existen intervenciones que cumplan con los criterios ingresados.");
 
-				ventana.setContentPane(new InterfazConsultarIntervencionesPaginacion(ventana));
+				ventana.setContentPane(new InterfazConsultarIntervencionesPaginacion(ventana, txtNumeroLegajo.getText(), txtNumeroTicket.getText(), txtFechaDesde.getText(), txtFechaHasta.getText(), comboBoxEstado.getSelectedItem()));
 				ventana.pack();
 			}
 		});

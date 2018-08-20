@@ -27,7 +27,7 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JPanel {
 	private JTextField txtGrupo;
 	private JTextField txtEstado;
 
-	public InterfazBuscarClasificacionTicketPaginacion(JFrame frame) {
+	public InterfazBuscarClasificacionTicketPaginacion(JFrame frame, String codigo, String nombre, Object grupo, Object estado, String descripcion) {
 		
 		this.ventana=frame;
 		ventana.setContentPane(this);
@@ -141,29 +141,40 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JPanel {
 		
 		
 		txtCodigoNumerico = new JTextField();
+		txtCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtCodigoNumerico.setBounds(300, 85, 217, 21);
 		txtCodigoNumerico.setColumns(10);
 		txtCodigoNumerico.setEditable(false);
 		this.add(txtCodigoNumerico);
 		
+		txtCodigoNumerico.setText(codigo);
+		
 		txtParteNombre = new JTextField();
+		txtParteNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtParteNombre.setColumns(10);
 		txtParteNombre.setBounds(300, 117, 217, 21);
 		txtParteNombre.setEditable(false);
 		this.add(txtParteNombre);
 		
+		txtParteNombre.setText(nombre);
+		
 		txtGrupo = new JTextField();
+		txtGrupo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtGrupo.setColumns(10);
 		txtGrupo.setBounds(300, 151, 217, 21);
 		txtGrupo.setEditable(false);
 		this.add(txtGrupo);
 		
+		txtGrupo.setText((String)grupo);
+		
 		txtEstado = new JTextField();
+		txtEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtEstado.setColumns(10);
 		txtEstado.setBounds(300, 182, 217, 21);
 		txtEstado.setEditable(false);
 		this.add(txtEstado);
 		
+		txtEstado.setText((String)estado);
 		
 		
 		JButton btnSeleccionar = new JButton("Seleccionar");
@@ -200,7 +211,7 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JPanel {
 		
 		btnSeleccionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ventana.setContentPane(new InterfazClasificacionTicketSeleccionada(ventana));
+				ventana.setContentPane(new InterfazClasificacionTicketSeleccionada(ventana, codigo, nombre, grupo, estado, descripcion));
 				ventana.pack();
 			}
 		});
@@ -208,7 +219,7 @@ public class InterfazBuscarClasificacionTicketPaginacion extends JPanel {
 		
 		btnBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ventana.setContentPane(new InterfazBorrarClasificacionTicket(ventana));
+				ventana.setContentPane(new InterfazBorrarClasificacionTicket(ventana, codigo, nombre, grupo, estado, descripcion));
 				ventana.pack();
 			}
 		});

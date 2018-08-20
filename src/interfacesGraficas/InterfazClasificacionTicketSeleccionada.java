@@ -26,7 +26,7 @@ public class InterfazClasificacionTicketSeleccionada extends JPanel {
 	private JTextField txtCantidad;
 	private JTextField txtCantidadTotal;
 
-	public InterfazClasificacionTicketSeleccionada(JFrame frame) {
+	public InterfazClasificacionTicketSeleccionada(JFrame frame, String codigo, String nombre, Object grupo, Object estado, String descripcion) {
 		
 		this.ventana=frame;
 		ventana.setContentPane(this);
@@ -100,6 +100,8 @@ public class InterfazClasificacionTicketSeleccionada extends JPanel {
 		textFieldCodigo.setColumns(10);
 		this.add(textFieldCodigo);
 		
+		textFieldCodigo.setText(codigo);
+		
 		textFieldNombre = new JTextField();
 		textFieldNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		textFieldNombre.setBackground(new Color(220, 220, 220));
@@ -108,6 +110,8 @@ public class InterfazClasificacionTicketSeleccionada extends JPanel {
 		textFieldNombre.setBounds(315, 126, 183, 22);
 		this.add(textFieldNombre);
 		
+		textFieldNombre.setText(nombre);
+		
 		textFieldEstado = new JTextField();
 		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		textFieldEstado.setEditable(false);
@@ -115,6 +119,8 @@ public class InterfazClasificacionTicketSeleccionada extends JPanel {
 		textFieldEstado.setBackground(new Color(220, 220, 220));
 		textFieldEstado.setBounds(315, 171, 183, 22);
 		this.add(textFieldEstado);
+		
+		textFieldEstado.setText((String)estado);
 		
 		
 		table_1 = new JTable();
@@ -174,7 +180,7 @@ public class InterfazClasificacionTicketSeleccionada extends JPanel {
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ventana.setContentPane(new InterfazBuscarClasificacionTicketPaginacion(ventana));
+				ventana.setContentPane(new InterfazBuscarClasificacionTicketPaginacion(ventana, codigo, nombre, grupo, estado, descripcion));
 				ventana.pack();
 			}
 		});

@@ -143,7 +143,7 @@ public class InterfazDerivarTicket1 extends JPanel {
 
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ventana.setContentPane(new InterfazRegistrarTicket2(ventana));
+				ventana.setContentPane(new InterfazRegistrarTicket1(ventana));
 				ventana.pack();
 			}
 		});

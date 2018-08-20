@@ -23,7 +23,7 @@ public class InterfazRegistrarClasificacionTicket2 extends JPanel {
 	private JTextField txtNombre;
 	private JTextField txtActor;
 
-	public InterfazRegistrarClasificacionTicket2(JFrame frame) {
+	public InterfazRegistrarClasificacionTicket2(JFrame frame, String nombre, String descripcion, Object grupo) {
 		
 		this.ventana=frame;
 		ventana.setContentPane(this);
@@ -51,6 +51,8 @@ public class InterfazRegistrarClasificacionTicket2 extends JPanel {
 		scrollPane.setViewportView(textAreaDescripcion);
 		//this.add(textAreaDescripcion);
 		
+		textAreaDescripcion.setText(descripcion);
+		
 		
 		JScrollPane scrollPane2 = new JScrollPane();
 		scrollPane2.setBounds(610, 417, 393, 87);
@@ -62,6 +64,8 @@ public class InterfazRegistrarClasificacionTicket2 extends JPanel {
 		txtListaGrupos.setBounds(610, 416, 393, 87);
 		scrollPane2.setViewportView(txtListaGrupos);
 		//this.add(txtListaGrupos);
+		
+		txtListaGrupos.setText((String)grupo);
 		
 		
 		
@@ -126,6 +130,8 @@ public class InterfazRegistrarClasificacionTicket2 extends JPanel {
 		txtNombre.setBounds(610, 145, 393, 24);
 		txtNombre.setColumns(10);
 		this.add(txtNombre);
+		
+		txtNombre.setText(nombre);
 		
 		txtActor = new JTextField();
 		txtActor.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));

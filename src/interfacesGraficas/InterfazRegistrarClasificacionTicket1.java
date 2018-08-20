@@ -152,7 +152,7 @@ public class InterfazRegistrarClasificacionTicket1 extends JPanel {
 					errorDescripcionVacio.setVisible(true);
 				}
 				else {
-					ventana.setContentPane(new InterfazRegistrarClasificacionTicket2(ventana));
+					ventana.setContentPane(new InterfazRegistrarClasificacionTicket2(ventana, txtNombre.getText(), textAreaDescripcion.getText(), list.getSelectedValue()));
 					ventana.pack();
 				}
 			}

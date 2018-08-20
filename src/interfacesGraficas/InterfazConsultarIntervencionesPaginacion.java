@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JScrollPane;
@@ -33,7 +34,7 @@ public class InterfazConsultarIntervencionesPaginacion extends JPanel {
 	private JTextField textFieldFechaDesde;
 	private JTextField textFieldFechaHasta;
 
-	public InterfazConsultarIntervencionesPaginacion(JFrame frame) {
+	public InterfazConsultarIntervencionesPaginacion(JFrame frame, String legajo, String ticket, String fechaDesde, String fechaHasta, Object estado) {
 
 		this.ventana=frame;
 		ventana.setContentPane(this);
@@ -213,12 +214,16 @@ public class InterfazConsultarIntervencionesPaginacion extends JPanel {
 		textFieldNumeroTicket.setEditable(false);
 		this.add(textFieldNumeroTicket);
 		
+		textFieldNumeroTicket.setText(ticket);
+		
 		textFieldEstado = new JTextField();
 		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		textFieldEstado.setColumns(10);
 		textFieldEstado.setBounds(297, 126, 130, 21);
 		textFieldEstado.setEditable(false);
 		this.add(textFieldEstado);
+		
+		textFieldEstado.setText((String)estado);
 		
 		textFieldNumeroLegajo = new JTextField();
 		textFieldNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
@@ -227,6 +232,8 @@ public class InterfazConsultarIntervencionesPaginacion extends JPanel {
 		textFieldNumeroLegajo.setEditable(false);
 		this.add(textFieldNumeroLegajo);
 		
+		textFieldNumeroLegajo.setText(legajo);
+		
 		textFieldFechaDesde = new JTextField();
 		textFieldFechaDesde.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		textFieldFechaDesde.setColumns(10);
@@ -234,12 +241,16 @@ public class InterfazConsultarIntervencionesPaginacion extends JPanel {
 		textFieldFechaDesde.setEditable(false);
 		this.add(textFieldFechaDesde);
 		
+		textFieldFechaDesde.setText(fechaDesde);
+		
 		textFieldFechaHasta = new JTextField();
 		textFieldFechaHasta.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		textFieldFechaHasta.setColumns(10);
 		textFieldFechaHasta.setBounds(616, 126, 116, 21);
 		textFieldFechaHasta.setEditable(false);
 		this.add(textFieldFechaHasta);
+		
+		textFieldFechaHasta.setText(fechaHasta);
 		
 		
 		

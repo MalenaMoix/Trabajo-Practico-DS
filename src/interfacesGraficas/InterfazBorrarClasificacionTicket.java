@@ -19,11 +19,11 @@ import java.awt.event.ActionEvent;
 public class InterfazBorrarClasificacionTicket extends JPanel {
 
 	private JFrame ventana;
-	private JTextField textFieldEstado;
-	private JTextField textFieldNombre;
-	private JTextField textFieldCodigoNumerico;
+	private JTextField txtEstado;
+	private JTextField txtNombre;
+	private JTextField txtCodigoNumerico;
 
-	public InterfazBorrarClasificacionTicket(JFrame frame) {
+	public InterfazBorrarClasificacionTicket(JFrame frame, String codigo, String nombre, Object grupo, Object estado, String descripcion) {
 		
 		//ACTOR : GRUPO DE RESOLUCION
 		//VALIDAR QUE LA CLASIFICACION NUNCA FUE USADA
@@ -48,10 +48,10 @@ public class InterfazBorrarClasificacionTicket extends JPanel {
 		this.add(scrollPane);
 		
 		
-		JTextArea textAreaDescripcion = new JTextArea();
-		scrollPane.setViewportView(textAreaDescripcion);
-		textAreaDescripcion.setBackground(new Color(220, 220, 220));
-		textAreaDescripcion.setEditable(false);
+		JTextArea txtAreaDescripcion = new JTextArea();
+		scrollPane.setViewportView(txtAreaDescripcion);
+		txtAreaDescripcion.setBackground(new Color(220, 220, 220));
+		txtAreaDescripcion.setEditable(false);
 		
 		
 		
@@ -88,29 +88,35 @@ public class InterfazBorrarClasificacionTicket extends JPanel {
 		
 		
 		
-		textFieldEstado = new JTextField();
-		textFieldEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textFieldEstado.setBackground(new Color(220, 220, 220));
-		textFieldEstado.setEditable(false);
-		textFieldEstado.setBounds(665, 380, 369, 24);
-		textFieldEstado.setColumns(10);
-		this.add(textFieldEstado);
+		txtEstado = new JTextField();
+		txtEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtEstado.setBackground(new Color(220, 220, 220));
+		txtEstado.setEditable(false);
+		txtEstado.setBounds(665, 380, 369, 24);
+		txtEstado.setColumns(10);
+		this.add(txtEstado);
 		
-		textFieldNombre = new JTextField();
-		textFieldNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textFieldNombre.setBackground(new Color(220, 220, 220));
-		textFieldNombre.setEditable(false);
-		textFieldNombre.setColumns(10);
-		textFieldNombre.setBounds(665, 321, 369, 24);
-		this.add(textFieldNombre);
+		txtEstado.setText((String)estado);
 		
-		textFieldCodigoNumerico = new JTextField();
-		textFieldCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		textFieldCodigoNumerico.setEditable(false);
-		textFieldCodigoNumerico.setColumns(10);
-		textFieldCodigoNumerico.setBackground(new Color(220, 220, 220));
-		textFieldCodigoNumerico.setBounds(665, 256, 369, 24);
-		this.add(textFieldCodigoNumerico);
+		txtNombre = new JTextField();
+		txtNombre.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtNombre.setBackground(new Color(220, 220, 220));
+		txtNombre.setEditable(false);
+		txtNombre.setColumns(10);
+		txtNombre.setBounds(665, 321, 369, 24);
+		this.add(txtNombre);
+		
+		txtNombre.setText(nombre);
+		
+		txtCodigoNumerico = new JTextField();
+		txtCodigoNumerico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
+		txtCodigoNumerico.setEditable(false);
+		txtCodigoNumerico.setColumns(10);
+		txtCodigoNumerico.setBackground(new Color(220, 220, 220));
+		txtCodigoNumerico.setBounds(665, 256, 369, 24);
+		this.add(txtCodigoNumerico);
+		
+		txtCodigoNumerico.setText(codigo);
 		
 		
 		
@@ -141,7 +147,7 @@ public class InterfazBorrarClasificacionTicket extends JPanel {
 		
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ventana.setContentPane(new InterfazBuscarClasificacionTicketPaginacion(ventana));
+				ventana.setContentPane(new InterfazBuscarClasificacionTicketPaginacion(ventana, codigo, nombre, grupo, estado, descripcion));
 				ventana.pack();
 			}
 		});

@@ -194,7 +194,7 @@ public class InterfazRegistrarTicket1 extends JPanel {
 					errorDebeElegir.setVisible(true);
 				}
 				else {
-					ventana.setContentPane(new InterfazRegistrarTicket2(ventana));
+					ventana.setContentPane(new InterfazRegistrarTicket2(ventana,txtNumeroTicket.getText(),txtNumeroLegajo.getText()));
 					ventana.pack();
 				}
 			}

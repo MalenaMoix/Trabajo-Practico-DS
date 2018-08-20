@@ -124,7 +124,7 @@ public class InterfazBuscarClasificacionTicket extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null, "No existen clasificaciones de tickets que cumplan con los criterios ingresados.");
 				
-				ventana.setContentPane(new InterfazBuscarClasificacionTicketPaginacion(ventana));
+				ventana.setContentPane(new InterfazBuscarClasificacionTicketPaginacion(ventana,textFieldCodigo.getText(),textFieldNombre.getText(),comboBoxGrupo.getSelectedItem(),comboBoxEstado.getSelectedItem(), textAreaDescripcion.getText()));
 				ventana.pack();
 			}
 		});

@@ -28,7 +28,7 @@ public class Principal extends JFrame {
 		
 		
 		//DEPENDIENDO SI SE REGISTRE COMO MESA DE AYUDA O GRUPO DE RESOLUCION
-		if (true) {
+		if (false) {
 			this.setContentPane(new HomeMesaAyuda(this));
 			this.pack();
 		}
