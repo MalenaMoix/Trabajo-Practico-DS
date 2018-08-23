@@ -104,7 +104,7 @@ public class InterfazBuscarClasificacionTicket extends JPanel {
 		
 		JComboBox<String> comboBoxEstado = new JComboBox<String>();
 		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxEstado.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione una opcion...", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK", "TODOS"}));
+		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Abierto derivado", "Cerrado", "Solucionado en la espera de OK", "TODOS"}));
 		comboBoxEstado.setBounds(696, 550, 296, 25);
 		this.add(comboBoxEstado);
 		

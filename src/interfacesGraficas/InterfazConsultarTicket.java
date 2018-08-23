@@ -165,7 +165,7 @@ public class InterfazConsultarTicket extends JPanel {
 		this.add(comboBoxClasificacionActual);
 		
 		JComboBox<String> comboBoxEstadoActual = new JComboBox<String>();
-		comboBoxEstadoActual.setModel(new DefaultComboBoxModel<String>(new String[] {"Abierto en Mesa de Ayuda", "Abierto derivado", "Abierto sin derivar", "Cerrado", "Solucionado en la espera de OK", "Todos"}));
+		comboBoxEstadoActual.setModel(new DefaultComboBoxModel(new String[] {"Abierto en Mesa de Ayuda", "Abierto derivado", "Cerrado", "Solucionado en la espera de OK", "Todos"}));
 		comboBoxEstadoActual.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		comboBoxEstadoActual.setEditable(true);
 		comboBoxEstadoActual.setBounds(611, 156, 230, 20);
