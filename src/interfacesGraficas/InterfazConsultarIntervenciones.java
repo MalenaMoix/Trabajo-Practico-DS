@@ -94,7 +94,7 @@ public class InterfazConsultarIntervenciones extends JPanel {
 		JComboBox<String> comboBoxEstado = new JComboBox<String>();
 		comboBoxEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		comboBoxEstado.setForeground(Color.BLACK);
-		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Asignada", "En espera", "Terminada", "Todos"}));
+		comboBoxEstado.setModel(new DefaultComboBoxModel(new String[] {"Asignada", "En espera", "Terminada", "Trabajando", "Todos"}));
 		comboBoxEstado.setBounds(630, 363, 267, 27);
 		this.add(comboBoxEstado);
 		

@@ -125,7 +125,7 @@ public class InterfazActualizarEstadoIntervencion extends JPanel {
 		
 		JComboBox<String> comboBoxNuevoEstado = new JComboBox<String>();
 		comboBoxNuevoEstado.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBoxNuevoEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Asignada", "En espera", "Terminada"}));
+		comboBoxNuevoEstado.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una opcion...", "Asignada", "En espera", "Terminada", "Trabajando"}));
 		comboBoxNuevoEstado.setBounds(666, 347, 266, 25);
 		this.add(comboBoxNuevoEstado);
 		
