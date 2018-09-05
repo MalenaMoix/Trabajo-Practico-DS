@@ -1,2 +1,5 @@
 Ver estados de las Intervenciones
 Ver estados de los Tickets
+
+Ver cardinalidades del Diagrama de Clases
+Ver cardinalidades del DER
