@@ -98,15 +98,10 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		
 		
 		
-		JButton btnDerivarTicket = new JButton("Derivar ticket");
-		btnDerivarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnDerivarTicket.setBounds(1020, 655, 133, 37);
-		this.add(btnDerivarTicket);
-		
-		JButton btnCerrarTicket = new JButton("Cerrar ticket");
-		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnCerrarTicket.setBounds(833, 655, 133, 37);
-		this.add(btnCerrarTicket);
+		JButton btnRegistrarTicket = new JButton("Registrar");
+		btnRegistrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnRegistrarTicket.setBounds(1020, 655, 133, 37);
+		this.add(btnRegistrarTicket);
 		
 		JButton atras = new JButton("Atras");
 		atras.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
@@ -114,28 +109,14 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		this.add(atras);
 		
 		
-		btnDerivarTicket.addActionListener(new ActionListener() {
+		btnRegistrarTicket.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (textAreaObservaciones.getText().isEmpty()) {
 					errorObsVacio.setVisible(true);
 				}
 				else {
-					ventana.setContentPane(new InterfazDerivarTicket1(ventana));
-					ventana.pack();
-				}
-			}
-		});
-		
-
-		btnCerrarTicket.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				if (textAreaObservaciones.getText().isEmpty()) {
-					errorObsVacio.setVisible(true);
-				}
-				else {
-					ventana.setContentPane(new InterfazCerrarTicket(ventana));
+					ventana.setContentPane(new InterfazRegistrarTicket3(ventana));
 					ventana.pack();
 				}
 			}
