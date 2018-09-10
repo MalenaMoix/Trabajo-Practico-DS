@@ -5,11 +5,18 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import entidades.Ticket;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
@@ -21,7 +28,7 @@ public class InterfazRegistrarTicket2 extends JPanel {
 	private JTextField txtNumeroTicket;
 	private JTextField txtNumeroLegajo;
 
-	public InterfazRegistrarTicket2(JFrame frame, String numeroTicket, String numeroLegajo) {
+	public InterfazRegistrarTicket2(JFrame frame, String numeroTicket, String numeroLegajo, Object clasificacion, LocalDate fecha, LocalTime hora) {
 
 		this.ventana=frame;
 		ventana.setContentPane(this);
@@ -115,9 +122,17 @@ public class InterfazRegistrarTicket2 extends JPanel {
 				if (textAreaObservaciones.getText().isEmpty()) {
 					errorObsVacio.setVisible(true);
 				}
+				
 				else {
-					ventana.setContentPane(new InterfazRegistrarTicket3(ventana));
-					ventana.pack();
+					int dialogButton = JOptionPane.YES_NO_OPTION;
+					int dialogResult = JOptionPane.showConfirmDialog (null, "Desea guardar los cambios realizados?","Warning",dialogButton);
+					if(dialogResult == JOptionPane.YES_OPTION){
+					  
+						Ticket ticket = new Ticket(Integer.valueOf(numeroTicket),fecha,hora);
+						
+						ventana.setContentPane(new InterfazRegistrarTicket3(ventana,numeroTicket,numeroLegajo,clasificacion,textAreaObservaciones.getText()));
+						ventana.pack();
+					}
 				}
 			}
 		});

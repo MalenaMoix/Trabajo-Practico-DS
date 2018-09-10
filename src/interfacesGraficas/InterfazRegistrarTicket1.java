@@ -55,7 +55,7 @@ public class InterfazRegistrarTicket1 extends JPanel {
 		
 		
 		
-		JLabel lblNumeroTicket = new JLabel("Numero de ticket:");
+		JLabel lblNumeroTicket = new JLabel("Numero de Ticket:");
 		lblNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
 		lblNumeroTicket.setBounds(379, 130, 156, 28);
 		this.add(lblNumeroTicket);
@@ -65,7 +65,7 @@ public class InterfazRegistrarTicket1 extends JPanel {
 		lblNumeroLegajo.setBounds(379, 253, 156, 23);
 		this.add(lblNumeroLegajo);
 		
-		JLabel lblClasificacionTicket = new JLabel("Clasificacion de ticket:");
+		JLabel lblClasificacionTicket = new JLabel("Clasificacion del Ticket:");
 		lblClasificacionTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
 		lblClasificacionTicket.setBounds(379, 598, 172, 36);
 		this.add(lblClasificacionTicket);
@@ -204,7 +204,7 @@ public class InterfazRegistrarTicket1 extends JPanel {
 					errorDebeElegir.setVisible(true);
 				}
 				else {
-					ventana.setContentPane(new InterfazRegistrarTicket2(ventana,txtNumeroTicket.getText(),txtNumeroLegajo.getText()));
+					ventana.setContentPane(new InterfazRegistrarTicket2(ventana,txtNumeroTicket.getText(),txtNumeroLegajo.getText(),comboBoxClasificacionTicket.getSelectedItem(),fechaApertura,horaApertura));
 					ventana.pack();
 				}
 			}
