@@ -97,7 +97,7 @@
 														"$ref": "AAAAAAFmqLnqkPieyyY="
 													},
 													"font": "Arial;13;0",
-													"left": 118.97900390625,
+													"left": 102.97900390625,
 													"top": 5,
 													"width": 115.9052734375,
 													"height": 13,
@@ -110,7 +110,7 @@
 														"$ref": "AAAAAAFmqLnqkPieyyY="
 													},
 													"font": "Arial;13;1",
-													"left": 53,
+													"left": 37,
 													"top": 5,
 													"width": 60.97900390625,
 													"height": 13,
@@ -118,8 +118,8 @@
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 48,
-											"width": 1161,
+											"left": 32,
+											"width": 1177,
 											"height": 2065,
 											"nameLabel": {
 												"$ref": "AAAAAAFmqLnqkPif/to="
@@ -436,7 +436,7 @@
 															"font": "Arial;13;0",
 															"left": 64,
 															"top": 223,
-															"width": 945,
+															"width": 977,
 															"height": 90,
 															"guardLabel": {
 																"$ref": "AAAAAAFmqMdOffsY048="
@@ -469,7 +469,7 @@
 															"font": "Arial;13;0",
 															"left": 64,
 															"top": 313,
-															"width": 945,
+															"width": 977,
 															"height": 43,
 															"guardLabel": {
 																"$ref": "AAAAAAFmqMdUaPshqTE="
@@ -479,14 +479,14 @@
 													"font": "Arial;13;0",
 													"left": 64,
 													"top": 223,
-													"width": 945,
+													"width": 977,
 													"height": 133
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 64,
 											"top": 200,
-											"width": 945,
+											"width": 977,
 											"height": 513,
 											"nameLabel": {
 												"$ref": "AAAAAAFmqMdOZPsJRFQ="
@@ -914,7 +914,7 @@
 															"font": "Arial;13;0",
 															"left": 88,
 															"top": 375,
-															"width": 897,
+															"width": 945,
 															"height": 138,
 															"guardLabel": {
 																"$ref": "AAAAAAFmqMxHFfvtuDs="
@@ -947,7 +947,7 @@
 															"font": "Arial;13;0",
 															"left": 88,
 															"top": 513,
-															"width": 897,
+															"width": 945,
 															"height": 72,
 															"guardLabel": {
 																"$ref": "AAAAAAFmqMxSgPv2iJA="
@@ -957,14 +957,14 @@
 													"font": "Arial;13;0",
 													"left": 88,
 													"top": 375,
-													"width": 897,
+													"width": 945,
 													"height": 210
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 88,
 											"top": 352,
-											"width": 897,
+											"width": 945,
 											"height": 345,
 											"nameLabel": {
 												"$ref": "AAAAAAFmqMxG9/veETk="
@@ -1107,17 +1107,17 @@
 														"$ref": "AAAAAAFmqMrGFvury6U="
 													},
 													"font": "Arial;13;0",
-													"left": 774,
+													"left": 776,
 													"top": 232,
-													"width": 168.3779296875,
+													"width": 209.06640625,
 													"height": 13,
-													"alpha": 1.5707963267948966,
-													"distance": 10,
+													"alpha": 0.4266273218940639,
+													"distance": 24.166091947189145,
 													"hostEdge": {
 														"$ref": "AAAAAAFmqMrGFvus9uE="
 													},
 													"edgePosition": 1,
-													"text": "3 : getIntervensiones(estado)"
+													"text": "3 : getIntervensionesTickets(estado)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -1781,17 +1781,17 @@
 														"$ref": "AAAAAAFmqN9s4v4wza0="
 													},
 													"font": "Arial;13;0",
-													"left": 767,
+													"left": 776,
 													"top": 592,
-													"width": 202.8076171875,
+													"width": 243.49609375,
 													"height": 13,
-													"alpha": 0.7853976633976983,
-													"distance": 14.142135623730951,
+													"alpha": 0.2510026249527348,
+													"distance": 40.26164427839479,
 													"hostEdge": {
 														"$ref": "AAAAAAFmqN9s4/4xsxQ="
 													},
 													"edgePosition": 1,
-													"text": "8 : getIntervensiones(datosIntDTO)"
+													"text": "8 : getIntervensionesTickets(datosIntDTO)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -1945,7 +1945,7 @@
 															"font": "Arial;13;0",
 															"left": 72,
 															"top": 767,
-															"width": 936,
+															"width": 1033,
 															"height": 226,
 															"guardLabel": {
 																"$ref": "AAAAAAFmqOIUuv52toQ="
@@ -1978,7 +1978,7 @@
 															"font": "Arial;13;0",
 															"left": 72,
 															"top": 993,
-															"width": 936,
+															"width": 1033,
 															"height": 96,
 															"guardLabel": {
 																"$ref": "AAAAAAFmqOIb9P5/4L8="
@@ -1988,14 +1988,14 @@
 													"font": "Arial;13;0",
 													"left": 72,
 													"top": 767,
-													"width": 936,
+													"width": 1033,
 													"height": 322
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 72,
 											"top": 744,
-											"width": 936,
+											"width": 1033,
 											"height": 360,
 											"nameLabel": {
 												"$ref": "AAAAAAFmqOIUjP5n51Q="
@@ -2251,7 +2251,7 @@
 														"$ref": "AAAAAAFmq2CYWhBxLMs="
 													},
 													"edgePosition": 1,
-													"text": "10 : listaDTO.add( new datosIntDTO(l[j])"
+													"text": "10 : listaDTO.add( new datosDTO(l[j])"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -3992,13 +3992,14 @@
 									"_parent": {
 										"$ref": "AAAAAAFmqLnqkPicILY="
 									},
-									"name": "getIntervensiones(estado)",
+									"name": "getIntervensionesTickets",
 									"source": {
 										"$ref": "AAAAAAFmqMhmI/staWw="
 									},
 									"target": {
 										"$ref": "AAAAAAFmqMpHLvuIp58="
-									}
+									},
+									"arguments": "estado"
 								},
 								{
 									"_type": "UMLMessage",
@@ -4064,7 +4065,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFmqLnqkPicILY="
 									},
-									"name": "getIntervensiones",
+									"name": "getIntervensionesTickets",
 									"source": {
 										"$ref": "AAAAAAFmqMhmI/staWw="
 									},
@@ -4094,7 +4095,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFmqLnqkPicILY="
 									},
-									"name": "listaDTO.add( new datosIntDTO(l[j])",
+									"name": "listaDTO.add( new datosDTO(l[j])",
 									"source": {
 										"$ref": "AAAAAAFmqMhmI/staWw="
 									},
