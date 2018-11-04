@@ -1,0 +1,5 @@
+URL: "jdbc:postgresql://190.114.206.177:5432/tutifruti27"
+
+USER: "tf27_user"
+
+PASSWORD: "tf135"
