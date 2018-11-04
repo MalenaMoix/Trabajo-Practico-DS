@@ -1,5 +1,8 @@
 package entidades;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Estado {
 	
 	private String nombre;

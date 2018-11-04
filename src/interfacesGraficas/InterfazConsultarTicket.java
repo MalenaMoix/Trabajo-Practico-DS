@@ -271,8 +271,8 @@ public class InterfazConsultarTicket extends JPanel {
 		
 		btnDerivar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ventana.setContentPane(new InterfazDerivarTicket1(ventana));
-				ventana.pack();
+				//ventana.setContentPane(new InterfazDerivarTicket1(ventana));
+				//ventana.pack();
 			}
 		});
 		

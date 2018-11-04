@@ -3,12 +3,23 @@ package entidades;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "TICKET")
 public class Ticket {
 	
-	private Integer numero;
+	@Column (name = "NUMERO_TICKET")
+	private Integer numeroTicket;
+	@Column (name = "FECHA_APERTURA")
 	private LocalDate fechaApertura;
+	@Column (name = "FECHA_FIN")
 	private LocalDate fechaFin;
+	@Column (name = "HORA_APERTURA")
 	private LocalTime horaApertura;
+	@Column (name = "HORA_FIN")
 	private LocalTime horaFin;
 	
 	
@@ -17,7 +28,7 @@ public class Ticket {
 	}
 	
 	public Ticket(Integer nro, LocalDate fechaAp, LocalTime horaAp) {
-		this.numero = nro;
+		this.numeroTicket = nro;
 		this.fechaApertura = fechaAp;
 		this.horaApertura = horaAp;
 	}
@@ -25,11 +36,11 @@ public class Ticket {
 	
 
 	public Integer getNumero() {
-		return numero;
+		return numeroTicket;
 	}
 
 	public void setNumero(Integer numero) {
-		this.numero = numero;
+		this.numeroTicket = numero;
 	}
 
 	public LocalDate getFechaApertura() {

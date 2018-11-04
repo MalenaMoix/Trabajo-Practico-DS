@@ -2,10 +2,21 @@ package entidades;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "DURACION_ESTADO")
 public class DuracionEstado {
 	
+	//FALTA AGREGAR EL ID
+	
+	@Column (name ="FECHA_INICIO")
 	private LocalDate fechaInicio;
+	@Column (name ="FECHA_FIN")
 	private LocalDate fechaFin;
+	@Column (name ="OBSERVACIONES")
 	private String observaciones;
 	
 	

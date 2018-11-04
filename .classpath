@@ -3,20 +3,76 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_162"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="libs"/>
-	<classpathentry kind="lib" path="libs/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="libs/classmate-1.3.0.jar"/>
-	<classpathentry kind="lib" path="libs/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="libs/hibernate-commons-annotations-5.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="libs/hibernate-core-5.2.11.Final.jar"/>
-	<classpathentry kind="lib" path="libs/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="libs/javassist-3.20.0-GA.jar"/>
-	<classpathentry kind="lib" path="libs/jboss-annotations-api_1.2_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="libs/jboss-jms-api_2.0_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="libs/jboss-logging-3.3.0.Final.jar"/>
-	<classpathentry kind="lib" path="libs/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="libs/lucene-core-5.5.4.jar"/>
-	<classpathentry kind="lib" path="libs/lucene-queryparser-5.5.4.jar"/>
-	<classpathentry kind="lib" path="libs/xml-apis-1.3.03.jar"/>
+	<classpathentry kind="lib" path="libs/antlr-2.7.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/classmate-1.3.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/dom4j-1.6.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/hibernate-commons-annotations-5.0.1.Final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/hibernate-core-5.2.11.Final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/hibernate-jpa-2.1-api-1.0.0.Final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/javassist-3.20.0-GA.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/jboss-annotations-api_1.2_spec-1.0.0.Final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/jboss-jms-api_2.0_spec-1.0.0.Final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/jboss-logging-3.3.0.Final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/jboss-transaction-api_1.2_spec-1.0.0.Final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/lucene-core-5.5.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/lucene-queryparser-5.5.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/xml-apis-1.3.03.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Malena%20Moix/eclipse-workspace/jdk-8u192-docs-all.zip!/docs/api"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/postgresql9.4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -12,14 +12,21 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextField;
 
 public class InterfazDerivarTicket1 extends JPanel {
 
 	private JFrame ventana;
+	private JTextField txtNumeroDeTicket;
+	private JTextField txtNumeroDeLegajo;
+	private JTextField txtClasificacionDeTicket;
 
-	public InterfazDerivarTicket1(JFrame frame) {
+	public InterfazDerivarTicket1(JFrame frame, String numeroTicket, String numeroLegajo, Object clasificacion) {
 		
 		//LA LISTA DE GRUPO RESOLUCION DEPENDE DE LA CLASIFICACION DEL PROBLEMA
+		
 		
 		this.ventana=frame;
 		ventana.setContentPane(this);
@@ -43,89 +50,67 @@ public class InterfazDerivarTicket1 extends JPanel {
 		
 		JLabel lblSeleccione = new JLabel("Seleccione grupo de resolucion:");
 		lblSeleccione.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
-		lblSeleccione.setBounds(364, 130, 262, 31);
+		lblSeleccione.setBounds(346, 304, 262, 31);
 		this.add(lblSeleccione);
 		
 		
+		JLabel lblNumeroDeTicket = new JLabel("Numero de ticket:");
+		lblNumeroDeTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblNumeroDeTicket.setBounds(346, 143, 262, 31);
+		add(lblNumeroDeTicket);
 		
-		JRadioButton radioButtonMesaAyuda = new JRadioButton("Mesa de ayuda");
-		radioButtonMesaAyuda.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonMesaAyuda.setBackground(new Color(230, 230, 250));
-		radioButtonMesaAyuda.setBounds(658, 169, 222, 23);
-		this.add(radioButtonMesaAyuda);
+		JLabel lblNumeroDeLegajo = new JLabel("Numero de legajo:");
+		lblNumeroDeLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblNumeroDeLegajo.setBounds(346, 187, 262, 31);
+		add(lblNumeroDeLegajo);
 		
-		JRadioButton radioButtonUnidadesSoporte = new JRadioButton("Unidades de soporte");
-		radioButtonUnidadesSoporte.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonUnidadesSoporte.setBackground(new Color(230, 230, 250));
-		radioButtonUnidadesSoporte.setBounds(658, 212, 222, 23);
-		this.add(radioButtonUnidadesSoporte);
-		
-		JRadioButton radioButtonServicioTecnico = new JRadioButton("Servicio tecnico");
-		radioButtonServicioTecnico.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonServicioTecnico.setBackground(new Color(230, 230, 250));
-		radioButtonServicioTecnico.setBounds(658, 253, 222, 23);
-		this.add(radioButtonServicioTecnico);
-		
-		JRadioButton radioButtonAdministradorDeBD = new JRadioButton("Administrador de Base de Datos");
-		radioButtonAdministradorDeBD.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonAdministradorDeBD.setBackground(new Color(230, 230, 250));
-		radioButtonAdministradorDeBD.setBounds(658, 293, 262, 23);
-		this.add(radioButtonAdministradorDeBD);
-		
-		JRadioButton radioButtonAdministradorSuseLinux = new JRadioButton("Administrador SUSE Linux");
-		radioButtonAdministradorSuseLinux.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonAdministradorSuseLinux.setBackground(new Color(230, 230, 250));
-		radioButtonAdministradorSuseLinux.setBounds(658, 333, 222, 23);
-		this.add(radioButtonAdministradorSuseLinux);
-		
-		JRadioButton radioButtonAdministradorProxy = new JRadioButton("Administrador Proxy y correo electronico");
-		radioButtonAdministradorProxy.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonAdministradorProxy.setBackground(new Color(230, 230, 250));
-		radioButtonAdministradorProxy.setBounds(658, 374, 317, 23);
-		this.add(radioButtonAdministradorProxy);
-		
-		JRadioButton radioButtonAdministradorDebian = new JRadioButton("Administrador DEBIAN");
-		radioButtonAdministradorDebian.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonAdministradorDebian.setBackground(new Color(230, 230, 250));
-		radioButtonAdministradorDebian.setBounds(658, 416, 222, 23);
-		this.add(radioButtonAdministradorDebian);
-		
-		JRadioButton radioButtonRedesLan = new JRadioButton("Redes LAN");
-		radioButtonRedesLan.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonRedesLan.setBackground(new Color(230, 230, 250));
-		radioButtonRedesLan.setBounds(658, 457, 222, 23);
-		this.add(radioButtonRedesLan);
-		
-		JRadioButton radioButtonComunicaciones = new JRadioButton("Comunicaciones");
-		radioButtonComunicaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonComunicaciones.setBackground(new Color(230, 230, 250));
-		radioButtonComunicaciones.setBounds(658, 499, 222, 23);
-		this.add(radioButtonComunicaciones);
-		
-		JRadioButton radioButtonDesarrolloSistemaComercial = new JRadioButton("Desarrollo Sistema Comercial");
-		radioButtonDesarrolloSistemaComercial.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonDesarrolloSistemaComercial.setBackground(new Color(230, 230, 250));
-		radioButtonDesarrolloSistemaComercial.setBounds(658, 541, 242, 23);
-		this.add(radioButtonDesarrolloSistemaComercial);
-		
-		JRadioButton radioButtonDesarrolloSistemaRRHH = new JRadioButton("Desarrollo Sistema RRHH");
-		radioButtonDesarrolloSistemaRRHH.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonDesarrolloSistemaRRHH.setBackground(new Color(230, 230, 250));
-		radioButtonDesarrolloSistemaRRHH.setBounds(658, 584, 222, 23);
-		this.add(radioButtonDesarrolloSistemaRRHH);
-		
-		JRadioButton radioButtonDesarrolloSistemaReclamos = new JRadioButton("Desarrollo Sistema de Reclamos");
-		radioButtonDesarrolloSistemaReclamos.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		radioButtonDesarrolloSistemaReclamos.setBackground(new Color(230, 230, 250));
-		radioButtonDesarrolloSistemaReclamos.setBounds(658, 626, 242, 23);
-		this.add(radioButtonDesarrolloSistemaReclamos);
+		JLabel lblNewLabel = new JLabel("Clasificacion de ticket:");
+		lblNewLabel.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		lblNewLabel.setBounds(346, 231, 262, 31);
+		add(lblNewLabel);
 		
 		
 		
-		JButton btnDerivar = new JButton("Derivar");
-		btnDerivar.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnDerivar.setBounds(1020, 655, 133, 37);
-		this.add(btnDerivar);
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.setEditable(true);
+		comboBox.setBackground(Color.WHITE);
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione una opcion...", "Mesa de ayuda", "Unidades de soporte", "Servicio tecnico", "Administrador de Base de Datos", "Administrador SUSE Linux", "Administrador Proxy y correo electronico", "Administrador DEBIAN", "Redes LAN", "Comunicaciones", "Desarrollo Sistema Comercial", "Desarrollo Sistema RRHH", "Desarrollo Sistema de reclamos"}));
+		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBox.setBounds(620, 308, 407, 25);
+		add(comboBox);
+		
+
+		
+		txtNumeroDeTicket = new JTextField();
+		txtNumeroDeTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtNumeroDeTicket.setEditable(false);
+		txtNumeroDeTicket.setBounds(620, 150, 407, 24);
+		add(txtNumeroDeTicket);
+		txtNumeroDeTicket.setColumns(10);
+		txtNumeroDeTicket.setText(numeroTicket);
+		
+		txtNumeroDeLegajo = new JTextField();
+		txtNumeroDeLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtNumeroDeLegajo.setEditable(false);
+		txtNumeroDeLegajo.setColumns(10);
+		txtNumeroDeLegajo.setBounds(620, 194, 407, 24);
+		add(txtNumeroDeLegajo);
+		txtNumeroDeLegajo.setText(numeroLegajo);
+		
+		txtClasificacionDeTicket = new JTextField();
+		txtClasificacionDeTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		txtClasificacionDeTicket.setEditable(false);
+		txtClasificacionDeTicket.setColumns(10);
+		txtClasificacionDeTicket.setBounds(620, 238, 407, 24);
+		add(txtClasificacionDeTicket);
+		txtClasificacionDeTicket.setText(clasificacion.toString());
+		
+		
+		
+		JButton btnDerivarTicket = new JButton("Derivar Ticket");
+		btnDerivarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnDerivarTicket.setBounds(1020, 655, 133, 37);
+		this.add(btnDerivarTicket);
 		
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
@@ -133,9 +118,9 @@ public class InterfazDerivarTicket1 extends JPanel {
 		this.add(btnAtras);
 		
 		
-		btnDerivar.addActionListener(new ActionListener() {
+		btnDerivarTicket.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ventana.setContentPane(new InterfazDerivarTicket2(ventana));
+				ventana.setContentPane(new InterfazRegistrarTicket2(ventana, numeroTicket, numeroLegajo, clasificacion));
 				ventana.pack();
 			}
 		});
@@ -143,7 +128,7 @@ public class InterfazDerivarTicket1 extends JPanel {
 
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ventana.setContentPane(new InterfazRegistrarTicket1(ventana));
+				ventana.setContentPane(new HomeMesaAyuda(ventana));
 				ventana.pack();
 			}
 		});

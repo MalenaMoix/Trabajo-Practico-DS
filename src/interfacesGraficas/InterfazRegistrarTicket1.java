@@ -145,6 +145,7 @@ public class InterfazRegistrarTicket1 extends JPanel {
 		
 		
 		txtNumeroTicket = new JTextField();
+		txtNumeroTicket.setEditable(false);
 		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtNumeroTicket.setColumns(10);
 		txtNumeroTicket.setBackground(new Color(220, 220, 220));
@@ -154,7 +155,7 @@ public class InterfazRegistrarTicket1 extends JPanel {
 		txtNumeroLegajo = new JTextField();
 		txtNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
 		txtNumeroLegajo.setColumns(10);
-		txtNumeroLegajo.setBackground(new Color(220, 220, 220));
+		txtNumeroLegajo.setBackground(Color.WHITE);
 		txtNumeroLegajo.setBounds(611, 253, 365, 24);
 		this.add(txtNumeroLegajo);
 		
@@ -204,7 +205,7 @@ public class InterfazRegistrarTicket1 extends JPanel {
 					errorDebeElegir.setVisible(true);
 				}
 				else {
-					ventana.setContentPane(new InterfazRegistrarTicket2(ventana,txtNumeroTicket.getText(),txtNumeroLegajo.getText(),comboBoxClasificacionTicket.getSelectedItem(),fechaApertura,horaApertura));
+					ventana.setContentPane(new InterfazRegistrarTicket2(ventana,txtNumeroTicket.getText(),txtNumeroLegajo.getText(),comboBoxClasificacionTicket.getSelectedItem()));
 					ventana.pack();
 				}
 			}

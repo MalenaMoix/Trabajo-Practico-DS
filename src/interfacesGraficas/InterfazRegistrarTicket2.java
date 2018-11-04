@@ -7,16 +7,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.LocalTime;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import entidades.Ticket;
-
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
@@ -27,8 +22,9 @@ public class InterfazRegistrarTicket2 extends JPanel {
 	private JFrame ventana;
 	private JTextField txtNumeroTicket;
 	private JTextField txtNumeroLegajo;
+	private JTextField txtClasificacion;
 
-	public InterfazRegistrarTicket2(JFrame frame, String numeroTicket, String numeroLegajo, Object clasificacion, LocalDate fecha, LocalTime hora) {
+	public InterfazRegistrarTicket2(JFrame frame, String numeroTicket, String numeroLegajo, Object clasificacion) {
 
 		this.ventana=frame;
 		ventana.setContentPane(this);
@@ -45,7 +41,7 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		this.add(separator);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(503, 253, 520, 320);
+		scrollPane.setBounds(503, 295, 520, 280);
 		this.add(scrollPane);
 		
 		JTextArea textAreaObservaciones = new JTextArea();
@@ -57,7 +53,7 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		JLabel errorObsVacio = new JLabel("* Este campo no puede estar vacio.");
 		errorObsVacio.setForeground(Color.RED);
 		errorObsVacio.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 14));
-		errorObsVacio.setBounds(1039, 253, 219, 24);
+		errorObsVacio.setBounds(1057, 300, 219, 24);
 		this.add(errorObsVacio);
 		errorObsVacio.setVisible(false);
 		
@@ -69,7 +65,7 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		
 		JLabel lblObservaciones = new JLabel("Observaciones:");
 		lblObservaciones.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
-		lblObservaciones.setBounds(319, 251, 133, 27);
+		lblObservaciones.setBounds(319, 288, 172, 27);
 		this.add(lblObservaciones);
 		
 		JLabel lblNumeroTicket = new JLabel("Numero de ticket:");
@@ -82,67 +78,74 @@ public class InterfazRegistrarTicket2 extends JPanel {
 		lblNumeroLegajo.setBounds(319, 192, 176, 27);
 		this.add(lblNumeroLegajo);
 		
+		JLabel lblClasificacion = new JLabel("Clasificacion ticket:");
+		lblClasificacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 20));
+		lblClasificacion.setBounds(319, 232, 172, 27);
+		add(lblClasificacion);
+		
+		
 		
 		txtNumeroTicket = new JTextField();
 		txtNumeroTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		txtNumeroTicket.setBackground(new Color(220, 220, 220));
-		txtNumeroTicket.setBounds(503, 158, 520, 22);
+		txtNumeroTicket.setBounds(503, 154, 520, 25);
 		txtNumeroTicket.setColumns(10);
 		txtNumeroTicket.setEditable(false);
 		this.add(txtNumeroTicket);
-		
 		txtNumeroTicket.setText(numeroTicket);
+		
 		
 		txtNumeroLegajo = new JTextField();
 		txtNumeroLegajo.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
 		txtNumeroLegajo.setColumns(10);
 		txtNumeroLegajo.setBackground(new Color(220, 220, 220));
-		txtNumeroLegajo.setBounds(503, 198, 520, 22);
+		txtNumeroLegajo.setBounds(503, 194, 520, 25);
 		txtNumeroLegajo.setEditable(false);
 		this.add(txtNumeroLegajo);
-		
 		txtNumeroLegajo.setText(numeroLegajo);
 		
 		
-		
-		JButton btnRegistrarTicket = new JButton("Registrar");
-		btnRegistrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		btnRegistrarTicket.setBounds(1020, 655, 133, 37);
-		this.add(btnRegistrarTicket);
-		
-		JButton atras = new JButton("Atras");
-		atras.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
-		atras.setBounds(1207, 655, 133, 37);
-		this.add(atras);
+		txtClasificacion = new JTextField();
+		txtClasificacion.setBackground(new Color(227, 227, 227));
+		txtClasificacion.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 18));
+		txtClasificacion.setEditable(false);
+		txtClasificacion.setBounds(503, 234, 520, 25);
+		add(txtClasificacion);
+		txtClasificacion.setColumns(10);
+		txtClasificacion.setText(clasificacion.toString());
 		
 		
-		btnRegistrarTicket.addActionListener(new ActionListener() {
+		
+		JButton btnDerivarTicket = new JButton("Derivar ticket");
+		btnDerivarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnDerivarTicket.setBounds(1020, 655, 133, 37);
+		this.add(btnDerivarTicket);
+		
+		JButton btnCerrarTicket = new JButton("Cerrar ticket");
+		btnCerrarTicket.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 16));
+		btnCerrarTicket.setBounds(1207, 655, 133, 37);
+		this.add(btnCerrarTicket);
+		
+		
+		btnDerivarTicket.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (textAreaObservaciones.getText().isEmpty()) {
 					errorObsVacio.setVisible(true);
 				}
-				
 				else {
-					int dialogButton = JOptionPane.YES_NO_OPTION;
-					int dialogResult = JOptionPane.showConfirmDialog (null, "Desea guardar los cambios realizados?","Warning",dialogButton);
-					if(dialogResult == JOptionPane.YES_OPTION){
-					  
-						Ticket ticket = new Ticket(Integer.valueOf(numeroTicket),fecha,hora);
-						
-						ventana.setContentPane(new InterfazRegistrarTicket3(ventana,numeroTicket,numeroLegajo,clasificacion,textAreaObservaciones.getText()));
-						ventana.pack();
-					}
+					ventana.setContentPane(new InterfazDerivarTicket1(ventana,txtNumeroTicket.getText(), txtNumeroLegajo.getText(), clasificacion));
+					ventana.pack();
 				}
 			}
 		});
 		
-		
-		atras.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ventana.setContentPane(new InterfazRegistrarTicket1(ventana));
+
+		btnCerrarTicket.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ventana.setContentPane(new HomeMesaAyuda(ventana));
 				ventana.pack();
 			}
-		});
+		});	
 	}
 }

@@ -3,13 +3,27 @@ package entidades;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "INTERVENCION")
 public class Intervencion {
 	
+	@Column (name = "ESTADO")
 	private String estado;
+	@Column (name = "ID_INTERVENCION")
+	private Integer id_Intervencion;
+	@Column (name = "FECHA_ASIGNACION")
 	private LocalDate fechaAsignacion;
+	@Column (name = "FECHA_FIN_ASIGNACION")
 	private LocalDate fechaFinAsignacion;
+	@Column (name = "HORA_ASIGNACION")
 	private LocalTime horaAsignacion;
+	@Column (name = "HORA_FIN_ASIGNACION")
 	private LocalTime horaFinAsignacion;
+	
 	
 	
 	public Intervencion() {
@@ -22,6 +36,7 @@ public class Intervencion {
 		this.horaAsignacion = horaAsig;
 	}
 
+	
 
 	public String getEstado() {
 		return estado;
@@ -63,4 +78,11 @@ public class Intervencion {
 		this.horaFinAsignacion = horaFinAsignacion;
 	}
 	
+	public Integer getId_Intervencion() {
+		return id_Intervencion;
+	}
+
+	public void setId_Intervencion(Integer id_Intervencion) {
+		this.id_Intervencion = id_Intervencion;
+	}
 }
